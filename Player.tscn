@@ -11,11 +11,6 @@ flags = 4
 atlas = ExtResource( 4 )
 region = Rect2( 0, 0, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=13]
-flags = 4
-atlas = ExtResource( 2 )
-region = Rect2( 0, 0, 32, 32 )
-
 [sub_resource type="AtlasTexture" id=15]
 flags = 4
 atlas = ExtResource( 1 )
@@ -131,17 +126,17 @@ flags = 4
 atlas = ExtResource( 3 )
 region = Rect2( 320, 0, 32, 32 )
 
+[sub_resource type="AtlasTexture" id=13]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 0, 0, 32, 32 )
+
 [sub_resource type="SpriteFrames" id=12]
 animations = [ {
 "frames": [ SubResource( 14 ) ],
 "loop": true,
 "name": "Jump",
 "speed": 20.0
-}, {
-"frames": [ SubResource( 13 ) ],
-"loop": true,
-"name": "Fall",
-"speed": 5.0
 }, {
 "frames": [ SubResource( 15 ), SubResource( 16 ), SubResource( 17 ), SubResource( 18 ), SubResource( 19 ), SubResource( 20 ), SubResource( 21 ), SubResource( 22 ), SubResource( 23 ), SubResource( 24 ), SubResource( 25 ), SubResource( 26 ) ],
 "loop": true,
@@ -152,13 +147,17 @@ animations = [ {
 "loop": true,
 "name": "Idle",
 "speed": 20.0
+}, {
+"frames": [ SubResource( 13 ) ],
+"loop": true,
+"name": "Fall",
+"speed": 5.0
 } ]
 
 [sub_resource type="CapsuleShape2D" id=27]
 height = 6.0
 
 [node name="Player" type="KinematicBody2D"]
-position = Vector2( 1, 0 )
 script = ExtResource( 5 )
 __meta__ = {
 "_edit_group_": true
@@ -172,3 +171,17 @@ playing = true
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 0, 3 )
 shape = SubResource( 27 )
+
+[node name="WallJump" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="WallJumpL" type="CollisionPolygon2D" parent="WallJump"]
+position = Vector2( -19, 2 )
+build_mode = 1
+polygon = PoolVector2Array( -8, -8, 8, -8, 8, 8, -8, 8 )
+
+[node name="WallJumpR" type="CollisionPolygon2D" parent="WallJump"]
+position = Vector2( 20, 2 )
+build_mode = 1
+polygon = PoolVector2Array( -8, -8, 8, -8, 8, 8, -8, 8 )

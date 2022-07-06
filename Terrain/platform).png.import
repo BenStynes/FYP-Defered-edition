@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Terrain (16x16).png-24e4971e97cc417566882d4f2d3fe45b.stex"
+path="res://.import/platform).png-21a765e12f564d723721e0ec058a3894.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Terrain/Terrain (16x16).png"
-dest_files=[ "res://.import/Terrain (16x16).png-24e4971e97cc417566882d4f2d3fe45b.stex" ]
+source_file="res://Terrain/platform).png"
+dest_files=[ "res://.import/platform).png-21a765e12f564d723721e0ec058a3894.stex" ]
 
 [params]
 

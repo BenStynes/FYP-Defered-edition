@@ -3,10 +3,10 @@ extends KinematicBody2D
 onready var animation = $ssSprite
 var velocity = Vector2(0,0)
 var moving = false
-
+onready var wall = $WallJump
 var Strength = 1
-var Speed  = 1
-var Dexterity =2
+var Speed  = 2
+var Dexterity =1
 var Skill  = 1
 var Body = 1
 var falling = false
@@ -18,7 +18,7 @@ var jumpCount =  1
 
 
 
-var JumpHeight : float = 100 + Strength * 20
+var JumpHeight : float = 50 + Strength * 20
 var PeakTime: float = 0.5 - Skill/10
 var FallTime: float = 0.4 
 
@@ -31,19 +31,24 @@ func _physics_process(delta):
 	
 	var axisX = Input.get_action_strength("right") - Input.get_action_strength("left")
 	
-	if Input.is_action_pressed("right"):
+	if Input.is_action_pressed("right") and not is_on_wall():
 		velocity.x = moveSpeed
-	if Input.is_action_pressed("left"):
+	if Input.is_action_pressed("left") and not is_on_wall():
 		velocity.x = -moveSpeed
 	
-	velocity.y +=  get_gravity() * delta
-	if Input.is_action_just_pressed("jump") and(is_on_floor() or jumpCount > 0):
-		
+	if not is_on_wall():
+		velocity.y +=  get_gravity() * delta
+	if Input.is_action_just_pressed("jump") and( is_on_floor() or is_on_wall() or jumpCount > 0):
+		 
 		jump()
 		
 		
 	if is_on_floor():
-		jumpCount = Dexterity/2
+		if(Dexterity > 1):
+			jumpCount = Dexterity/2
+		else:
+			jumpCount = 1 
+		
 	velocity = move_and_slide(velocity, Vector2.UP)
 
 	velocity.x = lerp(velocity.x,0,0.1)
@@ -69,8 +74,7 @@ func _physics_process(delta):
 	
 
 	
-
-
+		
 func levelUp(var x):
 	match x:
 		1:
@@ -94,6 +98,9 @@ func get_gravity():
 		falling = true
 		return fall_gravity
 func jump():
+	if  is_on_wall():
+		velocity.x = -moveSpeed * 3
+		print("wall jump")
 	velocity.y = jump_velocity
 	if(jumpCount > 0):
 		jumpCount -= 1
