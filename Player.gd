@@ -10,8 +10,8 @@ var Dexterity =1
 var Skill  = 1
 var Body = 1
 var falling = false
-
-	
+var onWall = false
+var axisX
 	
 var moveSpeed = 50 * Speed-0.75
 var jumpCount =  1
@@ -20,24 +20,25 @@ var jumpCount =  1
 
 var JumpHeight : float = 50 + Strength * 20
 var PeakTime: float = 0.5 - Skill/10
-var FallTime: float = 0.4 
+var FallTime: float = 0.4
 
 onready var jump_velocity : float = (2.0* JumpHeight) / PeakTime * -1.0
 onready var jump_gravity : float = (-2.0 * JumpHeight) / (PeakTime * PeakTime) *  -1.0
 onready var fall_gravity : float = (-2.0 * JumpHeight) / (FallTime * FallTime) * -1.0
-
+onready var wall_gravity : float = (-2.0 * JumpHeight) / (3 * 3) * -1.0
 	
 func _physics_process(delta):
 	
-	var axisX = Input.get_action_strength("right") - Input.get_action_strength("left")
+	axisX = Input.get_action_strength("right") - Input.get_action_strength("left")
 	
 	if Input.is_action_pressed("right") and not is_on_wall():
 		velocity.x = moveSpeed
-	if Input.is_action_pressed("left") and not is_on_wall():
+	if Input.is_action_pressed("left") and not  is_on_wall():
 		velocity.x = -moveSpeed
 	
-	if not is_on_wall():
-		velocity.y +=  get_gravity() * delta
+	
+	velocity.y +=  get_gravity() * delta
+	
 	if Input.is_action_just_pressed("jump") and( is_on_floor() or is_on_wall() or jumpCount > 0):
 		 
 		jump()
@@ -91,7 +92,7 @@ func levelUp(var x):
 func get_gravity():
 	
 	
-	if velocity.y < 0.0:
+	if velocity.y < 0.0 or not is_on_wall():
 		falling = false
 		return jump_gravity 
 	else:
@@ -99,9 +100,14 @@ func get_gravity():
 		return fall_gravity
 func jump():
 	if  is_on_wall():
-		velocity.x = -moveSpeed * 3
-		print("wall jump")
-	velocity.y = jump_velocity
+		if animation.flip_h == true:
+			velocity.x = moveSpeed * 3
+		elif animation.flip_h == false:
+			velocity.x = -moveSpeed * 3
+			print("wall jump")
+			velocity.y = jump_velocity  * 0.5	
+	else:
+		velocity.y = jump_velocity 
 	if(jumpCount > 0):
 		jumpCount -= 1
 		

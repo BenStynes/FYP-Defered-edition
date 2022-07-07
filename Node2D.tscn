@@ -6,19 +6,20 @@
 [node name="Test Level" type="Node2D"]
 
 [node name="Obstical" parent="." instance=ExtResource( 3 )]
-position = Vector2( 390.75, 369 )
+position = Vector2( 209, 245 )
 scale = Vector2( 2.13281, 0.625 )
 
 [node name="Obstical2" parent="." instance=ExtResource( 3 )]
-position = Vector2( 259, 393.5 )
-scale = Vector2( 1, 3.5625 )
+position = Vector2( 500, 174 )
+scale = Vector2( 6.10417, 12.7083 )
 
 [node name="Obstical3" parent="." instance=ExtResource( 3 )]
-position = Vector2( 149, 455 )
+position = Vector2( -69, 175 )
+scale = Vector2( 6.1875, 12.7917 )
 
 [node name="Obstical4" parent="." instance=ExtResource( 3 )]
-position = Vector2( 283.5, 522 )
-scale = Vector2( 6.89063, 1.78125 )
+position = Vector2( 205.938, 656.625 )
+scale = Vector2( 10.1224, 7.39063 )
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
-position = Vector2( 161, 401 )
+position = Vector2( 200, 455 )
