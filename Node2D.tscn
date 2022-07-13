@@ -1,5 +1,6 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
+[ext_resource path="res://Collectable.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Platform.tscn" type="PackedScene" id=3]
 
@@ -23,3 +24,23 @@ scale = Vector2( 10.1224, 7.39063 )
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
 position = Vector2( 200, 455 )
+
+[node name="ssSprite" parent="Player" index="0"]
+frame = 0
+
+[node name="Collectable" parent="." instance=ExtResource( 1 )]
+position = Vector2( 206, 215 )
+
+[node name="Collectable2" parent="." instance=ExtResource( 1 )]
+position = Vector2( 102, 463 )
+scale = Vector2( 0.257609, 1 )
+
+[node name="Collectable3" parent="." instance=ExtResource( 1 )]
+position = Vector2( 319, 452 )
+
+[node name="Collectable4" parent="." instance=ExtResource( 1 )]
+position = Vector2( 240, 429 )
+scale = Vector2( 0.257609, 1 )
+
+[editable path="Player"]
+[editable path="Player/Panel"]

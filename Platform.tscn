@@ -11,4 +11,11 @@ collision_mask = 3
 mode = 1
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="RigidBody2D"]
-polygon = PoolVector2Array( -24, -24, 24, -24, 24, 24, -24, 24 )
+position = Vector2( -5.16574e-07, 0 )
+scale = Vector2( 1.04167, 1 )
+polygon = PoolVector2Array( -23.04, -24, 23.04, -24, 23.04, 24, -23.04, 24 )
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="RigidBody2D"]
+position = Vector2( -5.16574e-07, 0 )
+scale = Vector2( 1.04167, 1 )
+polygon = PoolVector2Array( -23.04, -24, 23.04, -24, 23.04, 24, -23.04, 24 )

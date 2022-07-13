@@ -1,21 +1,23 @@
 extends KinematicBody2D
 
 onready var animation = $ssSprite
+onready var Collection =$Collect
+onready var Leveling = $Panel
 var velocity = Vector2(0,0)
 var moving = false
-onready var wall = $WallJump
-var Strength = 1
-var Speed  = 2
+
+var Strength = 3
+var Speed  = 1
 var Dexterity =1
 var Skill  = 1
 var Body = 1
 var falling = false
 var onWall = false
 var axisX
-	
+var experience = 0
+var XPLimiit = 1
 var moveSpeed = 50 * Speed-0.75
 var jumpCount =  1
-
 
 
 var JumpHeight : float = 50 + Strength * 20
@@ -43,7 +45,7 @@ func _physics_process(delta):
 		 
 		jump()
 		
-		
+	
 	if is_on_floor():
 		if(Dexterity > 1):
 			jumpCount = Dexterity/2
@@ -73,10 +75,18 @@ func _physics_process(delta):
 	elif  !is_on_floor() and falling == true:
 		animation.animation = "Fall"
 	
-
 	
+	if experience == XPLimiit:
+		Leveling. popup_centered()
 		
+	
+
+func Collect():
+	experience+=1
+	
 func levelUp(var x):
+	
+	
 	match x:
 		1:
 			 Strength += 1
@@ -88,7 +98,15 @@ func levelUp(var x):
 			Skill += 1
 		5:
 			Body +=1
-			
+	experience = 1
+	XPLimiit+= 1	
+	moveSpeed = 50 * Speed-0.75
+	JumpHeight  = 50 + Strength * 20
+	PeakTime = 0.5 - Skill/10
+	jump_velocity = (2.0* JumpHeight) / PeakTime * -1.0
+	jump_gravity = (-2.0 * JumpHeight) / (PeakTime * PeakTime) *  -1.0
+	fall_gravity =   (-2.0 * JumpHeight) / (FallTime * FallTime) * -1.0
+	Leveling.hide()
 func get_gravity():
 	
 	
@@ -102,12 +120,17 @@ func jump():
 	if  is_on_wall():
 		if animation.flip_h == true:
 			velocity.x = moveSpeed * 3
+			velocity.y = jump_velocity
 		elif animation.flip_h == false:
 			velocity.x = -moveSpeed * 3
 			print("wall jump")
-			velocity.y = jump_velocity  * 0.5	
+			velocity.y = jump_velocity
 	else:
 		velocity.y = jump_velocity 
 	if(jumpCount > 0):
 		jumpCount -= 1
 		
+
+
+func _on_Panel_level(attribute):
+	levelUp(attribute) # Replace with function body.
