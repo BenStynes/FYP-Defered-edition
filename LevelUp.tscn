@@ -106,7 +106,7 @@ Label/styles/normal = SubResource( 9 )
 
 [node name="PopupPanel" type="PopupPanel"]
 pause_mode = 2
-self_modulate = Color( 0.700472, 0.736232, 0.263768, 1 )
+self_modulate = Color( 0.395317, 0, 0.710573, 1 )
 margin_left = 3.0
 margin_top = 5.0
 margin_right = 188.0
@@ -121,9 +121,10 @@ anims/text = ExtResource( 3 )
 
 [node name="Panel" type="Panel" parent="."]
 self_modulate = Color( 0, 0, 0, 0.458824 )
-margin_left = -1.0
-margin_right = 189.0
-margin_bottom = 308.0
+margin_left = 1.0
+margin_top = -2.0
+margin_right = 186.0
+margin_bottom = 300.0
 
 [node name="GridContainer" type="GridContainer" parent="Panel"]
 margin_left = 13.0
@@ -147,7 +148,6 @@ margin_top = 10.0
 margin_right = 139.0
 margin_bottom = 35.0
 text = "strength"
-percent_visible = 0.730413
 
 [node name="Label2" type="Button" parent="Panel/GridContainer"]
 modulate = Color( 0.352941, 0.560784, 0, 1 )
@@ -163,7 +163,6 @@ margin_top = 11.0
 margin_right = 165.0
 margin_bottom = 36.0
 text = "Speed"
-percent_visible = 0.730413
 
 [node name="Label3" type="Button" parent="Panel/GridContainer"]
 modulate = Color( 0.352941, 0.560784, 0, 1 )
@@ -179,7 +178,6 @@ margin_top = 9.0
 margin_right = 145.0
 margin_bottom = 34.0
 text = "Dexterity"
-percent_visible = 0.730413
 
 [node name="Label4" type="Button" parent="Panel/GridContainer"]
 modulate = Color( 0.352941, 0.560784, 0, 1 )
@@ -195,7 +193,6 @@ margin_top = 10.0
 margin_right = 167.0
 margin_bottom = 35.0
 text = "Skill"
-percent_visible = 0.730413
 
 [node name="Label5" type="Button" parent="Panel/GridContainer"]
 modulate = Color( 0.352941, 0.560784, 0, 1 )
@@ -211,7 +208,6 @@ margin_top = 9.0
 margin_right = 165.0
 margin_bottom = 34.0
 text = "Body"
-percent_visible = 0.730413
 
 [connection signal="about_to_show" from="." to="." method="_on_PopupPanel_about_to_show"]
 [connection signal="button_up" from="Panel/GridContainer/Label" to="." method="_on_Label_button_up"]

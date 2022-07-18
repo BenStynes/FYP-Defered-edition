@@ -11,22 +11,16 @@ position = Vector2( 209, 245 )
 scale = Vector2( 2.13281, 0.625 )
 
 [node name="Obstical2" parent="." instance=ExtResource( 3 )]
-position = Vector2( 500, 174 )
+position = Vector2( 593, 523 )
 scale = Vector2( 6.10417, 12.7083 )
 
 [node name="Obstical3" parent="." instance=ExtResource( 3 )]
-position = Vector2( -69, 175 )
+position = Vector2( -186, 515 )
 scale = Vector2( 6.1875, 12.7917 )
 
 [node name="Obstical4" parent="." instance=ExtResource( 3 )]
 position = Vector2( 205.938, 656.625 )
 scale = Vector2( 10.1224, 7.39063 )
-
-[node name="Player" parent="." instance=ExtResource( 2 )]
-position = Vector2( 200, 455 )
-
-[node name="ssSprite" parent="Player" index="0"]
-frame = 0
 
 [node name="Collectable" parent="." instance=ExtResource( 1 )]
 position = Vector2( 206, 215 )
@@ -42,5 +36,11 @@ position = Vector2( 319, 452 )
 position = Vector2( 240, 429 )
 scale = Vector2( 0.257609, 1 )
 
+[node name="Player" parent="." instance=ExtResource( 2 )]
+position = Vector2( 143, 404 )
+
+[node name="ssSprite" parent="Player" index="0"]
+frame = 4
+
 [editable path="Player"]
-[editable path="Player/Panel"]
+[editable path="Player/CanvasLayer/PopupPanel"]

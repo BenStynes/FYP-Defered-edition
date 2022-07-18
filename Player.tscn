@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=2]
+[gd_scene load_steps=37 format=2]
 
 [ext_resource path="res://Main Characters/Pink Man/Run (32x32).png" type="Texture" id=1]
 [ext_resource path="res://Main Characters/Pink Man/Fall (32x32).png" type="Texture" id=2]
@@ -6,11 +6,63 @@
 [ext_resource path="res://Main Characters/Pink Man/Jump (32x32).png" type="Texture" id=4]
 [ext_resource path="res://Player.gd" type="Script" id=5]
 [ext_resource path="res://LevelUp.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Items/Fruits/Healthy.png" type="Texture" id=7]
+[ext_resource path="res://health.gd" type="Script" id=8]
 
-[sub_resource type="AtlasTexture" id=13]
+[sub_resource type="AtlasTexture" id=1]
 flags = 4
-atlas = ExtResource( 2 )
+atlas = ExtResource( 3 )
 region = Rect2( 0, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=2]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 32, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=3]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 64, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=4]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 96, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=5]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 128, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=6]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 160, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=7]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 192, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=8]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 224, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=9]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 256, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=10]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 288, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=11]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 320, 0, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=15]
 flags = 4
@@ -77,67 +129,17 @@ flags = 4
 atlas = ExtResource( 4 )
 region = Rect2( 0, 0, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=1]
+[sub_resource type="AtlasTexture" id=13]
 flags = 4
-atlas = ExtResource( 3 )
+atlas = ExtResource( 2 )
 region = Rect2( 0, 0, 32, 32 )
-
-[sub_resource type="AtlasTexture" id=2]
-flags = 4
-atlas = ExtResource( 3 )
-region = Rect2( 32, 0, 32, 32 )
-
-[sub_resource type="AtlasTexture" id=3]
-flags = 4
-atlas = ExtResource( 3 )
-region = Rect2( 64, 0, 32, 32 )
-
-[sub_resource type="AtlasTexture" id=4]
-flags = 4
-atlas = ExtResource( 3 )
-region = Rect2( 96, 0, 32, 32 )
-
-[sub_resource type="AtlasTexture" id=5]
-flags = 4
-atlas = ExtResource( 3 )
-region = Rect2( 128, 0, 32, 32 )
-
-[sub_resource type="AtlasTexture" id=6]
-flags = 4
-atlas = ExtResource( 3 )
-region = Rect2( 160, 0, 32, 32 )
-
-[sub_resource type="AtlasTexture" id=7]
-flags = 4
-atlas = ExtResource( 3 )
-region = Rect2( 192, 0, 32, 32 )
-
-[sub_resource type="AtlasTexture" id=8]
-flags = 4
-atlas = ExtResource( 3 )
-region = Rect2( 224, 0, 32, 32 )
-
-[sub_resource type="AtlasTexture" id=9]
-flags = 4
-atlas = ExtResource( 3 )
-region = Rect2( 256, 0, 32, 32 )
-
-[sub_resource type="AtlasTexture" id=10]
-flags = 4
-atlas = ExtResource( 3 )
-region = Rect2( 288, 0, 32, 32 )
-
-[sub_resource type="AtlasTexture" id=11]
-flags = 4
-atlas = ExtResource( 3 )
-region = Rect2( 320, 0, 32, 32 )
 
 [sub_resource type="SpriteFrames" id=12]
 animations = [ {
-"frames": [ SubResource( 13 ) ],
+"frames": [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ), SubResource( 9 ), SubResource( 10 ), SubResource( 11 ) ],
 "loop": true,
-"name": "Fall",
-"speed": 5.0
+"name": "Idle",
+"speed": 20.0
 }, {
 "frames": [ SubResource( 15 ), SubResource( 16 ), SubResource( 17 ), SubResource( 18 ), SubResource( 19 ), SubResource( 20 ), SubResource( 21 ), SubResource( 22 ), SubResource( 23 ), SubResource( 24 ), SubResource( 25 ), SubResource( 26 ) ],
 "loop": true,
@@ -149,10 +151,10 @@ animations = [ {
 "name": "Jump",
 "speed": 20.0
 }, {
-"frames": [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ), SubResource( 9 ), SubResource( 10 ), SubResource( 11 ) ],
+"frames": [ SubResource( 13 ) ],
 "loop": true,
-"name": "Idle",
-"speed": 20.0
+"name": "Fall",
+"speed": 5.0
 } ]
 
 [sub_resource type="CapsuleShape2D" id=27]
@@ -163,7 +165,7 @@ height = 10.0
 height = 12.0
 
 [node name="Player" type="KinematicBody2D"]
-position = Vector2( -25, -8 )
+position = Vector2( -10, 6 )
 script = ExtResource( 5 )
 __meta__ = {
 "_edit_group_": true
@@ -172,7 +174,7 @@ __meta__ = {
 [node name="ssSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 12 )
 animation = "Idle"
-frame = 1
+frame = 8
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -187,13 +189,47 @@ collision_mask = 2
 position = Vector2( 0, 2 )
 shape = SubResource( 28 )
 
-[node name="Panel" parent="." instance=ExtResource( 6 )]
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( 6, 6 )
+current = true
+drag_margin_top = 0.52
+drag_margin_bottom = 0.52
 
-[node name="Panel" parent="Panel" index="1"]
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="health" type="Panel" parent="CanvasLayer"]
+margin_left = 2.0
+margin_top = 3.0
+margin_right = 41.0
+margin_bottom = 30.0
+script = ExtResource( 8 )
+
+[node name="GridContainer" type="GridContainer" parent="CanvasLayer/health"]
+margin_left = 4.0
+margin_top = -2.0
+margin_right = 170.0
+margin_bottom = 38.0
+columns = 5
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/health/GridContainer"]
+margin_right = 32.0
+margin_bottom = 32.0
+texture = ExtResource( 7 )
+
+[node name="PopupPanel" parent="CanvasLayer" instance=ExtResource( 6 )]
+visible = true
+margin_left = -10.0
+margin_top = 6.0
+margin_right = 175.0
+margin_bottom = 308.0
+
+[node name="Panel" parent="CanvasLayer/PopupPanel" index="1"]
 margin_left = 0.0
+margin_top = 0.0
 margin_right = 185.0
 margin_bottom = 302.0
 
-[connection signal="level" from="Panel" to="." method="_on_Panel_level"]
+[connection signal="Birth" from="." to="CanvasLayer/health" method="_on_Player_Birth"]
+[connection signal="level" from="CanvasLayer/PopupPanel" to="." method="_on_PopupPanel_level"]
 
-[editable path="Panel"]
+[editable path="CanvasLayer/PopupPanel"]
