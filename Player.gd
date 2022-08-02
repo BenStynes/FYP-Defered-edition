@@ -3,7 +3,8 @@ extends KinematicBody2D
 onready var animation = $ssSprite
 onready var Collection =$Collect
 onready var Leveling = $CanvasLayer/PopupPanel
-
+signal takeDamage(health)
+signal lockControls()
 var velocity = Vector2(0,0)
 var moving = false
 
@@ -18,14 +19,15 @@ var axisX
 var experience = 0
 var XPLimiit = 1
 var moveSpeed = 50 * Speed-0.75
-var jumpCount =  (0.5 * Dexterity) + 0.5
-
+var jumpCount = Dexterity
+var lock = false
 signal Birth()
 
 var JumpHeight : float = 50 + Strength * 20
 var PeakTime: float = 0.5 - Skill/10
 var FallTime: float = 0.4
-
+var health  = 3 
+var damage = 0
 onready var jump_velocity : float = (2.0* JumpHeight) / PeakTime * -1.0
 onready var jump_gravity : float = (-2.0 * JumpHeight) / (PeakTime * PeakTime) *  -1.0
 onready var fall_gravity : float = (-2.0 * JumpHeight) / (FallTime * FallTime) * -1.0
@@ -35,22 +37,22 @@ func _physics_process(delta):
 	
 	axisX = Input.get_action_strength("right") - Input.get_action_strength("left")
 	
-	if Input.is_action_pressed("right") and not is_on_wall():
+	if Input.is_action_pressed("right") :
 		velocity.x = moveSpeed
-	if Input.is_action_pressed("left") and not  is_on_wall():
+	if Input.is_action_pressed("left"):
 		velocity.x = -moveSpeed
 	
 	
 	velocity.y +=  get_gravity() * delta
 	
-	if Input.is_action_just_pressed("jump"):
-		 
+	if Input.is_action_just_pressed("jump") && (is_on_floor() || jumpCount > 0 ):
+		jumpCount -= 1
 		jump()
 		
 	
-	if is_on_floor() && jumpCount <= 0:
-		
-		jumpCount =  (0.5 * Dexterity) + 0.5
+	if is_on_floor():
+		jumpCount = Dexterity
+		set_process_input(true)
 		
 	velocity = move_and_slide(velocity, Vector2.UP)
 
@@ -100,7 +102,7 @@ func levelUp(var x):
 			Body +=1
 			bod = true
 			
-	experience = 1
+	experience = 0
 	XPLimiit+= 1	
 	moveSpeed = 50 * Speed-0.75
 	JumpHeight  = 50 + Strength * 20
@@ -108,11 +110,12 @@ func levelUp(var x):
 	jump_velocity = (2.0* JumpHeight) / PeakTime * -1.0
 	jump_gravity = (-2.0 * JumpHeight) / (PeakTime * PeakTime) *  -1.0
 	fall_gravity =   (-2.0 * JumpHeight) / (FallTime * FallTime) * -1.0
-	jumpCount =  (0.5 * Dexterity) + 0.5
+	jumpCount =  Dexterity
 	
 	Leveling.hide()
 	if(bod):
 		emit_signal("Birth")
+		health = health + 1
 		bod = false
 	
 func get_gravity():
@@ -125,9 +128,8 @@ func get_gravity():
 		falling = true
 		return fall_gravity
 func jump():
-	if(jumpCount > 0):
-		jumpCount -= 1
 		if  is_on_wall():
+			emit_signal("lockControls")
 			if animation.flip_h == true:
 				velocity.x = moveSpeed * 3
 				velocity.y = jump_velocity
@@ -146,3 +148,26 @@ func jump():
 
 func _on_PopupPanel_level(attribute):
 	levelUp(attribute)
+
+
+func _on_Collect_area_entered(area):
+	if(area.is_in_group("Enemy")):
+		print_debug("Reeeeeeeeeee")
+		
+
+
+func _on_Enemy_Hit():
+	emit_signal("takeDamage",health)
+	damage= damage + 1
+	if animation.flip_h == true:
+				velocity.x =500
+				velocity.y = jump_velocity
+	elif animation.flip_h == false:
+				velocity.x =-500
+				velocity.y = jump_velocity
+	if damage >= health:
+			print("game over") #pass # Replace with function body.
+
+
+func _on_Player_lockControls():
+	lock =true# Replace with function body.

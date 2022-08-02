@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Checkpoint (No Flag).png-d2381bbbca88abc7bac99b7121ea4194.stex"
+path="res://.import/Checkpoint (No Flag).png-364d8710fcfabf6d8341e3e34a92e2ea.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Items/Checkpoints/Checkpoint/Checkpoint (No Flag).png"
-dest_files=[ "res://.import/Checkpoint (No Flag).png-d2381bbbca88abc7bac99b7121ea4194.stex" ]
+source_file="res://Other/Checkpoint/Checkpoint (No Flag).png"
+dest_files=[ "res://.import/Checkpoint (No Flag).png-364d8710fcfabf6d8341e3e34a92e2ea.stex" ]
 
 [params]
 

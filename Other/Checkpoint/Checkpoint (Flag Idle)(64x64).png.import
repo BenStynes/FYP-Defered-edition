@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Checkpoint (Flag Idle)(64x64).png-50fe90bcee795493ecb424b0bc3f288e.stex"
+path="res://.import/Checkpoint (Flag Idle)(64x64).png-902c6c8ecebb06aaa9104964b71fd2e6.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Items/Checkpoints/Checkpoint/Checkpoint (Flag Idle)(64x64).png"
-dest_files=[ "res://.import/Checkpoint (Flag Idle)(64x64).png-50fe90bcee795493ecb424b0bc3f288e.stex" ]
+source_file="res://Other/Checkpoint/Checkpoint (Flag Idle)(64x64).png"
+dest_files=[ "res://.import/Checkpoint (Flag Idle)(64x64).png-902c6c8ecebb06aaa9104964b71fd2e6.stex" ]
 
 [params]
 
