@@ -13,6 +13,8 @@ func _ready():
 		coinCount+=1
 		
 func _reset():
+	for i in get_child_count():
+		get_child(i).queue_free()
 	for i in coinCount:
 		var scene = load("res://Collectable.tscn")
 		var child = scene.instance()

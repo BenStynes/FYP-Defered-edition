@@ -106,7 +106,6 @@ Label/styles/normal = SubResource( 9 )
 
 [node name="PopupPanel" type="PopupPanel"]
 pause_mode = 2
-visible = true
 self_modulate = Color( 0.395317, 0, 0.710573, 1 )
 margin_left = 3.0
 margin_top = 5.0
@@ -138,6 +137,7 @@ custom_constants/hseparation = 100
 modulate = Color( 0.352941, 0.560784, 0, 1 )
 margin_right = 168.0
 margin_bottom = 40.0
+hint_tooltip = "Strenth Increases Jump Height"
 theme = SubResource( 2 )
 text = "Str"
 
@@ -153,6 +153,7 @@ modulate = Color( 0.352941, 0.560784, 0, 1 )
 margin_top = 50.0
 margin_right = 168.0
 margin_bottom = 90.0
+hint_tooltip = "Speed Increases move speed"
 theme = SubResource( 2 )
 text = "                            "
 
@@ -168,6 +169,7 @@ modulate = Color( 0.352941, 0.560784, 0, 1 )
 margin_top = 100.0
 margin_right = 168.0
 margin_bottom = 140.0
+hint_tooltip = "Dexterity increases jump amount"
 theme = SubResource( 2 )
 text = "                            "
 
@@ -183,6 +185,7 @@ modulate = Color( 0.352941, 0.560784, 0, 1 )
 margin_top = 150.0
 margin_right = 168.0
 margin_bottom = 190.0
+hint_tooltip = "Skill is time to reach max  Jump Height"
 theme = SubResource( 2 )
 text = "                            "
 
@@ -198,6 +201,7 @@ modulate = Color( 0.352941, 0.560784, 0, 1 )
 margin_top = 200.0
 margin_right = 168.0
 margin_bottom = 240.0
+hint_tooltip = "Body Increases Max Health"
 theme = SubResource( 2 )
 text = "                            "
 
@@ -210,12 +214,17 @@ text = "Body"
 
 [connection signal="about_to_show" from="." to="." method="_on_PopupPanel_about_to_show"]
 [connection signal="button_up" from="Panel/GridContainer/Label" to="." method="_on_Label_button_up"]
+[connection signal="focus_entered" from="Panel/GridContainer/Label" to="." method="_on_Label_focus_entered"]
 [connection signal="pressed" from="Panel/GridContainer/Label" to="." method="_on_Label_pressed"]
 [connection signal="button_up" from="Panel/GridContainer/Label2" to="." method="_on_Label2_button_up"]
+[connection signal="focus_entered" from="Panel/GridContainer/Label2" to="." method="_on_Label2_focus_entered"]
 [connection signal="pressed" from="Panel/GridContainer/Label2" to="." method="_on_Label2_pressed"]
 [connection signal="button_up" from="Panel/GridContainer/Label3" to="." method="_on_Label3_button_up"]
+[connection signal="focus_entered" from="Panel/GridContainer/Label3" to="." method="_on_Label3_focus_entered"]
 [connection signal="pressed" from="Panel/GridContainer/Label3" to="." method="_on_Label3_pressed"]
 [connection signal="button_up" from="Panel/GridContainer/Label4" to="." method="_on_Label4_button_up"]
+[connection signal="focus_entered" from="Panel/GridContainer/Label4" to="." method="_on_Label4_focus_entered"]
 [connection signal="pressed" from="Panel/GridContainer/Label4" to="." method="_on_Label4_pressed"]
 [connection signal="button_up" from="Panel/GridContainer/Label5" to="." method="_on_Label5_button_up"]
+[connection signal="focus_entered" from="Panel/GridContainer/Label5" to="." method="_on_Label5_focus_entered"]
 [connection signal="pressed" from="Panel/GridContainer/Label5" to="." method="_on_Label5_pressed"]

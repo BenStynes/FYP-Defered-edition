@@ -102,11 +102,13 @@ func levelUp(var x):
 			Skill += 1
 		5:
 			Body +=1
-			bod = true
+			emit_signal("Birth")
+			health = health + 1
+			
 			
 	experience = 0
 	XPLimiit+= 1	
-	moveSpeed = 50 * Speed-0.75
+	moveSpeed = 50 * Speed
 	JumpHeight  = 50 + Strength * 20
 	PeakTime = 0.5 - Skill/10
 	jump_velocity = (2.0* JumpHeight) / PeakTime * -1.0
@@ -116,8 +118,7 @@ func levelUp(var x):
 	
 	Leveling.hide()
 	if(bod):
-		emit_signal("Birth")
-		health = health + 1
+	
 		bod = false
 	
 func get_gravity():
@@ -152,10 +153,7 @@ func _on_PopupPanel_level(attribute):
 	levelUp(attribute)
 
 
-func _on_Collect_area_entered(area):
-	if(area.is_in_group("Enemy")):
-		print_debug("Reeeeeeeeeee")
-		
+
 
 
 func _on_Enemy_Hit():

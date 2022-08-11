@@ -25,9 +25,6 @@ scale = Vector2( 400, 10.9375 )
 [node name="Player" parent="." instance=ExtResource( 4 )]
 position = Vector2( 1419, 109 )
 
-[node name="ssSprite" parent="Player" index="0"]
-frame = 5
-
 [node name="Obstical2" parent="." instance=ExtResource( 1 )]
 position = Vector2( 1190, 325 )
 
@@ -238,163 +235,82 @@ patrolPath = NodePath("../Path2D2")
 [node name="Enemy5" parent="." instance=ExtResource( 2 )]
 position = Vector2( -2029, 344 )
 
-[node name="CollisionShape2D2" parent="Enemy5" index="1"]
-position = Vector2( 0, 8 )
-
 [node name="Enemy6" parent="." instance=ExtResource( 2 )]
 position = Vector2( -2015, 344 )
-
-[node name="CollisionShape2D2" parent="Enemy6" index="1"]
-position = Vector2( 0, 8 )
 
 [node name="Enemy7" parent="." instance=ExtResource( 2 )]
 position = Vector2( -2000, 344 )
 
-[node name="CollisionShape2D2" parent="Enemy7" index="1"]
-position = Vector2( 0, 5 )
-
 [node name="Enemy8" parent="." instance=ExtResource( 2 )]
 position = Vector2( -1985, 344 )
-
-[node name="CollisionShape2D2" parent="Enemy8" index="1"]
-position = Vector2( 0, 8 )
 
 [node name="Enemy9" parent="." instance=ExtResource( 2 )]
 position = Vector2( -1971, 344 )
 
-[node name="CollisionShape2D2" parent="Enemy9" index="1"]
-position = Vector2( 0, 8 )
-
 [node name="Enemy10" parent="." instance=ExtResource( 2 )]
 position = Vector2( -1956, 344 )
-
-[node name="CollisionShape2D2" parent="Enemy10" index="1"]
-position = Vector2( 0, 5 )
 
 [node name="Enemy11" parent="." instance=ExtResource( 2 )]
 position = Vector2( -1941, 344 )
 
-[node name="CollisionShape2D2" parent="Enemy11" index="1"]
-position = Vector2( 0, 8 )
-
 [node name="Enemy12" parent="." instance=ExtResource( 2 )]
 position = Vector2( -1927, 344 )
-
-[node name="CollisionShape2D2" parent="Enemy12" index="1"]
-position = Vector2( 0, 8 )
 
 [node name="Enemy13" parent="." instance=ExtResource( 2 )]
 position = Vector2( -1913, 344 )
 
-[node name="CollisionShape2D2" parent="Enemy13" index="1"]
-position = Vector2( 0, 5 )
-
 [node name="Enemy14" parent="." instance=ExtResource( 2 )]
 position = Vector2( -1899, 344 )
-
-[node name="CollisionShape2D2" parent="Enemy14" index="1"]
-position = Vector2( 0, 8 )
 
 [node name="Enemy15" parent="." instance=ExtResource( 2 )]
 position = Vector2( -1884, 344 )
 
-[node name="CollisionShape2D2" parent="Enemy15" index="1"]
-position = Vector2( 0, 8 )
-
 [node name="Enemy16" parent="." instance=ExtResource( 2 )]
 position = Vector2( -1870, 344 )
-
-[node name="CollisionShape2D2" parent="Enemy16" index="1"]
-position = Vector2( 0, 5 )
 
 [node name="Enemy17" parent="." instance=ExtResource( 2 )]
 position = Vector2( -1855, 344 )
 
-[node name="CollisionShape2D2" parent="Enemy17" index="1"]
-position = Vector2( 0, 8 )
-
 [node name="Enemy18" parent="." instance=ExtResource( 2 )]
 position = Vector2( -1841, 344 )
-
-[node name="CollisionShape2D2" parent="Enemy18" index="1"]
-position = Vector2( 0, 8 )
 
 [node name="Enemy19" parent="." instance=ExtResource( 2 )]
 position = Vector2( -1827, 344 )
 
-[node name="CollisionShape2D2" parent="Enemy19" index="1"]
-position = Vector2( 0, 5 )
-
 [node name="Enemy20" parent="." instance=ExtResource( 2 )]
 position = Vector2( -1813, 344 )
-
-[node name="CollisionShape2D2" parent="Enemy20" index="1"]
-position = Vector2( 0, 8 )
 
 [node name="Enemy21" parent="." instance=ExtResource( 2 )]
 position = Vector2( -1799, 344 )
 
-[node name="CollisionShape2D2" parent="Enemy21" index="1"]
-position = Vector2( 0, 8 )
-
 [node name="Enemy22" parent="." instance=ExtResource( 2 )]
 position = Vector2( -1785, 344 )
-
-[node name="CollisionShape2D2" parent="Enemy22" index="1"]
-position = Vector2( 0, 8 )
 
 [node name="Enemy23" parent="." instance=ExtResource( 2 )]
 position = Vector2( -1771, 344 )
 
-[node name="CollisionShape2D2" parent="Enemy23" index="1"]
-position = Vector2( 0, 8 )
-
 [node name="Enemy24" parent="." instance=ExtResource( 2 )]
 position = Vector2( -1757, 344 )
 
-[node name="CollisionShape2D2" parent="Enemy24" index="1"]
-position = Vector2( 0, 8 )
-
 [node name="Enemy25" parent="." instance=ExtResource( 2 )]
 position = Vector2( -1743, 344 )
-
-[node name="CollisionShape2D2" parent="Enemy25" index="1"]
-position = Vector2( 0, 8 )
 
 [node name="Enemy26" parent="." instance=ExtResource( 2 )]
 position = Vector2( -1729, 344 )
 patrolPath = NodePath("../Path2D2")
 
-[node name="CollisionShape2D2" parent="Enemy26" index="1"]
-position = Vector2( 0, 8 )
-
 [node name="Enemy27" parent="." instance=ExtResource( 2 )]
 position = Vector2( -1716, 344 )
 patrolPath = NodePath("../Path2D2")
 
-[node name="CollisionShape2D2" parent="Enemy27" index="1"]
-position = Vector2( 0, 8 )
-
 [node name="Enemy28" parent="." instance=ExtResource( 2 )]
 position = Vector2( -1703, 344 )
-
-[node name="CollisionShape2D2" parent="Enemy28" index="1"]
-position = Vector2( 0, 8 )
 
 [node name="Enemy29" parent="." instance=ExtResource( 2 )]
 position = Vector2( -1689, 344 )
 
-[node name="CollisionShape2D2" parent="Enemy29" index="1"]
-position = Vector2( 0, 8 )
-
 [node name="Enemy30" parent="." instance=ExtResource( 2 )]
 position = Vector2( -1675, 344 )
-
-[node name="CollisionShape2D2" parent="Enemy30" index="1"]
-position = Vector2( 0, 5 )
-
-[node name="CollisionShape2D" parent="Enemy30/Area2D2" index="0"]
-position = Vector2( 0, 4 )
 
 [node name="Path2D" type="Path2D" parent="."]
 curve = SubResource( 1 )
@@ -568,6 +484,7 @@ collision_mask = 2
 [connection signal="takeDamage" from="Player" to="Player" method="_on_Player_takeDamage"]
 [connection signal="Hit" from="Enemy" to="Player" method="_on_Enemy_Hit"]
 [connection signal="Hit" from="Enemy2" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="Enemy2" to="Player" method="_on_Enemy2_Hit"]
 [connection signal="Hit" from="Enemy3" to="Player" method="_on_Enemy_Hit"]
 [connection signal="Hit" from="Enemy4" to="Player" method="_on_Enemy_Hit"]
 [connection signal="Hit" from="Enemy5" to="Player" method="_on_Enemy_Hit"]
@@ -599,13 +516,6 @@ collision_mask = 2
 
 [editable path="Player"]
 [editable path="Player/CanvasLayer/PopupPanel"]
-[editable path="Enemy5"]
-[editable path="Enemy6"]
-[editable path="Enemy7"]
-[editable path="Enemy8"]
-[editable path="Enemy9"]
-[editable path="Enemy10"]
-[editable path="Enemy11"]
 [editable path="Enemy12"]
 [editable path="Enemy13"]
 [editable path="Enemy14"]
@@ -618,10 +528,5 @@ collision_mask = 2
 [editable path="Enemy21"]
 [editable path="Enemy22"]
 [editable path="Enemy23"]
-[editable path="Enemy24"]
-[editable path="Enemy25"]
-[editable path="Enemy26"]
-[editable path="Enemy27"]
-[editable path="Enemy28"]
 [editable path="Enemy29"]
 [editable path="Enemy30"]

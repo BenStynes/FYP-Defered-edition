@@ -39,12 +39,15 @@ func _physics_process(delta):
 	
 
 
-func _on_Area2D_body_entered(body):
-	if(body.is_in_group("Player")):
-		emit_signal("Hit")
 
 
-func _on_Area2D_area_entered(area):
+
+func _on_Hitbox_area_entered(area):
 	if(area.is_in_group("Player")):
 		emit_signal("Hit")
 	
+
+func _on_Hitbox_body_entered(body1):
+	if(body1.is_in_group("Player")):
+		emit_signal("Hit")
+

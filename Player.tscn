@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://moveable.tres" type="SpriteFrames" id=1]
 [ext_resource path="res://Terrain/platform).png" type="Texture" id=2]
@@ -9,17 +9,20 @@
 [ext_resource path="res://health.gd" type="Script" id=8]
 
 [sub_resource type="CapsuleShape2D" id=27]
-radius = 11.0
-height = 10.0
+height = 6.0
+
+[sub_resource type="CapsuleShape2D" id=29]
+radius = 12.0
+height = 0.0
 
 [sub_resource type="CapsuleShape2D" id=28]
 radius = 11.0
 height = 8.0
 
 [node name="Player" type="KinematicBody2D" groups=["Player"]]
-position = Vector2( -29, -3 )
-collision_layer = 147
-collision_mask = 145
+position = Vector2( -32, -12 )
+collision_layer = 211
+collision_mask = 209
 script = ExtResource( 5 )
 __meta__ = {
 "_edit_group_": true
@@ -28,19 +31,21 @@ __meta__ = {
 [node name="ssSprite" type="AnimatedSprite" parent="." groups=["Player"]]
 frames = ExtResource( 1 )
 animation = "Idle"
-frame = 8
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["Player"]]
-position = Vector2( 0, 2 )
 shape = SubResource( 27 )
 
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="." groups=["Player"]]
+position = Vector2( 1, 6 )
+shape = SubResource( 29 )
+
 [node name="Collect" type="Area2D" parent="." groups=["Player"]]
-collision_layer = 18
-collision_mask = 18
+collision_layer = 83
+collision_mask = 83
 
 [node name="Hitbox" type="CollisionShape2D" parent="Collect" groups=["Player"]]
-position = Vector2( 0, 2 )
+position = Vector2( 0, 6 )
 shape = SubResource( 28 )
 
 [node name="CanvasLayer2" type="CanvasLayer" parent="."]
@@ -130,32 +135,6 @@ margin_right = 167.0
 margin_bottom = 308.0
 popup_exclusive = true
 
-[node name="AnimationPlayer" parent="CanvasLayer/PopupPanel" index="0" groups=["Player"]]
-
-[node name="Panel" parent="CanvasLayer/PopupPanel" index="1" groups=["Player"]]
-
-[node name="GridContainer" parent="CanvasLayer/PopupPanel/Panel" index="0" groups=["Player"]]
-
-[node name="Label" parent="CanvasLayer/PopupPanel/Panel/GridContainer" index="0" groups=["Player"]]
-
-[node name="Label" parent="CanvasLayer/PopupPanel/Panel/GridContainer/Label" index="0" groups=["Player"]]
-
-[node name="Label2" parent="CanvasLayer/PopupPanel/Panel/GridContainer" index="1" groups=["Player"]]
-
-[node name="Label" parent="CanvasLayer/PopupPanel/Panel/GridContainer/Label2" index="0" groups=["Player"]]
-
-[node name="Label3" parent="CanvasLayer/PopupPanel/Panel/GridContainer" index="2" groups=["Player"]]
-
-[node name="Label" parent="CanvasLayer/PopupPanel/Panel/GridContainer/Label3" index="0" groups=["Player"]]
-
-[node name="Label4" parent="CanvasLayer/PopupPanel/Panel/GridContainer" index="3" groups=["Player"]]
-
-[node name="Label" parent="CanvasLayer/PopupPanel/Panel/GridContainer/Label4" index="0" groups=["Player"]]
-
-[node name="Label5" parent="CanvasLayer/PopupPanel/Panel/GridContainer" index="4" groups=["Player"]]
-
-[node name="Label" parent="CanvasLayer/PopupPanel/Panel/GridContainer/Label5" index="0" groups=["Player"]]
-
 [node name="Popup" type="Popup" parent="CanvasLayer"]
 margin_right = 40.0
 margin_bottom = 40.0
@@ -166,5 +145,3 @@ margin_bottom = 40.0
 [connection signal="area_entered" from="Collect" to="." method="_on_Collect_area_entered"]
 [connection signal="level" from="CanvasLayer/PopupPanel" to="." method="_on_PopupPanel_level"]
 [connection signal="popup_hide" from="CanvasLayer/PopupPanel" to="CanvasLayer/PopupPanel" method="_on_PopupPanel_popup_hide"]
-
-[editable path="CanvasLayer/PopupPanel"]
