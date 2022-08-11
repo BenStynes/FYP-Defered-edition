@@ -1,6 +1,9 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://Terrain/platform).png" type="Texture" id=1]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 23, 23 )
 
 [node name="Obstical" type="Sprite"]
 texture = ExtResource( 1 )
@@ -10,12 +13,5 @@ collision_layer = 2
 collision_mask = 2
 mode = 1
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="RigidBody2D"]
-position = Vector2( -5.16574e-07, 0 )
-scale = Vector2( 1.04167, 1 )
-polygon = PoolVector2Array( -23.04, -24, 23.04, -24, 23.04, 24, -23.04, 24 )
-
-[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="RigidBody2D"]
-position = Vector2( -5.16574e-07, 0 )
-scale = Vector2( 1.04167, 1 )
-polygon = PoolVector2Array( -23.04, -24, 23.04, -24, 23.04, 24, -23.04, 24 )
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
+shape = SubResource( 1 )

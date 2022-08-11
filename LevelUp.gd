@@ -3,7 +3,7 @@ extends Popup
 onready var help =  $AnimationPlayer
 onready var cringe = $Panel/GridContainer/Label
 signal level(attribute)
-
+var hell
 
 
 
@@ -15,28 +15,14 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	help.play("text")
-
-func _on_Label_button_up():
 	
-	pass
+		
+		
 
-func _on_Label2_button_up():
-	pass
-
-func _on_Label3_button_up():
-	pass
-
-func _on_Label4_button_up():
-
-	pass
-
-func _on_Label5_button_up():
-	pass
 
 func _on_PopupPanel_about_to_show():
 	 get_tree().paused = true  # Replace with function body.
-
-
+	 
 func _on_Label4_pressed():
 	emit_signal("level",4) # Replace with function body.
 	get_tree().paused = false # Replace with function body. # Replace with function body.
@@ -60,3 +46,6 @@ func _on_Label3_pressed():
 func _on_Label_pressed():
 	emit_signal("level",1)#Replace with function body.
 	get_tree().paused = false
+
+
+

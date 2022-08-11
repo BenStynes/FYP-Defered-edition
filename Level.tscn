@@ -1,0 +1,627 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Platform.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Enemy.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Collectable.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Player.tscn" type="PackedScene" id=4]
+[ext_resource path="res://CHolder.gd" type="Script" id=5]
+
+[sub_resource type="Curve2D" id=1]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 605, 324, 0, 0, 0, 0, -1608, 315, 0, 0, 0, 0, -1335, 194, 0, 0, 0, 0, -1216, 311, 0, 0, 0, 0, -980, 200, 0, 0, 0, 0, -878, 306, 0, 0, 0, 0, -678, 202, 0, 0, 0, 0, -511, 310, 0, 0, 0, 0, -384, 201, 0, 0, 0, 0, -288, 296, 0, 0, 0, 0, -280, 314, 0, 0, 0, 0, -184, 200, 0, 0, 0, 0, -88, 314, 0, 0, 0, 0, 31, 196, 0, 0, 0, 0, 161, 310, 0, 0, 0, 0, 289, 203, 0, 0, 0, 0, 395, 311, 0, 0, 0, 0, 480, 204, 0, 0, 0, 0, 589, 315, 0, 0, 0, 0, 598, 313, 0, 0, 0, 0, 599, 294, 0, 0, 0, 0, 590, 195 )
+}
+
+[sub_resource type="Curve2D" id=2]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, -1503, 212, 0, 0, 0, 0, -1202, 83, 0, 0, 0, 0, -1221, 335, 0, 0, 0, 0, -1612, 334, 0, 0, 0, 0, -1502, 222, 0, 0, 0, 0, -921, 100, 0, 0, 0, 0, -756, 281, 0, 0, 0, 0, -243, 282, 0, 0, 0, 0, -6, 122, 0, 0, 0, 0, 533, 123, 0, 0, 0, 0, 607, 313, 0, 0, 0, 0, 234, 265, 0, 0, 0, 0, -121, 329, 0, 0, 0, 0, -363, 179, 0, 0, 0, 0, -642, 302, 0, 0, 0, 0, -1034, 168, 0, 0, 0, 0, -1386, 295, 0, 0, 0, 0, -1564, 128, 0, 0, 0, 0, -1600, 98, 0, 0, 0, 0, -1589, 312, 0, 0, 0, 0, -1495, 211 )
+}
+
+[node name="Level" type="Node2D"]
+
+[node name="Obstical" parent="." instance=ExtResource( 1 )]
+position = Vector2( 13, 611.5 )
+scale = Vector2( 400, 10.9375 )
+
+[node name="Player" parent="." instance=ExtResource( 4 )]
+position = Vector2( 1419, 109 )
+
+[node name="ssSprite" parent="Player" index="0"]
+frame = 3
+
+[node name="Obstical2" parent="." instance=ExtResource( 1 )]
+position = Vector2( 1190, 325 )
+
+[node name="Obstical3" parent="." instance=ExtResource( 1 )]
+position = Vector2( 1107, 265 )
+
+[node name="Obstical10" parent="." instance=ExtResource( 1 )]
+position = Vector2( 1535, -36 )
+
+[node name="Obstical46" parent="." instance=ExtResource( 1 )]
+position = Vector2( -2060, 326 )
+
+[node name="Obstical47" parent="." instance=ExtResource( 1 )]
+position = Vector2( -2060, 278 )
+
+[node name="Obstical48" parent="." instance=ExtResource( 1 )]
+position = Vector2( -2060, 233 )
+
+[node name="Obstical49" parent="." instance=ExtResource( 1 )]
+position = Vector2( -2060, 187 )
+
+[node name="Obstical50" parent="." instance=ExtResource( 1 )]
+position = Vector2( -2060, 141 )
+
+[node name="Obstical51" parent="." instance=ExtResource( 1 )]
+position = Vector2( -1863, 168 )
+
+[node name="Obstical52" parent="." instance=ExtResource( 1 )]
+position = Vector2( -1965, 137 )
+
+[node name="Obstical53" parent="." instance=ExtResource( 1 )]
+position = Vector2( -2277, 130 )
+
+[node name="Obstical54" parent="." instance=ExtResource( 1 )]
+position = Vector2( -2207, 44 )
+
+[node name="Obstical55" parent="." instance=ExtResource( 1 )]
+position = Vector2( -2123, 104 )
+
+[node name="Obstical56" parent="." instance=ExtResource( 1 )]
+position = Vector2( -2162, 65 )
+
+[node name="Obstical57" parent="." instance=ExtResource( 1 )]
+position = Vector2( -2096, 138 )
+scale = Vector2( 0.604167, 1 )
+
+[node name="Obstical58" parent="." instance=ExtResource( 1 )]
+position = Vector2( -2665, 89.5 )
+scale = Vector2( 10.625, 2.6875 )
+
+[node name="Obstical59" parent="." instance=ExtResource( 1 )]
+position = Vector2( -3160, 91 )
+scale = Vector2( 10.625, 2.6875 )
+
+[node name="Obstical60" parent="." instance=ExtResource( 1 )]
+position = Vector2( -3659, 89 )
+scale = Vector2( 10.625, 2.6875 )
+
+[node name="Obstical61" parent="." instance=ExtResource( 1 )]
+position = Vector2( -4146, 80 )
+scale = Vector2( 10.625, 2.6875 )
+
+[node name="Obstical11" parent="." instance=ExtResource( 1 )]
+position = Vector2( 1634, 153 )
+
+[node name="Obstical12" parent="." instance=ExtResource( 1 )]
+position = Vector2( -1445, 106 )
+
+[node name="Obstical15" parent="." instance=ExtResource( 1 )]
+position = Vector2( -1646, 319 )
+
+[node name="Obstical16" parent="." instance=ExtResource( 1 )]
+position = Vector2( -1739, 223 )
+
+[node name="Obstical17" parent="." instance=ExtResource( 1 )]
+position = Vector2( -1550, 212 )
+
+[node name="Obstical18" parent="." instance=ExtResource( 1 )]
+position = Vector2( -1337, 33 )
+
+[node name="Obstical19" parent="." instance=ExtResource( 1 )]
+position = Vector2( -1520, -7 )
+
+[node name="Obstical20" parent="." instance=ExtResource( 1 )]
+position = Vector2( -1263, -91 )
+
+[node name="Obstical21" parent="." instance=ExtResource( 1 )]
+position = Vector2( -1154, -74 )
+
+[node name="Obstical22" parent="." instance=ExtResource( 1 )]
+position = Vector2( -1226, 53 )
+
+[node name="Obstical23" parent="." instance=ExtResource( 1 )]
+position = Vector2( -1601, -183 )
+
+[node name="Obstical24" parent="." instance=ExtResource( 1 )]
+position = Vector2( -1530, -283 )
+
+[node name="Obstical25" parent="." instance=ExtResource( 1 )]
+position = Vector2( -1417, -359 )
+
+[node name="Obstical26" parent="." instance=ExtResource( 1 )]
+position = Vector2( -1284, -318 )
+
+[node name="Obstical27" parent="." instance=ExtResource( 1 )]
+position = Vector2( -1176, -399 )
+
+[node name="Obstical28" parent="." instance=ExtResource( 1 )]
+position = Vector2( -1092, -495 )
+
+[node name="Obstical29" parent="." instance=ExtResource( 1 )]
+position = Vector2( -1209, -587 )
+
+[node name="Obstical30" parent="." instance=ExtResource( 1 )]
+position = Vector2( -1098, -668 )
+
+[node name="Obstical31" parent="." instance=ExtResource( 1 )]
+position = Vector2( -1215, -737 )
+
+[node name="Obstical32" parent="." instance=ExtResource( 1 )]
+position = Vector2( -1080, -824 )
+
+[node name="Obstical33" parent="." instance=ExtResource( 1 )]
+position = Vector2( -1192, -884 )
+
+[node name="Obstical34" parent="." instance=ExtResource( 1 )]
+position = Vector2( -1182, -1039 )
+
+[node name="Obstical35" parent="." instance=ExtResource( 1 )]
+position = Vector2( -1182, -1039 )
+
+[node name="Obstical36" parent="." instance=ExtResource( 1 )]
+position = Vector2( -1046, -941 )
+
+[node name="Obstical37" parent="." instance=ExtResource( 1 )]
+position = Vector2( -1055, -1137 )
+
+[node name="Obstical38" parent="." instance=ExtResource( 1 )]
+position = Vector2( -1163, -1222 )
+
+[node name="Obstical39" parent="." instance=ExtResource( 1 )]
+position = Vector2( -992, -1281 )
+
+[node name="Obstical40" parent="." instance=ExtResource( 1 )]
+position = Vector2( -1122, -1396 )
+
+[node name="Obstical41" parent="." instance=ExtResource( 1 )]
+position = Vector2( -984, -1474 )
+
+[node name="Obstical42" parent="." instance=ExtResource( 1 )]
+position = Vector2( -1158, -1611 )
+
+[node name="Obstical43" parent="." instance=ExtResource( 1 )]
+position = Vector2( -1033, -1682 )
+
+[node name="Obstical44" parent="." instance=ExtResource( 1 )]
+position = Vector2( -1129, -1867 )
+
+[node name="Obstical45" parent="." instance=ExtResource( 1 )]
+position = Vector2( -963, -1910 )
+
+[node name="Obstical13" parent="." instance=ExtResource( 1 )]
+position = Vector2( -1398, -210 )
+
+[node name="Obstical14" parent="." instance=ExtResource( 1 )]
+position = Vector2( -1620, -58 )
+
+[node name="Obstical4" parent="." instance=ExtResource( 1 )]
+position = Vector2( 1400, 301 )
+scale = Vector2( 2.66667, 2.0625 )
+
+[node name="Obstical8" parent="." instance=ExtResource( 1 )]
+position = Vector2( 1400, 237 )
+scale = Vector2( 2.66667, 2.0625 )
+
+[node name="Obstical9" parent="." instance=ExtResource( 1 )]
+position = Vector2( 1400, 180 )
+scale = Vector2( 2.66667, 2.0625 )
+
+[node name="Obstical5" parent="." instance=ExtResource( 1 )]
+position = Vector2( 350, 179 )
+scale = Vector2( 3.6875, 1 )
+
+[node name="Obstical6" parent="." instance=ExtResource( 1 )]
+position = Vector2( 952, 282.5 )
+scale = Vector2( 3.83333, 2.8125 )
+
+[node name="Obstical7" parent="." instance=ExtResource( 1 )]
+position = Vector2( 767, 307.5 )
+scale = Vector2( 4.22917, 1.8125 )
+
+[node name="Enemy" parent="." instance=ExtResource( 2 )]
+position = Vector2( 606, 325 )
+patrolPath = NodePath("../Path2D")
+
+[node name="Enemy2" parent="." instance=ExtResource( 2 )]
+position = Vector2( 593, 196 )
+patrolPath = NodePath("../Path2D")
+
+[node name="Enemy3" parent="." instance=ExtResource( 2 )]
+position = Vector2( -388, 201 )
+patrolPath = NodePath("../Path2D")
+
+[node name="Enemy4" parent="." instance=ExtResource( 2 )]
+position = Vector2( -1499, 213 )
+patrolPath = NodePath("../Path2D2")
+
+[node name="Enemy5" parent="." instance=ExtResource( 2 )]
+position = Vector2( -2029, 344 )
+
+[node name="CollisionShape2D2" parent="Enemy5" index="1"]
+position = Vector2( 0, 8 )
+
+[node name="Enemy6" parent="." instance=ExtResource( 2 )]
+position = Vector2( -2015, 344 )
+
+[node name="CollisionShape2D2" parent="Enemy6" index="1"]
+position = Vector2( 0, 8 )
+
+[node name="Enemy7" parent="." instance=ExtResource( 2 )]
+position = Vector2( -2000, 344 )
+
+[node name="CollisionShape2D2" parent="Enemy7" index="1"]
+position = Vector2( 0, 5 )
+
+[node name="Enemy8" parent="." instance=ExtResource( 2 )]
+position = Vector2( -1985, 344 )
+
+[node name="CollisionShape2D2" parent="Enemy8" index="1"]
+position = Vector2( 0, 8 )
+
+[node name="Enemy9" parent="." instance=ExtResource( 2 )]
+position = Vector2( -1971, 344 )
+
+[node name="CollisionShape2D2" parent="Enemy9" index="1"]
+position = Vector2( 0, 8 )
+
+[node name="Enemy10" parent="." instance=ExtResource( 2 )]
+position = Vector2( -1956, 344 )
+
+[node name="CollisionShape2D2" parent="Enemy10" index="1"]
+position = Vector2( 0, 5 )
+
+[node name="Enemy11" parent="." instance=ExtResource( 2 )]
+position = Vector2( -1941, 344 )
+
+[node name="CollisionShape2D2" parent="Enemy11" index="1"]
+position = Vector2( 0, 8 )
+
+[node name="Enemy12" parent="." instance=ExtResource( 2 )]
+position = Vector2( -1927, 344 )
+
+[node name="CollisionShape2D2" parent="Enemy12" index="1"]
+position = Vector2( 0, 8 )
+
+[node name="Enemy13" parent="." instance=ExtResource( 2 )]
+position = Vector2( -1913, 344 )
+
+[node name="CollisionShape2D2" parent="Enemy13" index="1"]
+position = Vector2( 0, 5 )
+
+[node name="Enemy14" parent="." instance=ExtResource( 2 )]
+position = Vector2( -1899, 344 )
+
+[node name="CollisionShape2D2" parent="Enemy14" index="1"]
+position = Vector2( 0, 8 )
+
+[node name="Enemy15" parent="." instance=ExtResource( 2 )]
+position = Vector2( -1884, 344 )
+
+[node name="CollisionShape2D2" parent="Enemy15" index="1"]
+position = Vector2( 0, 8 )
+
+[node name="Enemy16" parent="." instance=ExtResource( 2 )]
+position = Vector2( -1870, 344 )
+
+[node name="CollisionShape2D2" parent="Enemy16" index="1"]
+position = Vector2( 0, 5 )
+
+[node name="Enemy17" parent="." instance=ExtResource( 2 )]
+position = Vector2( -1855, 344 )
+
+[node name="CollisionShape2D2" parent="Enemy17" index="1"]
+position = Vector2( 0, 8 )
+
+[node name="Enemy18" parent="." instance=ExtResource( 2 )]
+position = Vector2( -1841, 344 )
+
+[node name="CollisionShape2D2" parent="Enemy18" index="1"]
+position = Vector2( 0, 8 )
+
+[node name="Enemy19" parent="." instance=ExtResource( 2 )]
+position = Vector2( -1827, 344 )
+
+[node name="CollisionShape2D2" parent="Enemy19" index="1"]
+position = Vector2( 0, 5 )
+
+[node name="Enemy20" parent="." instance=ExtResource( 2 )]
+position = Vector2( -1813, 344 )
+
+[node name="CollisionShape2D2" parent="Enemy20" index="1"]
+position = Vector2( 0, 8 )
+
+[node name="Enemy21" parent="." instance=ExtResource( 2 )]
+position = Vector2( -1799, 344 )
+
+[node name="CollisionShape2D2" parent="Enemy21" index="1"]
+position = Vector2( 0, 8 )
+
+[node name="Enemy22" parent="." instance=ExtResource( 2 )]
+position = Vector2( -1785, 344 )
+
+[node name="CollisionShape2D2" parent="Enemy22" index="1"]
+position = Vector2( 0, 8 )
+
+[node name="Enemy23" parent="." instance=ExtResource( 2 )]
+position = Vector2( -1771, 344 )
+
+[node name="CollisionShape2D2" parent="Enemy23" index="1"]
+position = Vector2( 0, 8 )
+
+[node name="Enemy24" parent="." instance=ExtResource( 2 )]
+position = Vector2( -1757, 344 )
+
+[node name="CollisionShape2D2" parent="Enemy24" index="1"]
+position = Vector2( 0, 8 )
+
+[node name="Enemy25" parent="." instance=ExtResource( 2 )]
+position = Vector2( -1743, 344 )
+
+[node name="CollisionShape2D2" parent="Enemy25" index="1"]
+position = Vector2( 0, 8 )
+
+[node name="Enemy26" parent="." instance=ExtResource( 2 )]
+position = Vector2( -1729, 344 )
+patrolPath = NodePath("../Path2D2")
+
+[node name="CollisionShape2D2" parent="Enemy26" index="1"]
+position = Vector2( 0, 8 )
+
+[node name="Enemy27" parent="." instance=ExtResource( 2 )]
+position = Vector2( -1716, 344 )
+patrolPath = NodePath("../Path2D2")
+
+[node name="CollisionShape2D2" parent="Enemy27" index="1"]
+position = Vector2( 0, 8 )
+
+[node name="Enemy28" parent="." instance=ExtResource( 2 )]
+position = Vector2( -1703, 344 )
+
+[node name="CollisionShape2D2" parent="Enemy28" index="1"]
+position = Vector2( 0, 8 )
+
+[node name="Enemy29" parent="." instance=ExtResource( 2 )]
+position = Vector2( -1689, 344 )
+
+[node name="CollisionShape2D2" parent="Enemy29" index="1"]
+position = Vector2( 0, 8 )
+
+[node name="Enemy30" parent="." instance=ExtResource( 2 )]
+position = Vector2( -1675, 344 )
+
+[node name="CollisionShape2D2" parent="Enemy30" index="1"]
+position = Vector2( 0, 5 )
+
+[node name="CollisionShape2D" parent="Enemy30/Area2D2" index="0"]
+position = Vector2( 0, 4 )
+
+[node name="Path2D" type="Path2D" parent="."]
+curve = SubResource( 1 )
+
+[node name="Path2D2" type="Path2D" parent="."]
+curve = SubResource( 2 )
+
+[node name="CHolder" type="Node" parent="."]
+script = ExtResource( 5 )
+
+[node name="Template" parent="CHolder" instance=ExtResource( 3 )]
+position = Vector2( -1579, 9083 )
+collision_layer = 2
+collision_mask = 2
+
+[node name="Collectable27" parent="CHolder" instance=ExtResource( 3 )]
+position = Vector2( 218, 311 )
+collision_layer = 2
+collision_mask = 2
+
+[node name="Collectable2" parent="CHolder" instance=ExtResource( 3 )]
+position = Vector2( 107, 333 )
+scale = Vector2( 0.257609, 1 )
+collision_layer = 2
+collision_mask = 2
+
+[node name="Collectable3" parent="CHolder" instance=ExtResource( 3 )]
+position = Vector2( 311, 318 )
+collision_layer = 2
+collision_mask = 2
+
+[node name="Collectable4" parent="CHolder" instance=ExtResource( 3 )]
+position = Vector2( 356, 139 )
+scale = Vector2( 0.257609, 1 )
+collision_layer = 2
+collision_mask = 2
+
+[node name="Collectable5" parent="CHolder" instance=ExtResource( 3 )]
+position = Vector2( 394, 142 )
+scale = Vector2( 0.257609, 1 )
+collision_layer = 2
+collision_mask = 2
+
+[node name="Collectable6" parent="CHolder" instance=ExtResource( 3 )]
+position = Vector2( -88, 225 )
+scale = Vector2( 0.257609, 1 )
+collision_layer = 2
+collision_mask = 2
+
+[node name="Collectable7" parent="CHolder" instance=ExtResource( 3 )]
+position = Vector2( 362, 321 )
+scale = Vector2( 0.257609, 1 )
+collision_layer = 2
+collision_mask = 2
+
+[node name="Collectable8" parent="CHolder" instance=ExtResource( 3 )]
+position = Vector2( 1535, -82 )
+scale = Vector2( 0.257609, 1 )
+collision_layer = 2
+collision_mask = 2
+
+[node name="Collectable9" parent="CHolder" instance=ExtResource( 3 )]
+position = Vector2( 1186, 282 )
+scale = Vector2( 0.257609, 1 )
+collision_layer = 2
+collision_mask = 2
+
+[node name="Collectable10" parent="CHolder" instance=ExtResource( 3 )]
+position = Vector2( 1634, 107 )
+scale = Vector2( 0.257609, 1 )
+collision_layer = 2
+collision_mask = 2
+
+[node name="Collectable11" parent="CHolder" instance=ExtResource( 3 )]
+position = Vector2( 1392, 88 )
+scale = Vector2( 0.257609, 1 )
+collision_layer = 2
+collision_mask = 2
+
+[node name="Collectable12" parent="CHolder" instance=ExtResource( 3 )]
+position = Vector2( 964, 172 )
+scale = Vector2( 0.257609, 1 )
+collision_layer = 2
+collision_mask = 2
+
+[node name="Collectable13" parent="CHolder" instance=ExtResource( 3 )]
+position = Vector2( 721, 226 )
+scale = Vector2( 0.257609, 1 )
+collision_layer = 2
+collision_mask = 2
+
+[node name="Collectable14" parent="CHolder" instance=ExtResource( 3 )]
+position = Vector2( -169, 293 )
+scale = Vector2( 0.257609, 1 )
+collision_layer = 2
+collision_mask = 2
+
+[node name="Collectable15" parent="CHolder" instance=ExtResource( 3 )]
+position = Vector2( -403, 283 )
+scale = Vector2( 0.257609, 1 )
+collision_layer = 2
+collision_mask = 2
+
+[node name="Collectable16" parent="CHolder" instance=ExtResource( 3 )]
+position = Vector2( -479, 284 )
+scale = Vector2( 0.257609, 1 )
+collision_layer = 2
+collision_mask = 2
+
+[node name="Collectable17" parent="CHolder" instance=ExtResource( 3 )]
+position = Vector2( -852, 301 )
+scale = Vector2( 0.257609, 1 )
+collision_layer = 2
+collision_mask = 2
+
+[node name="Collectable18" parent="CHolder" instance=ExtResource( 3 )]
+position = Vector2( -954, -29 )
+scale = Vector2( 0.257609, 1 )
+collision_layer = 2
+collision_mask = 2
+
+[node name="Collectable19" parent="CHolder" instance=ExtResource( 3 )]
+position = Vector2( -956, -1062 )
+scale = Vector2( 0.257609, 1 )
+collision_layer = 2
+collision_mask = 2
+
+[node name="Collectable20" parent="CHolder" instance=ExtResource( 3 )]
+position = Vector2( -846, -1257 )
+scale = Vector2( 0.257609, 1 )
+collision_layer = 2
+collision_mask = 2
+
+[node name="Collectable21" parent="CHolder" instance=ExtResource( 3 )]
+position = Vector2( -990, -504 )
+scale = Vector2( 0.257609, 1 )
+collision_layer = 2
+collision_mask = 2
+
+[node name="Collectable22" parent="CHolder" instance=ExtResource( 3 )]
+position = Vector2( -956, -283 )
+scale = Vector2( 0.257609, 1 )
+collision_layer = 2
+collision_mask = 2
+
+[node name="Collectable23" parent="CHolder" instance=ExtResource( 3 )]
+position = Vector2( -973, -766 )
+scale = Vector2( 0.257609, 1 )
+collision_layer = 2
+collision_mask = 2
+
+[node name="Collectable24" parent="CHolder" instance=ExtResource( 3 )]
+position = Vector2( -870, -1546 )
+scale = Vector2( 0.257609, 1 )
+collision_layer = 2
+collision_mask = 2
+
+[node name="Collectable25" parent="CHolder" instance=ExtResource( 3 )]
+position = Vector2( -874, -1784 )
+scale = Vector2( 0.257609, 1 )
+collision_layer = 2
+collision_mask = 2
+
+[node name="Collectable26" parent="CHolder" instance=ExtResource( 3 )]
+position = Vector2( -858, -1890 )
+scale = Vector2( 0.257609, 1 )
+collision_layer = 2
+collision_mask = 2
+
+[connection signal="Reset" from="Player" to="CHolder" method="_on_Player_Reset"]
+[connection signal="takeDamage" from="Player" to="Player" method="_on_Player_takeDamage"]
+[connection signal="Hit" from="Enemy" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="Enemy2" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="Enemy3" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="Enemy4" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="Enemy5" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="Enemy6" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="Enemy7" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="Enemy8" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="Enemy9" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="Enemy10" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="Enemy11" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="Enemy12" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="Enemy13" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="Enemy14" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="Enemy15" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="Enemy16" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="Enemy17" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="Enemy18" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="Enemy19" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="Enemy20" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="Enemy21" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="Enemy22" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="Enemy23" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="Enemy24" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="Enemy25" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="Enemy26" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="Enemy27" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="Enemy28" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="Enemy29" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="Enemy30" to="Player" method="_on_Enemy_Hit"]
+
+[editable path="Player"]
+[editable path="Player/CanvasLayer/PopupPanel"]
+[editable path="Enemy5"]
+[editable path="Enemy6"]
+[editable path="Enemy7"]
+[editable path="Enemy8"]
+[editable path="Enemy9"]
+[editable path="Enemy10"]
+[editable path="Enemy11"]
+[editable path="Enemy12"]
+[editable path="Enemy13"]
+[editable path="Enemy14"]
+[editable path="Enemy15"]
+[editable path="Enemy16"]
+[editable path="Enemy17"]
+[editable path="Enemy18"]
+[editable path="Enemy19"]
+[editable path="Enemy20"]
+[editable path="Enemy21"]
+[editable path="Enemy22"]
+[editable path="Enemy23"]
+[editable path="Enemy24"]
+[editable path="Enemy25"]
+[editable path="Enemy26"]
+[editable path="Enemy27"]
+[editable path="Enemy28"]
+[editable path="Enemy29"]
+[editable path="Enemy30"]

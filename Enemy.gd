@@ -45,5 +45,6 @@ func _on_Area2D_body_entered(body):
 
 
 func _on_Area2D_area_entered(area):
+	if(area.is_in_group("Player")):
+		emit_signal("Hit")
 	
-	emit_signal("Hit")

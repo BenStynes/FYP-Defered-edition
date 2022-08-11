@@ -71,4 +71,5 @@ curve = SubResource( 3 )
 
 [connection signal="Hit" from="Enemy" to="Player" method="_on_Enemy_Hit"]
 
+[editable path="Collectable2"]
 [editable path="Enemy"]

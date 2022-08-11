@@ -5,6 +5,7 @@ onready var Collection =$Collect
 onready var Leveling = $CanvasLayer/PopupPanel
 signal takeDamage(health)
 signal lockControls()
+signal Reset()
 var velocity = Vector2(0,0)
 var moving = false
 
@@ -44,7 +45,8 @@ func _physics_process(delta):
 	
 	
 	velocity.y +=  get_gravity() * delta
-	
+	if Input.is_action_just_pressed("ui_cancel"):
+		emit_signal("Reset")
 	if Input.is_action_just_pressed("jump") && (is_on_floor() || jumpCount > 0 ):
 		jumpCount -= 1
 		jump()
@@ -171,3 +173,6 @@ func _on_Enemy_Hit():
 
 func _on_Player_lockControls():
 	lock =true# Replace with function body.
+
+
+

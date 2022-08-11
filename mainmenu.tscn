@@ -1,5 +1,137 @@
-[gd_scene format=2]
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://mainmenu.tres" type="Theme" id=2]
+
+[sub_resource type="Animation" id=2]
+resource_name = "text"
+length = 9.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("PopupPanel/Label:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( -0.4, 0.2, 1, 1.9, 3.5, 4.3, 5.2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 0.972549, 0.0745098, 0.0745098, 1 ), Color( 0.0745098, 0.372549, 1, 1 ), Color( 0.675918, 0.767658, 0.0745098, 1 ), Color( 0.592157, 0.592157, 0.592157, 1 ), Color( 0.341176, 0.380392, 0.286275, 1 ), Color( 1, 0, 0, 1 ), Color( 0.588235, 0.972549, 0.0745098, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("PopupPanel/Label:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray(  ),
+"transitions": PoolRealArray(  ),
+"update": 0,
+"values": [  ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("PopupPanel/Label2:self_modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( -0.5, 0.9, 1.8, 2.9, 4, 5.1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 0.984314, 0.984314, 1 ), Color( 0.839216, 0.972549, 0.0745098, 1 ), Color( 0.0352941, 0.0745098, 1, 1 ), Color( 0.972549, 0.0745098, 0.0745098, 1 ), Color( 0.466667, 0.709804, 0.223529, 1 ), Color( 0.878431, 0.0313726, 1, 1 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("PopupPanel/Label:rect_position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( -0.3, 1, 2, 3.3, 5, 6.1, 7.1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 266, 35 ), Vector2( 200, 35 ), Vector2( 266, 35 ), Vector2( 320, 35 ), Vector2( 267, 35 ), Vector2( 266, 60 ), Vector2( 266, 35 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("PopupPanel/Label2:rect_position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( -0.4, 1, 2, 3.3, 5, 6.1, 7.1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 267, 35 ), Vector2( 320, 36 ), Vector2( 267, 36 ), Vector2( 200, 36 ), Vector2( 267, 36 ), Vector2( 266, 0 ), Vector2( 266, 36 ) ]
+}
 
 [node name="Control" type="Control"]
+show_behind_parent = true
 anchor_right = 1.0
 anchor_bottom = 1.0
+
+[node name="PopupPanel" type="PopupPanel" parent="."]
+visible = true
+show_behind_parent = true
+margin_left = 18.0
+margin_right = 1051.0
+margin_bottom = 598.0
+
+[node name="Label" type="Label" parent="PopupPanel"]
+self_modulate = Color( 0.4498, 0.619105, 0.422476, 1 )
+margin_left = 4.0
+margin_top = 4.0
+margin_right = 1029.0
+margin_bottom = 594.0
+theme = ExtResource( 2 )
+text = "let us start the game"
+align = 1
+uppercase = true
+
+[node name="Label2" type="Label" parent="PopupPanel"]
+self_modulate = Color( 0.862275, 0.974236, 0.204992, 1 )
+margin_left = 4.0
+margin_top = 4.0
+margin_right = 1029.0
+margin_bottom = 594.0
+theme = ExtResource( 2 )
+text = "let us start the game"
+align = 1
+uppercase = true
+
+[node name="Button" type="Button" parent="PopupPanel"]
+margin_left = 407.0
+margin_top = 347.0
+margin_right = 605.0
+margin_bottom = 390.0
+rect_pivot_offset = Vector2( -588, -242 )
+text = "Options"
+
+[node name="Button4" type="Button" parent="PopupPanel"]
+margin_left = 407.0
+margin_top = 454.0
+margin_right = 605.0
+margin_bottom = 496.0
+rect_pivot_offset = Vector2( -588, -242 )
+text = "Exit"
+
+[node name="Button2" type="Button" parent="PopupPanel"]
+margin_left = 416.0
+margin_top = 124.0
+margin_right = 614.0
+margin_bottom = 176.0
+rect_pivot_offset = Vector2( -588, -242 )
+text = "New Game"
+
+[node name="Button3" type="Button" parent="PopupPanel"]
+margin_left = 413.0
+margin_top = 224.0
+margin_right = 611.0
+margin_bottom = 276.0
+rect_pivot_offset = Vector2( -588, -242 )
+text = "Continue"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/text = SubResource( 2 )
