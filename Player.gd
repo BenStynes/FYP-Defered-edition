@@ -3,6 +3,7 @@ extends KinematicBody2D
 onready var animation = $ssSprite
 onready var Collection =$Collect
 onready var Leveling = $CanvasLayer/PopupPanel
+onready var anime = $AnimationPlayer
 signal takeDamage(health)
 signal lockControls()
 signal Reset()
@@ -157,15 +158,18 @@ func _on_PopupPanel_level(attribute):
 
 
 func _on_Enemy_Hit():
-	emit_signal("takeDamage",health)
-	damage= damage + 1
-	if animation.flip_h == true:
+	if anime.is_playing() == false:
+		emit_signal("takeDamage",health)
+		anime.play("Damage")
+	
+		damage= damage + 1
+		if animation.flip_h == true:
 				velocity.x =500
 				velocity.y = jump_velocity
-	elif animation.flip_h == false:
+		elif animation.flip_h == false:
 				velocity.x =-500
 				velocity.y = jump_velocity
-	if damage >= health:
+		if damage >= health:
 			print("game over") #pass # Replace with function body.
 
 
@@ -173,4 +177,21 @@ func _on_Player_lockControls():
 	lock =true# Replace with function body.
 
 
+
+
+
+func _on_Saw_Hit():
+	if anime.is_playing() == false:
+		emit_signal("takeDamage",health)
+		anime.play("Damage")
+	
+		damage= damage + 1
+		if animation.flip_h == true:
+				velocity.x =500
+				velocity.y = jump_velocity
+		elif animation.flip_h == false:
+				velocity.x =-500
+				velocity.y = jump_velocity
+		if damage >= health:
+			print("game over") #pass # Replace with function body.
 

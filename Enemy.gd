@@ -7,35 +7,19 @@ onready var body = $Area2D
 var JumpHeight : float = 50 
 var PeakTime: float = 0.5 
 var FallTime: float = 0.4
-signal Hit()
-onready var jump_velocity : float = (2.0* JumpHeight) / PeakTime * -1.0
-onready var jump_gravity : float = (-2.0 * JumpHeight) / (PeakTime * PeakTime) *  -1.0
-onready var fall_gravity : float = (-2.0 * JumpHeight) / (FallTime * FallTime) * -1.0
-var moveSpeed = 100
-export (NodePath) var patrolPath
+var l := Line2D.new()   
 
-var patrolPoints
-var patrolIndex = 0
-var velocity = position 
+signal Hit()
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	if patrolPath: 
-		patrolPoints = get_node(patrolPath).curve.get_baked_points()
+	pass
 		
 		# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
 	
-	
-	if!patrolPath:
-		return
-	var target = patrolPoints[patrolIndex]
-	if position.distance_to(target) <1:
-		patrolIndex = wrapi(patrolIndex + 1,0,patrolPoints.size())
-		target = patrolPoints[patrolIndex]
-	velocity = (target - position).normalized() * moveSpeed 
-	velocity.y += fall_gravity * delta
-	
-	velocity = move_and_slide(velocity)
+	 pass
+		
 	
 
 
@@ -50,4 +34,5 @@ func _on_Hitbox_area_entered(area):
 func _on_Hitbox_body_entered(body1):
 	if(body1.is_in_group("Player")):
 		emit_signal("Hit")
+	
 

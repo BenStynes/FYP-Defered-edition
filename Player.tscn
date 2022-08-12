@@ -8,19 +8,31 @@
 [ext_resource path="res://Items/Fruits/Healthy.png" type="Texture" id=7]
 [ext_resource path="res://health.gd" type="Script" id=8]
 
-[sub_resource type="CapsuleShape2D" id=27]
-height = 6.0
-
 [sub_resource type="CapsuleShape2D" id=29]
-radius = 12.0
-height = 0.0
-
-[sub_resource type="CapsuleShape2D" id=28]
-radius = 11.0
 height = 8.0
 
+[sub_resource type="CapsuleShape2D" id=28]
+radius = 12.0
+height = 8.0
+
+[sub_resource type="Animation" id=30]
+resource_name = "Damage"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("ssSprite:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 1, 1.5, 2, 2.5, 3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ true, false, true, false, true, false, true ]
+}
+
 [node name="Player" type="KinematicBody2D" groups=["Player"]]
-position = Vector2( -32, -12 )
+position = Vector2( -21, -12 )
 collision_layer = 211
 collision_mask = 209
 script = ExtResource( 5 )
@@ -31,10 +43,8 @@ __meta__ = {
 [node name="ssSprite" type="AnimatedSprite" parent="." groups=["Player"]]
 frames = ExtResource( 1 )
 animation = "Idle"
+frame = 5
 playing = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["Player"]]
-shape = SubResource( 27 )
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="." groups=["Player"]]
 position = Vector2( 1, 6 )
@@ -138,6 +148,9 @@ popup_exclusive = true
 [node name="Popup" type="Popup" parent="CanvasLayer"]
 margin_right = 40.0
 margin_bottom = 40.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/Damage = SubResource( 30 )
 
 [connection signal="Birth" from="." to="CanvasLayer/health" method="_on_Player_Birth"]
 [connection signal="lockControls" from="." to="." method="_on_Player_lockControls"]
