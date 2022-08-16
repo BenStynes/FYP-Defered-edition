@@ -21,17 +21,18 @@ var onWall = false
 var axisX
 var experience = 0
 var XPLimiit = 1
-var moveSpeed = 50 * Speed-0.75
+var moveSpeed = 75 * Speed
 var jumpCount = Dexterity
 var lock = false
 var totalCoins 
-var StartPosition
+var StartPosition = Vector2(1385,112)
+var weight = 0.05
 signal Birth()
 signal Display(level)
 signal Display2(coin)
 
 var JumpHeight : float = 50 + Strength * 20
-var PeakTime: float = 0.5 - Skill/10
+var PeakTime: float = 0.5
 var FallTime: float = 0.4
 var health  = 3 
 var damage = 0
@@ -47,10 +48,10 @@ func _physics_process(delta):
 	
 	axisX = Input.get_action_strength("right") - Input.get_action_strength("left")
 	if Input.is_action_pressed("right") :
-		velocity.x = moveSpeed
+		velocity.x = lerp(velocity.x,moveSpeed,weight)
 		
 	if Input.is_action_pressed("left"):
-		velocity.x = -moveSpeed
+		velocity.x = lerp(velocity.x,-moveSpeed,weight)
 		
 	
 	
@@ -67,7 +68,7 @@ func _physics_process(delta):
 		
 	velocity = move_and_slide(velocity, Vector2.UP)
 
-	velocity.x = lerp(velocity.x,0,0.1)
+	velocity.x = lerp(velocity.x,0,weight)
 	if axisX  > 0:
 		animation.flip_h = false
 		
@@ -110,7 +111,7 @@ func levelUp(var x):
 			 JumpHeight = 50 + Strength * 20
 		2:
 			 Speed += 1
-			 moveSpeed = 50 * Speed
+			 moveSpeed = 75 * Speed
 			
 			
 		3:
@@ -118,7 +119,8 @@ func levelUp(var x):
 			 jumpCount =  Dexterity/2
 		4:
 			Skill += 1
-			PeakTime = 0.5 - Skill/10
+			
+			weight = min(weight +0.1,1)
 		5:
 			Body +=1
 			emit_signal("Birth")
@@ -216,6 +218,7 @@ func _on_CHolder_Amount(num):
 
 
 func _on_GameOver_reset():
+	emit_signal("Reset")
 	damage = 0
 	level = 1
 	Strength = 1
@@ -236,6 +239,8 @@ func _on_GameOver_reset():
 	jump_velocity = (2.0* JumpHeight) / PeakTime * -1.0
 	jump_gravity = (-2.0 * JumpHeight) / (PeakTime * PeakTime) *  -1.0
 	fall_gravity =   (-2.0 * JumpHeight) / (FallTime * FallTime) * -1.0
-	emit_signal("Reset")
-	totalCoins = get_parent().get_child(1).get_child_count() -1
+	velocity = Vector2(0,0)
+	
+	
+	anime.stop(true)
 	GO.hide()
