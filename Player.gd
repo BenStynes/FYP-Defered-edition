@@ -44,6 +44,10 @@ onready var wall_gravity : float = (-2.0 * JumpHeight) / (3 * 3) * -1.0
 func _ready():
 	StartPosition = position
 	totalCoins = get_parent().get_child(1).get_child_count() -1
+	level = PlayerInformation.level
+	emit_signal("Display2", totalCoins)
+	emit_signal("Display",level)
+	
 func _physics_process(delta):
 	
 	axisX = Input.get_action_strength("right") - Input.get_action_strength("left")
@@ -240,7 +244,18 @@ func _on_GameOver_reset():
 	jump_gravity = (-2.0 * JumpHeight) / (PeakTime * PeakTime) *  -1.0
 	fall_gravity =   (-2.0 * JumpHeight) / (FallTime * FallTime) * -1.0
 	velocity = Vector2(0,0)
-	
-	
 	anime.stop(true)
 	GO.hide()
+
+func passStatus():
+	PlayerInformation.setter(Strength,Speed,Dexterity,Skill,Body,XPLimiit,experience,level)
+	PlayerInformation.health = health
+	damage = 0
+	level = 1
+	
+	get_tree().root.get_node("Level").queue_free()
+	get_tree().change_scene("res://Node2D.tscn")
+	level = PlayerInformation.level		
+	
+func _on_END_win():
+	passStatus()

@@ -62,12 +62,12 @@ collision_mask = 2
 [node name="Enemy" parent="." instance=ExtResource( 4 )]
 position = Vector2( -13, 446 )
 scale = Vector2( 4, 4 )
-patrolPath = NodePath("../Path2D")
 
 [node name="Path2D2" type="Path2D" parent="."]
 curve = SubResource( 3 )
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
+position = Vector2( 498, 53 )
 
 [connection signal="Hit" from="Enemy" to="Player" method="_on_Enemy_Hit"]
 
