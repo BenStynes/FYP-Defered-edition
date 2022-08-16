@@ -3,13 +3,14 @@ extends KinematicBody2D
 onready var animation = $ssSprite
 onready var Collection =$Collect
 onready var Leveling = $CanvasLayer/PopupPanel
+onready var GO = $CanvasLayer/GameOver
 onready var anime = $AnimationPlayer
 signal takeDamage(health)
 signal lockControls()
 signal Reset()
 var velocity = Vector2(0,0)
 var moving = false
-
+var level = 1
 var Strength = 1
 var Speed  = 1
 var Dexterity =1
@@ -23,7 +24,11 @@ var XPLimiit = 1
 var moveSpeed = 50 * Speed-0.75
 var jumpCount = Dexterity
 var lock = false
+var totalCoins 
+var StartPosition
 signal Birth()
+signal Display(level)
+signal Display2(coin)
 
 var JumpHeight : float = 50 + Strength * 20
 var PeakTime: float = 0.5 - Skill/10
@@ -34,37 +39,42 @@ onready var jump_velocity : float = (2.0* JumpHeight) / PeakTime * -1.0
 onready var jump_gravity : float = (-2.0 * JumpHeight) / (PeakTime * PeakTime) *  -1.0
 onready var fall_gravity : float = (-2.0 * JumpHeight) / (FallTime * FallTime) * -1.0
 onready var wall_gravity : float = (-2.0 * JumpHeight) / (3 * 3) * -1.0
-	
+
+func _ready():
+	StartPosition = position
+	totalCoins = get_parent().get_child(1).get_child_count() -1
 func _physics_process(delta):
 	
 	axisX = Input.get_action_strength("right") - Input.get_action_strength("left")
-	
 	if Input.is_action_pressed("right") :
 		velocity.x = moveSpeed
+		
 	if Input.is_action_pressed("left"):
 		velocity.x = -moveSpeed
+		
 	
 	
 	velocity.y +=  get_gravity() * delta
-	if Input.is_action_just_pressed("ui_cancel"):
-		emit_signal("Reset")
+
 	if Input.is_action_just_pressed("jump") && (is_on_floor() || jumpCount > 0 ):
 		jumpCount -= 1
 		jump()
 		
 	
 	if is_on_floor():
-		jumpCount = Dexterity
+		jumpCount = Dexterity/2
 		set_process_input(true)
 		
 	velocity = move_and_slide(velocity, Vector2.UP)
 
 	velocity.x = lerp(velocity.x,0,0.1)
-	
 	if axisX  > 0:
 		animation.flip_h = false
+		
+		
 	elif axisX < 0 :  
 		animation.flip_h = true
+		
 		
 		
 	if axisX  > 0 and is_on_floor():
@@ -84,23 +94,31 @@ func _physics_process(delta):
 	if experience == XPLimiit:
 		Leveling.popup_centered()
 		
-	
+	if damage >= health:
+			GO.popup_centered()
 
-func Collect():
+func Collect(num):
 	experience+=1
-	
+	emit_signal("Display2", totalCoins)
+	totalCoins-=1
 func levelUp(var x):
+	level += 1
 	
-	var bod = false
 	match x:
 		1:
 			 Strength += 1
+			 JumpHeight = 50 + Strength * 20
 		2:
 			 Speed += 1
+			 moveSpeed = 50 * Speed
+			
+			
 		3:
 			 Dexterity += 1
+			 jumpCount =  Dexterity/2
 		4:
 			Skill += 1
+			PeakTime = 0.5 - Skill/10
 		5:
 			Body +=1
 			emit_signal("Birth")
@@ -109,18 +127,15 @@ func levelUp(var x):
 			
 	experience = 0
 	XPLimiit+= 1	
-	moveSpeed = 50 * Speed
-	JumpHeight  = 50 + Strength * 20
-	PeakTime = 0.5 - Skill/10
+	
+	
 	jump_velocity = (2.0* JumpHeight) / PeakTime * -1.0
 	jump_gravity = (-2.0 * JumpHeight) / (PeakTime * PeakTime) *  -1.0
 	fall_gravity =   (-2.0 * JumpHeight) / (FallTime * FallTime) * -1.0
-	jumpCount =  Dexterity
+	
 	
 	Leveling.hide()
-	if(bod):
-	
-		bod = false
+	emit_signal("Display",level)
 	
 func get_gravity():
 	
@@ -169,8 +184,7 @@ func _on_Enemy_Hit():
 		elif animation.flip_h == false:
 				velocity.x =-500
 				velocity.y = jump_velocity
-		if damage >= health:
-			print("game over") #pass # Replace with function body.
+		pass # Replace with function body.
 
 
 func _on_Player_lockControls():
@@ -195,3 +209,33 @@ func _on_Saw_Hit():
 		if damage >= health:
 			print("game over") #pass # Replace with function body.
 
+
+
+func _on_CHolder_Amount(num):
+	totalCoins = num-1 # Replace with function body.
+
+
+func _on_GameOver_reset():
+	damage = 0
+	level = 1
+	Strength = 1
+	Speed = 1
+	Skill = 1
+	Dexterity = 1
+	Body = 1
+	health = 3
+	position = StartPosition
+	emit_signal("Display",level)
+	totalCoins = 26
+	emit_signal("Display2", totalCoins)
+	moveSpeed = 50 * Speed
+	PeakTime = 0.5 - Skill/10
+	JumpHeight = 50 + Strength * 20
+	experience = 0
+	XPLimiit = 1	
+	jump_velocity = (2.0* JumpHeight) / PeakTime * -1.0
+	jump_gravity = (-2.0 * JumpHeight) / (PeakTime * PeakTime) *  -1.0
+	fall_gravity =   (-2.0 * JumpHeight) / (FallTime * FallTime) * -1.0
+	emit_signal("Reset")
+	totalCoins = get_parent().get_child(1).get_child_count() -1
+	GO.hide()

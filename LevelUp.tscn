@@ -35,7 +35,7 @@ modulate_color = Color( 1, 0.54902, 0.54902, 1 )
 [sub_resource type="Animation" id=22]
 length = 0.001
 tracks/0/type = "value"
-tracks/0/path = NodePath("Panel/GridContainer/Label:text")
+tracks/0/path = NodePath("Panel/GridContainer/Button:text")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -111,6 +111,7 @@ margin_left = 3.0
 margin_top = 5.0
 margin_right = 188.0
 margin_bottom = 307.0
+rect_min_size = Vector2( 185, 302 )
 theme = SubResource( 18 )
 custom_styles/panel = SubResource( 20 )
 script = ExtResource( 2 )
@@ -123,89 +124,96 @@ anims/text = ExtResource( 3 )
 self_modulate = Color( 0, 0, 0, 0.458824 )
 margin_right = 185.0
 margin_bottom = 302.0
+rect_min_size = Vector2( 185, 302 )
 
 [node name="GridContainer" type="GridContainer" parent="Panel"]
 margin_left = 13.0
 margin_top = 31.0
 margin_right = 173.0
 margin_bottom = 271.0
+rect_min_size = Vector2( 168, 240 )
 theme = SubResource( 1 )
 custom_constants/vseparation = 10
 custom_constants/hseparation = 100
 
-[node name="Label" type="Button" parent="Panel/GridContainer"]
+[node name="Button" type="Button" parent="Panel/GridContainer"]
 modulate = Color( 0.352941, 0.560784, 0, 1 )
 margin_right = 168.0
 margin_bottom = 40.0
+rect_min_size = Vector2( 168, 40 )
 hint_tooltip = "Strenth Increases Jump Height"
 theme = SubResource( 2 )
 text = "Str"
 
-[node name="Label" type="Label" parent="Panel/GridContainer/Label"]
+[node name="Label" type="Label" parent="Panel/GridContainer/Button"]
 margin_left = 19.0
 margin_top = 10.0
 margin_right = 139.0
 margin_bottom = 35.0
 text = "strength"
 
-[node name="Label2" type="Button" parent="Panel/GridContainer"]
+[node name="Button2" type="Button" parent="Panel/GridContainer"]
 modulate = Color( 0.352941, 0.560784, 0, 1 )
 margin_top = 50.0
 margin_right = 168.0
 margin_bottom = 90.0
+rect_min_size = Vector2( 168, 40 )
 hint_tooltip = "Speed Increases move speed"
 theme = SubResource( 2 )
 text = "                            "
 
-[node name="Label" type="Label" parent="Panel/GridContainer/Label2"]
+[node name="Label" type="Label" parent="Panel/GridContainer/Button2"]
 margin_left = 45.0
 margin_top = 11.0
 margin_right = 165.0
 margin_bottom = 36.0
 text = "Speed"
 
-[node name="Label3" type="Button" parent="Panel/GridContainer"]
+[node name="Button3" type="Button" parent="Panel/GridContainer"]
 modulate = Color( 0.352941, 0.560784, 0, 1 )
 margin_top = 100.0
 margin_right = 168.0
 margin_bottom = 140.0
+rect_min_size = Vector2( 168, 40 )
 hint_tooltip = "Dexterity increases jump amount"
 theme = SubResource( 2 )
 text = "                            "
 
-[node name="Label" type="Label" parent="Panel/GridContainer/Label3"]
+[node name="Label" type="Label" parent="Panel/GridContainer/Button3"]
 margin_left = 25.0
 margin_top = 9.0
 margin_right = 145.0
 margin_bottom = 34.0
 text = "Dexterity"
 
-[node name="Label4" type="Button" parent="Panel/GridContainer"]
+[node name="Button4" type="Button" parent="Panel/GridContainer"]
 modulate = Color( 0.352941, 0.560784, 0, 1 )
 margin_top = 150.0
 margin_right = 168.0
 margin_bottom = 190.0
+rect_min_size = Vector2( 168, 40 )
 hint_tooltip = "Skill is time to reach max  Jump Height"
 theme = SubResource( 2 )
 text = "                            "
 
-[node name="Label" type="Label" parent="Panel/GridContainer/Label4"]
+[node name="Label" type="Label" parent="Panel/GridContainer/Button4"]
 margin_left = 47.0
 margin_top = 10.0
 margin_right = 167.0
 margin_bottom = 35.0
 text = "Skill"
 
-[node name="Label5" type="Button" parent="Panel/GridContainer"]
+[node name="Button5" type="Button" parent="Panel/GridContainer"]
 modulate = Color( 0.352941, 0.560784, 0, 1 )
 margin_top = 200.0
 margin_right = 168.0
 margin_bottom = 240.0
+rect_min_size = Vector2( 168, 40 )
 hint_tooltip = "Body Increases Max Health"
 theme = SubResource( 2 )
 text = "                            "
 
-[node name="Label" type="Label" parent="Panel/GridContainer/Label5"]
+[node name="Label" type="Label" parent="Panel/GridContainer/Button5"]
 margin_left = 45.0
 margin_top = 9.0
 margin_right = 165.0
@@ -213,18 +221,18 @@ margin_bottom = 34.0
 text = "Body"
 
 [connection signal="about_to_show" from="." to="." method="_on_PopupPanel_about_to_show"]
-[connection signal="button_up" from="Panel/GridContainer/Label" to="." method="_on_Label_button_up"]
-[connection signal="focus_entered" from="Panel/GridContainer/Label" to="." method="_on_Label_focus_entered"]
-[connection signal="pressed" from="Panel/GridContainer/Label" to="." method="_on_Label_pressed"]
-[connection signal="button_up" from="Panel/GridContainer/Label2" to="." method="_on_Label2_button_up"]
-[connection signal="focus_entered" from="Panel/GridContainer/Label2" to="." method="_on_Label2_focus_entered"]
-[connection signal="pressed" from="Panel/GridContainer/Label2" to="." method="_on_Label2_pressed"]
-[connection signal="button_up" from="Panel/GridContainer/Label3" to="." method="_on_Label3_button_up"]
-[connection signal="focus_entered" from="Panel/GridContainer/Label3" to="." method="_on_Label3_focus_entered"]
-[connection signal="pressed" from="Panel/GridContainer/Label3" to="." method="_on_Label3_pressed"]
-[connection signal="button_up" from="Panel/GridContainer/Label4" to="." method="_on_Label4_button_up"]
-[connection signal="focus_entered" from="Panel/GridContainer/Label4" to="." method="_on_Label4_focus_entered"]
-[connection signal="pressed" from="Panel/GridContainer/Label4" to="." method="_on_Label4_pressed"]
-[connection signal="button_up" from="Panel/GridContainer/Label5" to="." method="_on_Label5_button_up"]
-[connection signal="focus_entered" from="Panel/GridContainer/Label5" to="." method="_on_Label5_focus_entered"]
-[connection signal="pressed" from="Panel/GridContainer/Label5" to="." method="_on_Label5_pressed"]
+[connection signal="button_up" from="Panel/GridContainer/Button" to="." method="_on_Label_button_up"]
+[connection signal="focus_entered" from="Panel/GridContainer/Button" to="." method="_on_Label_focus_entered"]
+[connection signal="pressed" from="Panel/GridContainer/Button" to="." method="_on_Label_pressed"]
+[connection signal="button_up" from="Panel/GridContainer/Button2" to="." method="_on_Label2_button_up"]
+[connection signal="focus_entered" from="Panel/GridContainer/Button2" to="." method="_on_Label2_focus_entered"]
+[connection signal="pressed" from="Panel/GridContainer/Button2" to="." method="_on_Label2_pressed"]
+[connection signal="button_up" from="Panel/GridContainer/Button3" to="." method="_on_Label3_button_up"]
+[connection signal="focus_entered" from="Panel/GridContainer/Button3" to="." method="_on_Label3_focus_entered"]
+[connection signal="pressed" from="Panel/GridContainer/Button3" to="." method="_on_Label3_pressed"]
+[connection signal="button_up" from="Panel/GridContainer/Button4" to="." method="_on_Label4_button_up"]
+[connection signal="focus_entered" from="Panel/GridContainer/Button4" to="." method="_on_Label4_focus_entered"]
+[connection signal="pressed" from="Panel/GridContainer/Button4" to="." method="_on_Label4_pressed"]
+[connection signal="button_up" from="Panel/GridContainer/Button5" to="." method="_on_Label5_button_up"]
+[connection signal="focus_entered" from="Panel/GridContainer/Button5" to="." method="_on_Label5_focus_entered"]
+[connection signal="pressed" from="Panel/GridContainer/Button5" to="." method="_on_Label5_pressed"]

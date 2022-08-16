@@ -38,7 +38,7 @@ func _physics_process(delta):
 	var target = patrolPoints[patrolIndex]
 	
 	
-	l.add_point(target ) 
+	
 	if position.distance_to(target) <1:
 		patrolIndex = wrapi(patrolIndex + 1,0,patrolPoints.size())
 		target = patrolPoints[patrolIndex]

@@ -39,3 +39,14 @@ func _on_Player_takeDamage(t_health):
 			text.texture = unhealthy
 			break 
 	
+
+
+func _on_GameOver_reset():
+	for n in health:
+		var text = container.get_child(n)
+		if text.texture == unhealthy:
+			text.texture = healthy
+			
+		if n > 2:
+			text.queue_free()
+	

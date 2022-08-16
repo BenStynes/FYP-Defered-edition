@@ -1,11 +1,11 @@
 extends Popup
 
 onready var help =  $AnimationPlayer
-onready var button = $Panel/GridContainer/Label
-onready var button1 = $Panel/GridContainer/Label2
-onready var button2 = $Panel/GridContainer/Label3
-onready var button3 = $Panel/GridContainer/Label4
-onready var button4 = $Panel/GridContainer/Label5
+onready var button = $Panel/GridContainer/Button
+onready var button1 = $Panel/GridContainer/Button2
+onready var button2 = $Panel/GridContainer/Button3
+onready var button3 = $Panel/GridContainer/Button4
+onready var button4 = $Panel/GridContainer/Button5
 
 signal level(attribute)
 var hell
@@ -20,15 +20,16 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	help.play("text")
-	if get_tree().paused == true:
-		Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
-	else:
-		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+	
+	#if get_tree().paused == true:
+		#Input.set_mouse_mode(Input.MOUSE_MODE_CONFINED)
+
+		#Input.set_mouse_mode(Input.MOUSE_MODE_CONFINED)
 
 
 func _on_PopupPanel_about_to_show():
 	 get_tree().paused = true 
-	 
+	 Input.warp_mouse_position(button.rect_global_position)
 func _on_Label4_pressed():
 	emit_signal("level",4) 
 	get_tree().paused = false
@@ -56,7 +57,9 @@ func _on_Label_pressed():
 
 
 func _on_Label_focus_entered():
-	Input.warp_mouse_position( button.rect_global_position )
+	Input.warp_mouse_position(button.rect_global_position)
+
+
 
 
 func _on_Label2_focus_entered():

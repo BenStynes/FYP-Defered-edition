@@ -23,16 +23,16 @@ _data = {
 [node name="Level" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource( 4 )]
-position = Vector2( 1419, 109 )
+position = Vector2( 1272, 322 )
 
 [node name="ssSprite" parent="Player" index="0"]
-frame = 7
+frame = 6
 
-[node name="CHolder" type="Node" parent="."]
+[node name="CHolder" type="Node" parent="." groups=["coin"]]
 script = ExtResource( 5 )
 
 [node name="Template" parent="CHolder" instance=ExtResource( 3 )]
-position = Vector2( -1579, 9083 )
+position = Vector2( -1600, 8820 )
 collision_layer = 2
 collision_mask = 2
 
@@ -185,7 +185,7 @@ collision_layer = 2
 collision_mask = 2
 
 [node name="Collectable26" parent="CHolder" instance=ExtResource( 3 )]
-position = Vector2( -858, -1890 )
+position = Vector2( -868, -1847 )
 scale = Vector2( 0.257609, 1 )
 collision_layer = 2
 collision_mask = 2
@@ -492,14 +492,44 @@ position = Vector2( -1716, 344 )
 [node name="Enemy28" parent="SpikeHolder" instance=ExtResource( 2 )]
 position = Vector2( -1703, 344 )
 
+[node name="Enemy31" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( -1724, 194 )
+
+[node name="Enemy32" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( -1565, 184 )
+
+[node name="Enemy33" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( -1647, 292 )
+
+[node name="Enemy34" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( -1461, 78 )
+
+[node name="Enemy39" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 856, 223 )
+rotation = -1.56393
+
+[node name="Enemy35" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( -1535, -34 )
+
+[node name="Enemy36" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( -1636, -87 )
+
+[node name="Enemy37" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( -1620, -87 )
+
+[node name="Enemy38" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( -1604, -87 )
+
 [node name="Enemy29" parent="SpikeHolder" instance=ExtResource( 2 )]
 position = Vector2( -1689, 344 )
 
 [node name="Enemy30" parent="SpikeHolder" instance=ExtResource( 2 )]
 position = Vector2( -1675, 344 )
 
+[connection signal="Display" from="Player" to="Player/CanvasLayer/Panel/Coin" method="_on_Player_Display"]
 [connection signal="Reset" from="Player" to="CHolder" method="_on_Player_Reset"]
 [connection signal="takeDamage" from="Player" to="Player" method="_on_Player_takeDamage"]
+[connection signal="Amount" from="CHolder" to="CHolder/Collectable27" method="_on_CHolder_Amount"]
 [connection signal="Hit" from="SHolder/Saw" to="Player" method="_on_Saw_Hit"]
 [connection signal="Hit" from="SHolder/Saw3" to="Player" method="_on_Saw_Hit"]
 [connection signal="Hit" from="SHolder/Saw4" to="Player" method="_on_Saw_Hit"]
@@ -529,6 +559,15 @@ position = Vector2( -1675, 344 )
 [connection signal="Hit" from="SpikeHolder/Enemy26" to="Player" method="_on_Enemy_Hit"]
 [connection signal="Hit" from="SpikeHolder/Enemy27" to="Player" method="_on_Enemy_Hit"]
 [connection signal="Hit" from="SpikeHolder/Enemy28" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy31" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy32" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy33" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy34" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy39" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy35" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy36" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy37" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy38" to="Player" method="_on_Enemy_Hit"]
 [connection signal="Hit" from="SpikeHolder/Enemy29" to="Player" method="_on_Enemy_Hit"]
 [connection signal="Hit" from="SpikeHolder/Enemy30" to="Player" method="_on_Enemy_Hit"]
 
