@@ -16,8 +16,9 @@ func _ready():
 #	pass
 
 func _on_Yes_pressed():
-	emit_signal("reset") # Replace with function body.
 	get_tree().paused = false 	
+	emit_signal("reset") # Replace with function body.
+	
 	
 	
 func _on_No_pressed():

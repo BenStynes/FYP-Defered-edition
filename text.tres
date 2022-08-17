@@ -17,7 +17,7 @@ tracks/0/keys = {
 "values": [ Color( 0.964706, 0.964706, 0.964706, 1 ), Color( 1, 0, 0, 1 ), Color( 0.14902, 0, 1, 1 ), Color( 0.898039, 1, 0, 1 ), Color( 0, 0, 0, 1 ) ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("Panel/GridContainer/Button/Label:percent_visible")
+tracks/1/path = NodePath("Panel/Button/Label:percent_visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -29,7 +29,7 @@ tracks/1/keys = {
 "values": [ 0.0, 1.0, 1.0 ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("Panel/GridContainer/Button2/Label:percent_visible")
+tracks/2/path = NodePath("Panel/Button2/Label:percent_visible")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -41,7 +41,7 @@ tracks/2/keys = {
 "values": [ 0.0, 1.0, 1.0 ]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("Panel/GridContainer/Button3/Label:percent_visible")
+tracks/3/path = NodePath("Panel/Button3/Label:percent_visible")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/imported = false
@@ -53,7 +53,7 @@ tracks/3/keys = {
 "values": [ 0.0, 1.0, 1.0 ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("Panel/GridContainer/Button4/Label:percent_visible")
+tracks/4/path = NodePath("Panel/Button4/Label:percent_visible")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/imported = false
@@ -65,7 +65,7 @@ tracks/4/keys = {
 "values": [ 0.0, 1.0, 1.0 ]
 }
 tracks/5/type = "value"
-tracks/5/path = NodePath("Panel/GridContainer/Button5/Label:percent_visible")
+tracks/5/path = NodePath("Panel/Button5/Label:percent_visible")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/imported = false

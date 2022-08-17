@@ -1,5 +1,6 @@
 extends KinematicBody2D
 
+onready var ost =$Music
 onready var animation = $ssSprite
 onready var Collection =$Collect
 onready var Leveling = $CanvasLayer/PopupPanel
@@ -8,6 +9,7 @@ onready var anime = $AnimationPlayer
 signal takeDamage(health)
 signal lockControls()
 signal Reset()
+var currentLevel 
 var velocity = Vector2(0,0)
 var moving = false
 var level = 1
@@ -25,7 +27,7 @@ var moveSpeed = 75 * Speed
 var jumpCount = Dexterity
 var lock = false
 var totalCoins 
-var StartPosition = Vector2(1385,112)
+var StartPosition = Vector2(1440,110)
 var weight = 0.05
 signal Birth()
 signal Display(level)
@@ -42,12 +44,29 @@ onready var fall_gravity : float = (-2.0 * JumpHeight) / (FallTime * FallTime) *
 onready var wall_gravity : float = (-2.0 * JumpHeight) / (3 * 3) * -1.0
 
 func _ready():
-	StartPosition = position
+	position = StartPosition
 	totalCoins = get_parent().get_child(1).get_child_count() -1
-	level = PlayerInformation.level
+	level = PlayerInformation.level		
+	Strength = PlayerInformation.Strength
+	JumpHeight = 50 + Strength * 20
+	Body = PlayerInformation.Body
+	Speed = PlayerInformation.Speed
+	Dexterity = PlayerInformation.Dexterity
+	Skill = PlayerInformation.Skill
+	XPLimiit = PlayerInformation.XPLimiit
+	experience = PlayerInformation.experience
+	health = PlayerInformation.health
+	currentLevel = 	PlayerInformation.currentLevel
+	jump_velocity = (2.0* JumpHeight) / PeakTime * -1.0
+	jump_gravity = (-2.0 * JumpHeight) / (PeakTime * PeakTime) *  -1.0
+	fall_gravity =   (-2.0 * JumpHeight) / (FallTime * FallTime) * -1.0
+	moveSpeed = 75 * Speed
+	jumpCount =  Dexterity/2
+	weight = Skill/100 + 0.05
+	weight = min(weight,1)
 	emit_signal("Display2", totalCoins)
 	emit_signal("Display",level)
-	
+	get_tree().paused = false
 func _physics_process(delta):
 	
 	axisX = Input.get_action_strength("right") - Input.get_action_strength("left")
@@ -123,7 +142,7 @@ func levelUp(var x):
 			 jumpCount =  Dexterity/2
 		4:
 			Skill += 1
-			
+			weight = Skill/100 + 0.05
 			weight = min(weight +0.1,1)
 		5:
 			Body +=1
@@ -223,39 +242,46 @@ func _on_CHolder_Amount(num):
 
 func _on_GameOver_reset():
 	emit_signal("Reset")
-	damage = 0
-	level = 1
-	Strength = 1
-	Speed = 1
-	Skill = 1
-	Dexterity = 1
-	Body = 1
-	health = 3
 	position = StartPosition
 	emit_signal("Display",level)
 	totalCoins = 26
 	emit_signal("Display2", totalCoins)
-	moveSpeed = 50 * Speed
-	PeakTime = 0.5 - Skill/10
-	JumpHeight = 50 + Strength * 20
-	experience = 0
-	XPLimiit = 1	
-	jump_velocity = (2.0* JumpHeight) / PeakTime * -1.0
-	jump_gravity = (-2.0 * JumpHeight) / (PeakTime * PeakTime) *  -1.0
-	fall_gravity =   (-2.0 * JumpHeight) / (FallTime * FallTime) * -1.0
+	
+
 	velocity = Vector2(0,0)
 	anime.stop(true)
 	GO.hide()
+	get_tree().change_scene(currentLevel)
 
 func passStatus():
-	PlayerInformation.setter(Strength,Speed,Dexterity,Skill,Body,XPLimiit,experience,level)
+	PlayerInformation.level	= level 	
+	PlayerInformation.Strength = Strength
+	PlayerInformation.Body = Body
+	PlayerInformation.Speed = Speed 
+	PlayerInformation.Dexterity = Dexterity
+	PlayerInformation.Skill = Skill
+	PlayerInformation.XPLimiit = XPLimiit
+	PlayerInformation.experience = experience
 	PlayerInformation.health = health
 	damage = 0
-	level = 1
 	
-	get_tree().root.get_node("Level").queue_free()
-	get_tree().change_scene("res://Node2D.tscn")
-	level = PlayerInformation.level		
+	
 	
 func _on_END_win():
 	passStatus()
+	PlayerInformation.currentLevel = "res://Level2.tscn"
+	get_tree().root.get_node("Level").queue_free()
+	get_tree().change_scene("res://Level2.tscn")
+
+func _on_END2_win():
+	passStatus()
+	PlayerInformation.currentLevel = "res://Level3.tscn"
+	get_tree().root.get_node("Level").queue_free()
+	get_tree().change_scene("res://Level3.tscn")
+	
+
+
+func _on_END3_win():
+	passStatus()
+	get_tree().root.get_node("Level").queue_free()
+	get_tree().change_scene("res://Node2D.tscn") # Replace with function body.

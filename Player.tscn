@@ -62,7 +62,7 @@ __meta__ = {
 [node name="ssSprite" type="AnimatedSprite" parent="." groups=["Player"]]
 frames = ExtResource( 1 )
 animation = "Idle"
-frame = 9
+frame = 4
 playing = true
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="." groups=["Player"]]
@@ -147,8 +147,6 @@ margin_bottom = 32.0
 columns = 5
 
 [node name="PopupPanel" parent="CanvasLayer" groups=["Player"] instance=ExtResource( 6 )]
-margin_left = 0.0
-margin_top = 0.0
 margin_right = 185.0
 margin_bottom = 302.0
 popup_exclusive = true

@@ -1,12 +1,12 @@
 extends Popup
 
 onready var help =  $AnimationPlayer
-onready var button = $Panel/GridContainer/Button
-onready var button1 = $Panel/GridContainer/Button2
-onready var button2 = $Panel/GridContainer/Button3
-onready var button3 = $Panel/GridContainer/Button4
-onready var button4 = $Panel/GridContainer/Button5
-
+onready var button = $Panel/Button
+onready var button1 = $Panel/Button2
+onready var button2 = $Panel/Button3
+onready var button3 = $Panel/Button4
+onready var button4 = $Panel/Button5
+var offset = Vector2(20,20)
 signal level(attribute)
 var hell
 
@@ -14,10 +14,18 @@ var hell
 
 func _ready():
 	button.text = "             "
+	get_viewport().connect("size_changed",self,"resize")
 	pass
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
+func resize():
+	button = get_child(1).get_child(0)
+	button1 = get_child(1).get_child(1)
+	button2 = get_child(1).get_child(2)
+	button3 =  get_child(1).get_child(3)
+	button4 = get_child(1).get_child(4)
+
 func _process(delta):
 	help.play("text")
 	
@@ -57,23 +65,27 @@ func _on_Label_pressed():
 
 
 func _on_Label_focus_entered():
-	Input.warp_mouse_position(button.rect_global_position)
+	get_viewport().warp_mouse(button.rect_global_position + offset)
 
 
 
 
 func _on_Label2_focus_entered():
-	Input.warp_mouse_position( button1.rect_global_position )
+	get_viewport().warp_mouse(button1.rect_global_position + offset)
+	
 
 
 func _on_Label3_focus_entered():
-	Input.warp_mouse_position( button2.rect_global_position )
-
+	get_viewport().warp_mouse( button2.rect_global_position + offset)
+	
+	
 
 func _on_Label5_focus_entered():
-	Input.warp_mouse_position( button4.rect_global_position )
-
+	get_viewport().warp_mouse( button4.rect_global_position + offset)
+	
+	
 
 func _on_Label4_focus_entered():
-	Input.warp_mouse_position( button3.rect_global_position )
-
+	get_viewport().warp_mouse( button3.rect_global_position+ offset )
+	
+	
