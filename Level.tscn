@@ -32,7 +32,10 @@ _data = {
 position = Vector2( 1448, 111 )
 
 [node name="ssSprite" parent="Player" index="0"]
-frame = 6
+frame = 0
+
+[node name="TextureRect4" parent="Player/CanvasLayer2" index="3"]
+self_modulate = Color( 0.47451, 0.423529, 0.87451, 0.54902 )
 
 [node name="CHolder" type="Node" parent="." groups=["coin"]]
 script = ExtResource( 5 )
@@ -329,6 +332,42 @@ position = Vector2( -1965, 137 )
 [node name="Obstical53" parent="OHolder" instance=ExtResource( 1 )]
 position = Vector2( -2321, 312 )
 
+[node name="Obstical70" parent="OHolder" instance=ExtResource( 1 )]
+position = Vector2( -2474, 311 )
+
+[node name="Obstical71" parent="OHolder" instance=ExtResource( 1 )]
+position = Vector2( -2737, 308 )
+
+[node name="Obstical72" parent="OHolder" instance=ExtResource( 1 )]
+position = Vector2( -2930, 302 )
+
+[node name="Obstical73" parent="OHolder" instance=ExtResource( 1 )]
+position = Vector2( -3269, 299 )
+
+[node name="Obstical74" parent="OHolder" instance=ExtResource( 1 )]
+position = Vector2( -3088, 300 )
+
+[node name="Obstical75" parent="OHolder" instance=ExtResource( 1 )]
+position = Vector2( -3367, 294 )
+
+[node name="Obstical76" parent="OHolder" instance=ExtResource( 1 )]
+position = Vector2( -3529, 290 )
+
+[node name="Obstical77" parent="OHolder" instance=ExtResource( 1 )]
+position = Vector2( -3642, 290 )
+
+[node name="Obstical78" parent="OHolder" instance=ExtResource( 1 )]
+position = Vector2( -3840, 291 )
+
+[node name="Obstical79" parent="OHolder" instance=ExtResource( 1 )]
+position = Vector2( -4192, 302 )
+
+[node name="Obstical81" parent="OHolder" instance=ExtResource( 1 )]
+position = Vector2( -4634, 296 )
+
+[node name="Obstical80" parent="OHolder" instance=ExtResource( 1 )]
+position = Vector2( -3971, 331 )
+
 [node name="Obstical54" parent="OHolder" instance=ExtResource( 1 )]
 position = Vector2( -2207, 44 )
 
@@ -379,7 +418,7 @@ position = Vector2( 1422.5, -76 )
 scale = Vector2( 5.64583, 1 )
 
 [node name="Obstical12" parent="OHolder" instance=ExtResource( 1 )]
-position = Vector2( -1445, 106 )
+position = Vector2( -1453, 155 )
 
 [node name="Obstical15" parent="OHolder" instance=ExtResource( 1 )]
 position = Vector2( -1646, 319 )
@@ -394,7 +433,7 @@ position = Vector2( -1550, 212 )
 position = Vector2( -1337, 33 )
 
 [node name="Obstical19" parent="OHolder" instance=ExtResource( 1 )]
-position = Vector2( -1520, -7 )
+position = Vector2( -1521, 108 )
 
 [node name="Obstical20" parent="OHolder" instance=ExtResource( 1 )]
 position = Vector2( -1263, -91 )
@@ -494,6 +533,22 @@ scale = Vector2( 2.66667, 2.0625 )
 
 [node name="Obstical5" parent="OHolder" instance=ExtResource( 1 )]
 position = Vector2( 350, 179 )
+scale = Vector2( 3.6875, 1 )
+
+[node name="Obstical66" parent="OHolder" instance=ExtResource( 1 )]
+position = Vector2( 111, 129 )
+scale = Vector2( 3.6875, 1 )
+
+[node name="Obstical67" parent="OHolder" instance=ExtResource( 1 )]
+position = Vector2( 367, 9 )
+scale = Vector2( 3.6875, 1 )
+
+[node name="Obstical68" parent="OHolder" instance=ExtResource( 1 )]
+position = Vector2( 120, -96 )
+scale = Vector2( 3.6875, 1 )
+
+[node name="Obstical69" parent="OHolder" instance=ExtResource( 1 )]
+position = Vector2( 364, -174 )
 scale = Vector2( 3.6875, 1 )
 
 [node name="Obstical6" parent="OHolder" instance=ExtResource( 1 )]
@@ -944,7 +999,7 @@ position = Vector2( 856, 223 )
 rotation = -1.56393
 
 [node name="Enemy35" parent="SpikeHolder" instance=ExtResource( 2 )]
-position = Vector2( -1535, -34 )
+position = Vector2( -1654, 290 )
 
 [node name="Enemy36" parent="SpikeHolder" instance=ExtResource( 2 )]
 position = Vector2( -1636, -87 )
@@ -962,7 +1017,7 @@ position = Vector2( -1689, 344 )
 position = Vector2( -1675, 344 )
 
 [node name="END" parent="." instance=ExtResource( 8 )]
-position = Vector2( 729, 233 )
+position = Vector2( -4012, -13 )
 
 [connection signal="Display" from="Player" to="Player/CanvasLayer/Panel/Coin" method="_on_Player_Display"]
 [connection signal="Reset" from="Player" to="CHolder" method="_on_Player_Reset"]
@@ -1129,6 +1184,7 @@ position = Vector2( 729, 233 )
 
 [editable path="Player"]
 [editable path="Player/CanvasLayer/PopupPanel"]
+[editable path="Player/CanvasLayer/pause"]
 [editable path="SpikeHolder/Enemy12"]
 [editable path="SpikeHolder/Enemy13"]
 [editable path="SpikeHolder/Enemy14"]

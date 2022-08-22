@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Platform.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Enemy.tscn" type="PackedScene" id=2]
@@ -10,7 +10,6 @@
 [ext_resource path="res://END.tscn" type="PackedScene" id=8]
 [ext_resource path="res://SawPath.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Terrain/P3 (16x16).png" type="Texture" id=10]
-[ext_resource path="res://Background/Gray.png" type="Texture" id=11]
 
 [sub_resource type="Curve2D" id=3]
 _data = {
@@ -26,13 +25,117 @@ _data = {
 [node name="Level" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource( 4 )]
-position = Vector2( 1385, 112 )
+position = Vector2( 1399, 113 )
 
 [node name="ssSprite" parent="Player" index="0"]
-frame = 7
+frame = 8
 
 [node name="TextureRect" parent="Player/CanvasLayer2" index="0"]
 texture = ExtResource( 10 )
+
+[node name="TextureRect5" parent="Player/CanvasLayer2/TextureRect/CanvasLayer" index="0"]
+self_modulate = Color( 0.803922, 0.929412, 0.635294, 1 )
+margin_left = 407.0
+margin_right = 429.0
+margin_bottom = 67.0
+
+[node name="TextureRect6" parent="Player/CanvasLayer2/TextureRect/CanvasLayer" index="1"]
+self_modulate = Color( 0.803922, 0.929412, 0.635294, 1 )
+margin_left = 384.0
+margin_right = 418.0
+
+[node name="TextureRect7" parent="Player/CanvasLayer2/TextureRect/CanvasLayer" index="2"]
+self_modulate = Color( 0.803922, 0.929412, 0.635294, 1 )
+margin_left = 502.0
+margin_right = 535.0
+margin_bottom = 49.0
+
+[node name="TextureRect8" parent="Player/CanvasLayer2/TextureRect/CanvasLayer" index="3"]
+self_modulate = Color( 0.803922, 0.929412, 0.635294, 1 )
+margin_left = 321.0
+margin_right = 354.0
+
+[node name="TextureRect9" parent="Player/CanvasLayer2/TextureRect/CanvasLayer" index="4"]
+visible = true
+self_modulate = Color( 0.803922, 0.929412, 0.635294, 1 )
+margin_left = 416.0
+margin_top = 143.0
+margin_right = 445.0
+margin_bottom = 177.0
+
+[node name="TextureRect10" parent="Player/CanvasLayer2/TextureRect/CanvasLayer" index="5"]
+visible = true
+self_modulate = Color( 0.803922, 0.929412, 0.635294, 1 )
+margin_left = 370.0
+margin_right = 394.0
+margin_bottom = 233.0
+
+[node name="TextureRect11" parent="Player/CanvasLayer2/TextureRect/CanvasLayer" index="6"]
+visible = true
+self_modulate = Color( 0.803922, 0.929412, 0.635294, 1 )
+margin_left = 595.0
+margin_right = 639.0
+
+[node name="TextureRect12" parent="Player/CanvasLayer2/TextureRect/CanvasLayer" index="7"]
+visible = true
+self_modulate = Color( 0.803922, 0.929412, 0.635294, 1 )
+margin_right = 369.0
+margin_bottom = 171.0
+
+[node name="TextureRect13" parent="Player/CanvasLayer2/TextureRect/CanvasLayer" index="8"]
+visible = true
+self_modulate = Color( 0.803922, 0.929412, 0.635294, 1 )
+margin_left = 447.0
+margin_right = 483.0
+margin_bottom = 121.0
+
+[node name="TextureRect14" parent="Player/CanvasLayer2/TextureRect/CanvasLayer" index="9"]
+visible = true
+self_modulate = Color( 0.803922, 0.929412, 0.635294, 1 )
+margin_left = 457.0
+margin_right = 502.0
+margin_bottom = 151.0
+
+[node name="TextureRect15" parent="Player/CanvasLayer2/TextureRect/CanvasLayer" index="10"]
+visible = true
+self_modulate = Color( 0.803922, 0.929412, 0.635294, 1 )
+margin_left = 573.0
+margin_right = 625.0
+margin_bottom = 98.0
+
+[node name="TextureRect16" parent="Player/CanvasLayer2/TextureRect/CanvasLayer" index="11"]
+visible = true
+self_modulate = Color( 0.803922, 0.929412, 0.635294, 1 )
+margin_left = 530.0
+margin_top = 93.0
+margin_right = 559.0
+margin_bottom = 123.0
+
+[node name="TextureRect17" parent="Player/CanvasLayer2/TextureRect/CanvasLayer" index="12"]
+visible = true
+self_modulate = Color( 0.803922, 0.929412, 0.635294, 1 )
+margin_left = 524.0
+margin_right = 553.0
+margin_bottom = 218.0
+
+[node name="TextureRect18" parent="Player/CanvasLayer2/TextureRect/CanvasLayer" index="13"]
+visible = true
+self_modulate = Color( 0.803922, 0.929412, 0.635294, 1 )
+margin_left = 534.0
+margin_right = 572.0
+margin_bottom = 254.0
+
+[node name="TextureRect19" parent="Player/CanvasLayer2/TextureRect/CanvasLayer" index="14"]
+visible = true
+self_modulate = Color( 0.803922, 0.929412, 0.635294, 1 )
+margin_left = 650.0
+margin_right = 696.0
+margin_bottom = 199.0
+
+[node name="TextureRect20" parent="Player/CanvasLayer2/TextureRect/CanvasLayer" index="15"]
+visible = true
+self_modulate = Color( 0.803922, 0.929412, 0.635294, 1 )
+margin_right = 528.0
 
 [node name="TextureRect2" parent="Player/CanvasLayer2" index="1"]
 texture = ExtResource( 10 )
@@ -41,7 +144,7 @@ texture = ExtResource( 10 )
 texture = ExtResource( 10 )
 
 [node name="TextureRect4" parent="Player/CanvasLayer2" index="3"]
-texture = ExtResource( 11 )
+self_modulate = Color( 0, 0, 0, 0.843137 )
 
 [node name="CHolder" type="Node" parent="." groups=["coin"]]
 script = ExtResource( 5 )

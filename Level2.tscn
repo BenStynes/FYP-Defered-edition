@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Platform.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Enemy.tscn" type="PackedScene" id=2]
@@ -10,7 +10,6 @@
 [ext_resource path="res://END.tscn" type="PackedScene" id=8]
 [ext_resource path="res://SawPath.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Terrain/P2 (16x16).png" type="Texture" id=10]
-[ext_resource path="res://Background/Brown.png" type="Texture" id=11]
 
 [sub_resource type="Curve2D" id=3]
 _data = {
@@ -29,10 +28,22 @@ _data = {
 position = Vector2( 1440, 110 )
 
 [node name="ssSprite" parent="Player" index="0"]
-frame = 2
+frame = 4
 
 [node name="TextureRect" parent="Player/CanvasLayer2" index="0"]
 texture = ExtResource( 10 )
+
+[node name="TextureRect5" parent="Player/CanvasLayer2/TextureRect/CanvasLayer" index="0"]
+self_modulate = Color( 0, 0, 0, 1 )
+
+[node name="TextureRect6" parent="Player/CanvasLayer2/TextureRect/CanvasLayer" index="1"]
+self_modulate = Color( 0, 0, 0, 1 )
+
+[node name="TextureRect7" parent="Player/CanvasLayer2/TextureRect/CanvasLayer" index="2"]
+self_modulate = Color( 0, 0, 0, 1 )
+
+[node name="TextureRect8" parent="Player/CanvasLayer2/TextureRect/CanvasLayer" index="3"]
+self_modulate = Color( 0, 0, 0, 1 )
 
 [node name="TextureRect2" parent="Player/CanvasLayer2" index="1"]
 texture = ExtResource( 10 )
@@ -41,10 +52,11 @@ texture = ExtResource( 10 )
 texture = ExtResource( 10 )
 
 [node name="TextureRect4" parent="Player/CanvasLayer2" index="3"]
-texture = ExtResource( 11 )
-
-[node name="Panel" parent="Player/CanvasLayer/PopupPanel" index="1"]
-margin_bottom = -7.32159
+self_modulate = Color( 0.654902, 0.509804, 0.509804, 0.431373 )
+margin_left = 313.0
+margin_top = 2.0
+margin_right = 712.0
+margin_bottom = 258.0
 
 [node name="CHolder" type="Node" parent="." groups=["coin"]]
 script = ExtResource( 5 )

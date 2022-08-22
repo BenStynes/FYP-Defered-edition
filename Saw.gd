@@ -1,6 +1,6 @@
 extends KinematicBody2D
 onready var body = $Area2D
-
+onready var sawsound = $SawSound
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
@@ -23,7 +23,7 @@ var doOnce = false
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	
-	
+	sawsound.volume_db = PlayerInformation.soundVol
 	if patrolPath: 
 		patrolPoints = path.curve.get_baked_points()
 		
@@ -47,6 +47,7 @@ func _physics_process(delta):
 	
 	velocity = move_and_slide(velocity)
 	
+	sawsound.play()
 
 
 

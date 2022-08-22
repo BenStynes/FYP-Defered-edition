@@ -1,17 +1,23 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://moveable.tres" type="SpriteFrames" id=1]
 [ext_resource path="res://Terrain/platform).png" type="Texture" id=2]
-[ext_resource path="res://Background/Blue.png" type="Texture" id=3]
+[ext_resource path="res://Other/Confetti (16x16).png" type="Texture" id=3]
 [ext_resource path="res://CoinDisplay.gd" type="Script" id=4]
 [ext_resource path="res://Player.gd" type="Script" id=5]
 [ext_resource path="res://LevelUp.tscn" type="PackedScene" id=6]
+[ext_resource path="res://GameOver.tscn" type="PackedScene" id=7]
 [ext_resource path="res://health.gd" type="Script" id=8]
 [ext_resource path="res://DisplayLevel.gd" type="Script" id=9]
 [ext_resource path="res://Fonts/DigitalArcade.ttf" type="DynamicFontData" id=10]
-[ext_resource path="res://Fonts/Rainbow2000-Regular.ttf" type="DynamicFontData" id=11]
-[ext_resource path="res://Fonts/new_dynamicfont.tres" type="DynamicFont" id=12]
-[ext_resource path="res://GameOver.gd" type="Script" id=13]
+[ext_resource path="res://Other/Dust Particle.png" type="Texture" id=11]
+[ext_resource path="res://Clouds.tres" type="Animation" id=12]
+[ext_resource path="res://Pause.tscn" type="PackedScene" id=13]
+[ext_resource path="res://hes_a_mantas.mp3" type="AudioStream" id=14]
+[ext_resource path="res://hitHurt.wav" type="AudioStream" id=15]
+[ext_resource path="res://jump.wav" type="AudioStream" id=16]
+[ext_resource path="res://pickupCoin.wav" type="AudioStream" id=17]
+[ext_resource path="res://powerUp.wav" type="AudioStream" id=18]
 
 [sub_resource type="CapsuleShape2D" id=29]
 height = 8.0
@@ -36,12 +42,6 @@ tracks/0/keys = {
 "values": [ true, false, true, false, true, false, true ]
 }
 
-[sub_resource type="DynamicFont" id=33]
-size = 50
-outline_size = 1
-outline_color = Color( 0.509804, 0, 0, 1 )
-font_data = ExtResource( 11 )
-
 [sub_resource type="Theme" id=31]
 
 [sub_resource type="DynamicFont" id=32]
@@ -51,7 +51,7 @@ outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 10 )
 
 [node name="Player" type="KinematicBody2D" groups=["Player"]]
-position = Vector2( -17, -14 )
+position = Vector2( -11, -23 )
 collision_layer = 211
 collision_mask = 209
 script = ExtResource( 5 )
@@ -62,7 +62,7 @@ __meta__ = {
 [node name="ssSprite" type="AnimatedSprite" parent="." groups=["Player"]]
 frames = ExtResource( 1 )
 animation = "Idle"
-frame = 4
+frame = 9
 playing = true
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="." groups=["Player"]]
@@ -77,8 +77,9 @@ collision_mask = 83
 position = Vector2( 0, 6 )
 shape = SubResource( 28 )
 
-[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+[node name="CanvasLayer2" type="ParallaxBackground" parent="."]
 layer = -2
+scroll_offset = Vector2( 5, 5 )
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer2"]
 self_modulate = Color( 1, 1, 1, 0.431373 )
@@ -88,6 +89,149 @@ margin_right = 314.0
 margin_bottom = 1025.0
 texture = ExtResource( 2 )
 stretch_mode = 1
+
+[node name="CanvasLayer" type="CanvasLayer" parent="CanvasLayer2/TextureRect"]
+layer = -3
+
+[node name="TextureRect5" type="TextureRect" parent="CanvasLayer2/TextureRect/CanvasLayer"]
+margin_left = 315.888
+margin_top = 48.0
+margin_right = 468.866
+margin_bottom = 82.0
+texture = ExtResource( 11 )
+expand = true
+
+[node name="TextureRect6" type="TextureRect" parent="CanvasLayer2/TextureRect/CanvasLayer"]
+margin_left = 326.161
+margin_top = 68.0
+margin_right = 479.175
+margin_bottom = 102.0
+texture = ExtResource( 11 )
+expand = true
+
+[node name="TextureRect7" type="TextureRect" parent="CanvasLayer2/TextureRect/CanvasLayer"]
+margin_left = 442.389
+margin_top = 22.0
+margin_right = 595.421
+margin_bottom = 56.0
+texture = ExtResource( 11 )
+expand = true
+
+[node name="TextureRect8" type="TextureRect" parent="CanvasLayer2/TextureRect/CanvasLayer"]
+margin_left = 277.279
+margin_top = 6.0
+margin_right = 430.279
+margin_bottom = 40.0
+texture = ExtResource( 11 )
+expand = true
+
+[node name="TextureRect9" type="TextureRect" parent="CanvasLayer2/TextureRect/CanvasLayer"]
+visible = false
+margin_left = 359.609
+margin_top = 184.0
+margin_right = 512.587
+margin_bottom = 218.0
+texture = ExtResource( 11 )
+expand = true
+
+[node name="TextureRect10" type="TextureRect" parent="CanvasLayer2/TextureRect/CanvasLayer"]
+visible = false
+margin_left = 369.883
+margin_top = 204.0
+margin_right = 522.896
+margin_bottom = 238.0
+texture = ExtResource( 11 )
+expand = true
+
+[node name="TextureRect11" type="TextureRect" parent="CanvasLayer2/TextureRect/CanvasLayer"]
+visible = false
+margin_left = 486.11
+margin_top = 158.0
+margin_right = 639.142
+margin_bottom = 192.0
+texture = ExtResource( 11 )
+expand = true
+
+[node name="TextureRect12" type="TextureRect" parent="CanvasLayer2/TextureRect/CanvasLayer"]
+visible = false
+margin_left = 321.0
+margin_top = 142.0
+margin_right = 474.0
+margin_bottom = 176.0
+texture = ExtResource( 11 )
+expand = true
+
+[node name="TextureRect13" type="TextureRect" parent="CanvasLayer2/TextureRect/CanvasLayer"]
+visible = false
+margin_left = 446.609
+margin_top = 98.0
+margin_right = 599.587
+margin_bottom = 132.0
+texture = ExtResource( 11 )
+expand = true
+
+[node name="TextureRect14" type="TextureRect" parent="CanvasLayer2/TextureRect/CanvasLayer"]
+visible = false
+margin_left = 456.883
+margin_top = 118.0
+margin_right = 609.896
+margin_bottom = 152.0
+texture = ExtResource( 11 )
+expand = true
+
+[node name="TextureRect15" type="TextureRect" parent="CanvasLayer2/TextureRect/CanvasLayer"]
+visible = false
+margin_left = 573.11
+margin_top = 72.0
+margin_right = 726.142
+margin_bottom = 106.0
+texture = ExtResource( 11 )
+expand = true
+
+[node name="TextureRect16" type="TextureRect" parent="CanvasLayer2/TextureRect/CanvasLayer"]
+visible = false
+margin_left = 408.0
+margin_top = 56.0
+margin_right = 561.0
+margin_bottom = 90.0
+texture = ExtResource( 11 )
+expand = true
+
+[node name="TextureRect17" type="TextureRect" parent="CanvasLayer2/TextureRect/CanvasLayer"]
+visible = false
+margin_left = 523.609
+margin_top = 199.0
+margin_right = 676.587
+margin_bottom = 233.0
+texture = ExtResource( 11 )
+expand = true
+
+[node name="TextureRect18" type="TextureRect" parent="CanvasLayer2/TextureRect/CanvasLayer"]
+visible = false
+margin_left = 533.883
+margin_top = 219.0
+margin_right = 686.896
+margin_bottom = 253.0
+texture = ExtResource( 11 )
+expand = true
+
+[node name="TextureRect19" type="TextureRect" parent="CanvasLayer2/TextureRect/CanvasLayer"]
+visible = false
+margin_left = 650.11
+margin_top = 173.0
+margin_right = 803.142
+margin_bottom = 207.0
+texture = ExtResource( 11 )
+expand = true
+
+[node name="TextureRect20" type="TextureRect" parent="CanvasLayer2/TextureRect/CanvasLayer"]
+visible = false
+margin_left = 485.0
+margin_top = 157.0
+margin_right = 638.0
+margin_bottom = 191.0
+texture = ExtResource( 11 )
+expand = true
 
 [node name="TextureRect2" type="TextureRect" parent="CanvasLayer2"]
 self_modulate = Color( 1, 1, 1, 0.431373 )
@@ -151,50 +295,10 @@ margin_right = 185.0
 margin_bottom = 302.0
 popup_exclusive = true
 
-[node name="GameOver" type="Popup" parent="CanvasLayer"]
-pause_mode = 2
-margin_right = 493.0
-margin_bottom = 284.0
-popup_exclusive = true
-script = ExtResource( 13 )
+[node name="Panel" parent="CanvasLayer/PopupPanel" index="1"]
+margin_bottom = -7.32159
 
-[node name="Panel" type="Panel" parent="CanvasLayer/GameOver"]
-margin_right = 491.0
-margin_bottom = 283.0
-
-[node name="Label" type="Label" parent="CanvasLayer/GameOver/Panel"]
-margin_left = 94.0
-margin_top = 41.0
-margin_right = 408.0
-margin_bottom = 146.0
-custom_fonts/font = SubResource( 33 )
-text = "Game Over 
-Continue?"
-align = 1
-
-[node name="Yes" type="Button" parent="CanvasLayer/GameOver/Panel"]
-margin_left = 91.0
-margin_top = 195.0
-margin_right = 178.0
-margin_bottom = 232.0
-focus_neighbour_left = NodePath("../No")
-focus_neighbour_right = NodePath("../No")
-focus_next = NodePath("../No")
-focus_previous = NodePath("../No")
-custom_fonts/font = ExtResource( 12 )
-text = "Yes"
-
-[node name="No" type="Button" parent="CanvasLayer/GameOver/Panel"]
-margin_left = 282.0
-margin_top = 195.0
-margin_right = 369.0
-margin_bottom = 232.0
-focus_neighbour_left = NodePath("../Yes")
-focus_neighbour_right = NodePath("../Yes")
-focus_next = NodePath("../Yes")
-focus_previous = NodePath("../Yes")
-custom_fonts/font = ExtResource( 12 )
-text = "NO"
+[node name="GameOver" parent="CanvasLayer" instance=ExtResource( 7 )]
 
 [node name="Panel" type="Panel" parent="CanvasLayer"]
 margin_top = 3.0
@@ -221,6 +325,26 @@ custom_fonts/font = SubResource( 32 )
 text = "Coins: 34"
 script = ExtResource( 4 )
 
+[node name="pause" parent="CanvasLayer" instance=ExtResource( 13 )]
+
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="."]
+anims/Clouds = ExtResource( 12 )
+
+[node name="Hurt" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 15 )
+
+[node name="Jump" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 16 )
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 14 )
+
+[node name="LSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 18 )
+
+[node name="CoinSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 17 )
+
 [connection signal="Birth" from="." to="CanvasLayer/health" method="_on_Player_Birth"]
 [connection signal="Display" from="." to="CanvasLayer/Panel/Level" method="_on_Player_Display"]
 [connection signal="Display2" from="." to="CanvasLayer/Panel/Coin" method="_on_Player_Display2"]
@@ -228,9 +352,7 @@ script = ExtResource( 4 )
 [connection signal="takeDamage" from="." to="CanvasLayer/health" method="_on_Player_takeDamage"]
 [connection signal="level" from="CanvasLayer/PopupPanel" to="." method="_on_PopupPanel_level"]
 [connection signal="popup_hide" from="CanvasLayer/PopupPanel" to="CanvasLayer/PopupPanel" method="_on_PopupPanel_popup_hide"]
-[connection signal="about_to_show" from="CanvasLayer/GameOver" to="." method="_on_GameOver_about_to_show"]
-[connection signal="about_to_show" from="CanvasLayer/GameOver" to="CanvasLayer/GameOver" method="_on_GameOver_about_to_show"]
-[connection signal="reset" from="CanvasLayer/GameOver" to="." method="_on_GameOver_reset"]
-[connection signal="reset" from="CanvasLayer/GameOver" to="CanvasLayer/health" method="_on_GameOver_reset"]
-[connection signal="pressed" from="CanvasLayer/GameOver/Panel/Yes" to="CanvasLayer/GameOver" method="_on_Yes_pressed"]
-[connection signal="pressed" from="CanvasLayer/GameOver/Panel/No" to="CanvasLayer/GameOver" method="_on_No_pressed"]
+[connection signal="finished" from="CoinSound" to="." method="_on_CoinSound_finished"]
+
+[editable path="CanvasLayer/PopupPanel"]
+[editable path="CanvasLayer/pause"]

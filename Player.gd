@@ -1,11 +1,17 @@
 extends KinematicBody2D
 
-onready var ost =$Music
+
 onready var animation = $ssSprite
 onready var Collection =$Collect
 onready var Leveling = $CanvasLayer/PopupPanel
 onready var GO = $CanvasLayer/GameOver
+onready var pause = $CanvasLayer/pause
 onready var anime = $AnimationPlayer
+onready var anime2 = $AnimationPlayer2
+onready var Music = $Music
+onready var jump = $Jump
+onready var hurt = $Hurt
+onready var sound = $CoinSound
 signal takeDamage(health)
 signal lockControls()
 signal Reset()
@@ -64,9 +70,19 @@ func _ready():
 	jumpCount =  Dexterity/2
 	weight = Skill/100 + 0.05
 	weight = min(weight,1)
+	animation.self_modulate = PlayerInformation.color
+	Music.volume_db = PlayerInformation.musicVol
+	hurt.volume_db = PlayerInformation.soundVol
+	jump.volume_db =  PlayerInformation.soundVol
+	Music.play()
 	emit_signal("Display2", totalCoins)
 	emit_signal("Display",level)
 	get_tree().paused = false
+	if currentLevel != "res://Level3.tscn":
+		anime2.play("Clouds")
+	else:
+		anime2.stop()
+	sound.volume_db = PlayerInformation.soundVol
 func _physics_process(delta):
 	
 	axisX = Input.get_action_strength("right") - Input.get_action_strength("left")
@@ -79,8 +95,11 @@ func _physics_process(delta):
 	
 	
 	velocity.y +=  get_gravity() * delta
-
+	if Input.is_action_just_pressed("ui_cancel"):
+		get_tree().paused = true
+		pause.popup()
 	if Input.is_action_just_pressed("jump") && (is_on_floor() || jumpCount > 0 ):
+		jump.play()
 		jumpCount -= 1
 		jump()
 		
@@ -116,15 +135,16 @@ func _physics_process(delta):
 	
 	
 	if experience == XPLimiit:
+		Music.stop()
 		Leveling.popup_centered()
 		
 	if damage >= health:
-			GO.popup_centered()
+		Music.stop()
+		GO.popup()
 
 func Collect(num):
-	experience+=1
-	emit_signal("Display2", totalCoins)
-	totalCoins-=1
+	sound.play()
+
 func levelUp(var x):
 	level += 1
 	
@@ -160,6 +180,7 @@ func levelUp(var x):
 	
 	
 	Leveling.hide()
+	Music.play()
 	emit_signal("Display",level)
 	
 func get_gravity():
@@ -201,7 +222,7 @@ func _on_Enemy_Hit():
 	if anime.is_playing() == false:
 		emit_signal("takeDamage",health)
 		anime.play("Damage")
-	
+		hurt.play()
 		damage= damage + 1
 		if animation.flip_h == true:
 				velocity.x =500
@@ -223,7 +244,7 @@ func _on_Saw_Hit():
 	if anime.is_playing() == false:
 		emit_signal("takeDamage",health)
 		anime.play("Damage")
-	
+		hurt.play()
 		damage= damage + 1
 		if animation.flip_h == true:
 				velocity.x =500
@@ -251,6 +272,7 @@ func _on_GameOver_reset():
 	velocity = Vector2(0,0)
 	anime.stop(true)
 	GO.hide()
+	Music.play()
 	get_tree().change_scene(currentLevel)
 
 func passStatus():
@@ -264,8 +286,17 @@ func passStatus():
 	PlayerInformation.experience = experience
 	PlayerInformation.health = health
 	damage = 0
-	
-	
+	Music.stop()
+func saveStats():
+	PlayerInformation.level	= level 	
+	PlayerInformation.Strength = Strength
+	PlayerInformation.Body = Body
+	PlayerInformation.Speed = Speed 
+	PlayerInformation.Dexterity = Dexterity
+	PlayerInformation.Skill = Skill
+	PlayerInformation.XPLimiit = XPLimiit
+	PlayerInformation.experience = experience
+	PlayerInformation.health = health
 	
 func _on_END_win():
 	passStatus()
@@ -285,3 +316,9 @@ func _on_END3_win():
 	passStatus()
 	get_tree().root.get_node("Level").queue_free()
 	get_tree().change_scene("res://Node2D.tscn") # Replace with function body.
+
+
+func _on_CoinSound_finished():
+	experience+=1
+	emit_signal("Display2", totalCoins)
+	totalCoins-=1

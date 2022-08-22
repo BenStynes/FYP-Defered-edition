@@ -1,8 +1,10 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://levelup1.png" type="Texture" id=1]
 [ext_resource path="res://LevelUp.gd" type="Script" id=2]
 [ext_resource path="res://text.tres" type="Animation" id=3]
+[ext_resource path="res://ButtonTheme.tres" type="Theme" id=4]
+[ext_resource path="res://Main.wav" type="AudioStream" id=5]
 
 [sub_resource type="StyleBoxTexture" id=19]
 
@@ -47,64 +49,8 @@ tracks/0/keys = {
 "values": [ "Str" ]
 }
 
-[sub_resource type="DynamicFontData" id=15]
-antialiased = false
-font_path = "res://Fonts/DigitalArcade.ttf"
-
-[sub_resource type="DynamicFont" id=16]
-size = 40
-font_data = SubResource( 15 )
-
-[sub_resource type="StyleBoxFlat" id=24]
-bg_color = Color( 1, 1, 1, 0.364706 )
-
-[sub_resource type="StyleBoxFlat" id=23]
-bg_color = Color( 0.180392, 0.0313726, 0.0313726, 0.537255 )
-
-[sub_resource type="StyleBoxTexture" id=17]
-
-[sub_resource type="DynamicFontData" id=5]
-antialiased = false
-font_path = "res://Fonts/DigitalArcade.ttf"
-
-[sub_resource type="DynamicFont" id=6]
-size = 27
-outline_size = 1
-outline_color = Color( 0, 0, 0, 1 )
-extra_spacing_top = -5
-extra_spacing_bottom = 2
-extra_spacing_char = 2
-extra_spacing_space = 1
-font_data = SubResource( 5 )
-
-[sub_resource type="StyleBoxEmpty" id=9]
-
-[sub_resource type="Theme" id=2]
-Button/colors/font_color = Color( 0.88, 0.88, 0.88, 1 )
-Button/colors/font_color_disabled = Color( 0.9, 0.9, 0.9, 0.2 )
-Button/colors/font_color_focus = Color( 0.94, 0.94, 0.94, 1 )
-Button/colors/font_color_hover = Color( 0.94, 0.94, 0.94, 1 )
-Button/colors/font_color_pressed = Color( 1, 1, 1, 1 )
-Button/constants/hseparation = 2
-Button/fonts/font = SubResource( 16 )
-Button/styles/disabled = null
-Button/styles/focus = SubResource( 24 )
-Button/styles/hover = SubResource( 23 )
-Button/styles/normal = SubResource( 17 )
-Button/styles/pressed = null
-Label/colors/font_color = Color( 0.74902, 0.996078, 0.0588235, 1 )
-Label/colors/font_color_shadow = Color( 0, 0, 0, 0 )
-Label/colors/font_outline_modulate = Color( 0.101961, 0.431373, 1, 1 )
-Label/constants/line_spacing = 3
-Label/constants/shadow_as_outline = 0
-Label/constants/shadow_offset_x = 1
-Label/constants/shadow_offset_y = 1
-Label/fonts/font = SubResource( 6 )
-Label/styles/normal = SubResource( 9 )
-
 [node name="PopupPanel" type="PopupPanel"]
 pause_mode = 2
-visible = true
 self_modulate = Color( 0.395317, 0, 0.710573, 1 )
 anchor_right = 1.482
 anchor_bottom = 1.022
@@ -138,7 +84,7 @@ rect_min_size = Vector2( 168, 40 )
 hint_tooltip = "Strenth Increases Jump Height"
 size_flags_horizontal = 2
 size_flags_vertical = 2
-theme = SubResource( 2 )
+theme = ExtResource( 4 )
 text = "Str"
 
 [node name="Label" type="Label" parent="Panel/Button"]
@@ -161,7 +107,7 @@ rect_min_size = Vector2( 168, 40 )
 hint_tooltip = "Speed Increases move speed"
 size_flags_horizontal = 2
 size_flags_vertical = 2
-theme = SubResource( 2 )
+theme = ExtResource( 4 )
 text = "                            "
 
 [node name="Label" type="Label" parent="Panel/Button2"]
@@ -184,7 +130,7 @@ rect_min_size = Vector2( 168, 40 )
 hint_tooltip = "Dexterity increases jump amount"
 size_flags_horizontal = 2
 size_flags_vertical = 2
-theme = SubResource( 2 )
+theme = ExtResource( 4 )
 text = "                            "
 
 [node name="Label" type="Label" parent="Panel/Button3"]
@@ -207,7 +153,7 @@ rect_min_size = Vector2( 168, 40 )
 hint_tooltip = "Skill is time to reach max  Jump Height"
 size_flags_horizontal = 2
 size_flags_vertical = 2
-theme = SubResource( 2 )
+theme = ExtResource( 4 )
 text = "                            "
 
 [node name="Label" type="Label" parent="Panel/Button4"]
@@ -230,7 +176,7 @@ rect_min_size = Vector2( 168, 40 )
 hint_tooltip = "Body Increases Max Health"
 size_flags_horizontal = 2
 size_flags_vertical = 2
-theme = SubResource( 2 )
+theme = ExtResource( 4 )
 text = "                            "
 
 [node name="Label" type="Label" parent="Panel/Button5"]
@@ -241,7 +187,11 @@ margin_bottom = 34.0
 text = "Body"
 align = 1
 
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )
+
 [connection signal="about_to_show" from="." to="." method="_on_PopupPanel_about_to_show"]
+[connection signal="popup_hide" from="." to="." method="_on_PopupPanel_popup_hide"]
 [connection signal="button_up" from="Panel/Button" to="." method="_on_Label_button_up"]
 [connection signal="focus_entered" from="Panel/Button" to="." method="_on_Label_focus_entered"]
 [connection signal="pressed" from="Panel/Button" to="." method="_on_Label_pressed"]

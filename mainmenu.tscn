@@ -1,6 +1,15 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Fonts/new_dynamicfont.tres" type="DynamicFont" id=1]
+[ext_resource path="res://ButtonTheme.tres" type="Theme" id=2]
+[ext_resource path="res://mainmenu.gd" type="Script" id=3]
+[ext_resource path="res://Traps/Sand Mud Ice/Mud Particle.png" type="Texture" id=4]
+[ext_resource path="res://Terrain/platform).png" type="Texture" id=5]
+[ext_resource path="res://Other/Confetti (16x16).png" type="Texture" id=6]
+[ext_resource path="res://Main Characters/Pink Man/Jump (32x32).png" type="Texture" id=7]
+[ext_resource path="res://K.mp3" type="AudioStream" id=8]
+[ext_resource path="res://click.wav" type="AudioStream" id=9]
+[ext_resource path="res://blipSelect.wav" type="AudioStream" id=10]
 
 [sub_resource type="Animation" id=2]
 resource_name = "text"
@@ -67,52 +76,314 @@ tracks/4/keys = {
 "values": [ Vector2( 267, 35 ), Vector2( 320, 36 ), Vector2( 267, 36 ), Vector2( 200, 36 ), Vector2( 267, 36 ), Vector2( 266, 0 ), Vector2( 266, 36 ) ]
 }
 
-[node name="Control" type="Control"]
+[node name="Menu" type="Popup"]
+pause_mode = 2
 anchor_right = 1.0
 anchor_bottom = 1.0
+popup_exclusive = true
+script = ExtResource( 3 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/text = SubResource( 2 )
 
 [node name="Label" type="Label" parent="."]
-self_modulate = Color( 0.915008, 0.208968, 0.0745098, 1 )
-margin_left = 26.0
-margin_top = 40.0
-margin_right = 1051.0
-margin_bottom = 630.0
+self_modulate = Color( 0.373856, 0.273203, 0.691503, 1 )
+margin_left = -45.0
+margin_top = 13.2926
+margin_right = 980.0
+margin_bottom = 603.293
 custom_fonts/font = ExtResource( 1 )
 text = "lEVEL JUMP"
 align = 1
 uppercase = true
 
 [node name="Label2" type="Label" parent="."]
-self_modulate = Color( 0.98493, 0.866189, 0.986258, 1 )
-margin_left = 28.5446
-margin_top = 40.0
-margin_right = 1053.54
-margin_bottom = 630.0
+self_modulate = Color( 0.942577, 0.980112, 0.659384, 1 )
+margin_left = -45.0
+margin_top = 21.2926
+margin_right = 979.995
+margin_bottom = 611.293
 custom_fonts/font = ExtResource( 1 )
 text = "lEVEL JUMP"
 align = 1
 uppercase = true
 
 [node name="Button" type="Button" parent="."]
-margin_left = 444.0
-margin_top = 199.0
-margin_right = 599.0
-margin_bottom = 250.0
+margin_left = 374.0
+margin_top = 179.293
+margin_right = 588.0
+margin_bottom = 240.293
+focus_neighbour_top = NodePath("../Button5")
+focus_neighbour_bottom = NodePath("../Button2")
+theme = ExtResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "New Game"
 
 [node name="Button2" type="Button" parent="."]
-margin_left = 447.0
-margin_top = 304.0
-margin_right = 602.0
-margin_bottom = 355.0
+margin_left = 374.0
+margin_top = 258.293
+margin_right = 579.0
+margin_bottom = 318.293
+focus_neighbour_top = NodePath("../Button")
+focus_neighbour_bottom = NodePath("../Button4")
+theme = ExtResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Continue"
 
+[node name="Button4" type="Button" parent="."]
+margin_left = 366.0
+margin_top = 352.293
+margin_right = 599.0
+margin_bottom = 406.293
+focus_neighbour_top = NodePath("../Button2")
+focus_neighbour_bottom = NodePath("../Button3")
+theme = ExtResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Change Color"
+
+[node name="Popup" type="Popup" parent="Button4"]
+visible = true
+anchor_left = -1.539
+anchor_top = -6.877
+anchor_right = 2.794
+anchor_bottom = 5.37
+margin_left = -8.41299
+margin_top = -8.64197
+margin_right = -0.00201416
+margin_bottom = 0.019989
+
+[node name="Sprite" type="Sprite" parent="Button4/Popup"]
+position = Vector2( 638, 394 )
+scale = Vector2( 2.5, 1.875 )
+texture = ExtResource( 7 )
+
 [node name="Button3" type="Button" parent="."]
-margin_left = 448.0
-margin_top = 422.0
-margin_right = 603.0
-margin_bottom = 473.0
+margin_left = 370.0
+margin_top = 435.293
+margin_right = 596.0
+margin_bottom = 475.293
+focus_neighbour_top = NodePath("../Button4")
+focus_neighbour_bottom = NodePath("../Button5")
+theme = ExtResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Audio "
+
+[node name="Popup" type="Popup" parent="Button3"]
+visible = true
+anchor_left = -1.598
+anchor_top = -11.267
+anchor_right = 2.874
+anchor_bottom = 6.835
+margin_left = -8.85199
+margin_top = -14.32
+margin_right = -7.52399
+margin_bottom = 0.599976
+
+[node name="BMusic" type="Button" parent="Button3/Popup"]
+margin_left = 718.0
+margin_top = 382.707
+margin_right = 917.0
+margin_bottom = 422.707
+focus_neighbour_top = NodePath("../Done")
+focus_neighbour_bottom = NodePath("../Bsfx")
+text = "music"
+
+[node name="Label" type="Label" parent="Button3/Popup/BMusic"]
+margin_left = 171.0
+margin_top = 8.0
+margin_right = 211.0
+margin_bottom = 33.0
+text = "50"
+
+[node name="Bsfx" type="Button" parent="Button3/Popup"]
+margin_left = 701.0
+margin_top = 465.707
+margin_right = 931.0
+margin_bottom = 505.707
+focus_neighbour_top = NodePath("../BMusic")
+focus_neighbour_bottom = NodePath("../Done")
+text = "Effects"
+
+[node name="Label2" type="Label" parent="Button3/Popup/Bsfx"]
+margin_left = 199.0
+margin_top = 6.7074
+margin_right = 239.0
+margin_bottom = 31.7074
+text = "50"
+
+[node name="Done" type="Button" parent="Button3/Popup"]
+margin_left = 704.0
+margin_top = 546.707
+margin_right = 934.0
+margin_bottom = 586.707
+focus_neighbour_top = NodePath("../Bsfx")
+focus_neighbour_bottom = NodePath("../BMusic")
+text = "dONE"
+
+[node name="Button5" type="Button" parent="."]
+margin_left = 368.101
+margin_top = 515.589
+margin_right = 594.101
+margin_bottom = 555.589
+focus_neighbour_top = NodePath("../Button3")
+focus_neighbour_bottom = NodePath("../Button")
+theme = ExtResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Exit"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = -2
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
+self_modulate = Color( 1, 1, 1, 0.713726 )
+margin_top = -27.7074
+margin_right = 1027.0
+margin_bottom = 179.293
+texture = ExtResource( 4 )
+expand = true
+
+[node name="TextureRect11" type="TextureRect" parent="CanvasLayer"]
+self_modulate = Color( 1, 1, 1, 0.713726 )
+margin_left = -2.0
+margin_top = 562.0
+margin_right = 228.0
+margin_bottom = 706.0
+texture = ExtResource( 5 )
+expand = true
+
+[node name="TextureRect12" type="TextureRect" parent="CanvasLayer"]
+self_modulate = Color( 1, 1, 1, 0.713726 )
+margin_left = 225.0
+margin_top = 564.0
+margin_right = 439.0
+margin_bottom = 708.0
+texture = ExtResource( 5 )
+expand = true
+
+[node name="TextureRect13" type="TextureRect" parent="CanvasLayer"]
+self_modulate = Color( 1, 1, 1, 0.713726 )
+margin_left = 437.0
+margin_top = 564.0
+margin_right = 604.0
+margin_bottom = 708.0
+texture = ExtResource( 5 )
+expand = true
+
+[node name="TextureRect14" type="TextureRect" parent="CanvasLayer"]
+self_modulate = Color( 1, 1, 1, 0.713726 )
+margin_left = 599.0
+margin_top = 566.0
+margin_right = 813.0
+margin_bottom = 710.0
+texture = ExtResource( 5 )
+expand = true
+
+[node name="TextureRect15" type="TextureRect" parent="CanvasLayer"]
+self_modulate = Color( 1, 1, 1, 0.713726 )
+margin_left = 808.0
+margin_top = 568.0
+margin_right = 1022.0
+margin_bottom = 712.0
+texture = ExtResource( 5 )
+expand = true
+
+[node name="CanvasLayer3" type="CanvasLayer" parent="."]
+layer = -3
+
+[node name="TextureRect11" type="TextureRect" parent="CanvasLayer3"]
+self_modulate = Color( 0.341176, 0.352941, 0.839216, 1 )
+margin_left = -2.0
+margin_top = 152.293
+margin_right = 178.0
+margin_bottom = 1175.29
+rect_rotation = -90.0724
+texture = ExtResource( 6 )
+expand = true
+
+[node name="TextureRect12" type="TextureRect" parent="CanvasLayer3"]
+self_modulate = Color( 0.47451, 0.662745, 1, 1 )
+margin_left = -1.0
+margin_top = 258.293
+margin_right = 110.0
+margin_bottom = 1278.29
+rect_rotation = -90.0724
+texture = ExtResource( 6 )
+expand = true
+
+[node name="TextureRect13" type="TextureRect" parent="CanvasLayer3"]
+self_modulate = Color( 0.415686, 0.552941, 0.0470588, 1 )
+margin_top = 349.293
+margin_right = 108.0
+margin_bottom = 1370.29
+rect_rotation = -90.0724
+texture = ExtResource( 6 )
+expand = true
+
+[node name="TextureRect14" type="TextureRect" parent="CanvasLayer3"]
+self_modulate = Color( 0.317647, 0.435294, 0, 1 )
+margin_left = -2.0
+margin_top = 432.293
+margin_right = 102.0
+margin_bottom = 1457.29
+rect_rotation = -90.0724
+texture = ExtResource( 6 )
+expand = true
+
+[node name="TextureRect15" type="TextureRect" parent="CanvasLayer3"]
+self_modulate = Color( 0.290196, 0.396078, 0, 1 )
+margin_left = -3.0
+margin_top = 491.0
+margin_right = 77.0
+margin_bottom = 1517.0
+rect_rotation = -90.0724
+texture = ExtResource( 6 )
+expand = true
+
+[node name="TextureRect17" type="TextureRect" parent="CanvasLayer3"]
+self_modulate = Color( 0.290196, 0.396078, 0, 1 )
+margin_left = -3.0
+margin_top = 491.0
+margin_right = 77.0
+margin_bottom = 1517.0
+rect_rotation = -90.0724
+texture = ExtResource( 6 )
+expand = true
+
+[node name="TextureRect16" type="TextureRect" parent="CanvasLayer3"]
+self_modulate = Color( 0.239216, 0.317647, 0.027451, 1 )
+margin_left = -6.0
+margin_top = 571.0
+margin_right = 74.0
+margin_bottom = 1597.0
+rect_rotation = -90.0724
+texture = ExtResource( 6 )
+expand = true
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 8 )
+
+[node name="Click" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 9 )
+
+[node name="Select" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 10 )
+
+[connection signal="about_to_show" from="." to="." method="_on_Menu_about_to_show"]
+[connection signal="focus_entered" from="Button" to="." method="_on_Button_focus_entered"]
+[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
+[connection signal="focus_entered" from="Button2" to="." method="_on_Button2_focus_entered"]
+[connection signal="pressed" from="Button2" to="." method="_on_Button2_pressed"]
+[connection signal="focus_entered" from="Button4" to="." method="_on_Button4_focus_entered"]
+[connection signal="focus_exited" from="Button4" to="." method="_on_Button4_focus_exited"]
+[connection signal="pressed" from="Button4" to="." method="_on_Button4_pressed"]
+[connection signal="focus_entered" from="Button3" to="." method="_on_Button3_focus_entered"]
+[connection signal="pressed" from="Button3" to="." method="_on_Button3_pressed"]
+[connection signal="focus_entered" from="Button3/Popup/BMusic" to="." method="_on_BMusic_focus_entered"]
+[connection signal="pressed" from="Button3/Popup/BMusic" to="." method="_on_BMusic_pressed"]
+[connection signal="focus_entered" from="Button3/Popup/Bsfx" to="." method="_on_Bsfx_focus_entered"]
+[connection signal="pressed" from="Button3/Popup/Bsfx" to="." method="_on_Bsfx_pressed"]
+[connection signal="focus_entered" from="Button3/Popup/Done" to="." method="_on_Done_focus_entered"]
+[connection signal="pressed" from="Button3/Popup/Done" to="." method="_on_Done_pressed"]
+[connection signal="focus_entered" from="Button5" to="." method="_on_Button3_focus_entered"]
+[connection signal="pressed" from="Button5" to="." method="_on_Button3_pressed"]
+[connection signal="pressed" from="Button5" to="." method="_on_Button5_pressed"]

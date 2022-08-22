@@ -6,6 +6,7 @@ onready var button1 = $Panel/Button2
 onready var button2 = $Panel/Button3
 onready var button3 = $Panel/Button4
 onready var button4 = $Panel/Button5
+onready var Music = $Music
 var offset = Vector2(20,20)
 signal level(attribute)
 var hell
@@ -15,7 +16,7 @@ var hell
 func _ready():
 	button.text = "             "
 	get_viewport().connect("size_changed",self,"resize")
-	pass
+	Music.volume_db = PlayerInformation.musicVol
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -29,15 +30,16 @@ func resize():
 func _process(delta):
 	help.play("text")
 	
-	#if get_tree().paused == true:
-		#Input.set_mouse_mode(Input.MOUSE_MODE_CONFINED)
-
-		#Input.set_mouse_mode(Input.MOUSE_MODE_CONFINED)
+	if get_tree().paused == true:
+		Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
+	else:
+		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 
 
 func _on_PopupPanel_about_to_show():
+	 Music.play()
 	 get_tree().paused = true 
-	 Input.warp_mouse_position(button.rect_global_position)
+	 get_viewport().warp_mouse(button.rect_global_position)
 func _on_Label4_pressed():
 	emit_signal("level",4) 
 	get_tree().paused = false
@@ -89,3 +91,7 @@ func _on_Label4_focus_entered():
 	get_viewport().warp_mouse( button3.rect_global_position+ offset )
 	
 	
+
+
+func _on_PopupPanel_popup_hide():
+	Music.stop() # Replace with function body.
