@@ -32,7 +32,7 @@ _data = {
 position = Vector2( 1448, 111 )
 
 [node name="ssSprite" parent="Player" index="0"]
-frame = 0
+frame = 10
 
 [node name="TextureRect4" parent="Player/CanvasLayer2" index="3"]
 self_modulate = Color( 0.47451, 0.423529, 0.87451, 0.54902 )
