@@ -2,12 +2,12 @@
 
 importer="wav"
 type="AudioStreamSample"
-path="res://.import/32158__zin__piano-2-140bpm.wav-59425a56d4c1800071b2305088106147.sample"
+path="res://.import/32158__zin__piano-2-140bpm.wav-f6f0a69e3a996dd9da6a459d93f952e3.sample"
 
 [deps]
 
-source_file="res://Game/32158__zin__piano-2-140bpm.wav"
-dest_files=[ "res://.import/32158__zin__piano-2-140bpm.wav-59425a56d4c1800071b2305088106147.sample" ]
+source_file="res://32158__zin__piano-2-140bpm.wav"
+dest_files=[ "res://.import/32158__zin__piano-2-140bpm.wav-f6f0a69e3a996dd9da6a459d93f952e3.sample" ]
 
 [params]
 

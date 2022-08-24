@@ -1,0 +1,3580 @@
+[gd_scene load_steps=20 format=2]
+
+[ext_resource path="res://Platform.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Enemy.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Collectable.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Player.tscn" type="PackedScene" id=4]
+[ext_resource path="res://CHolder.gd" type="Script" id=5]
+[ext_resource path="res://SHolder.gd" type="Script" id=6]
+[ext_resource path="res://Saw.tscn" type="PackedScene" id=7]
+[ext_resource path="res://END.tscn" type="PackedScene" id=8]
+[ext_resource path="res://SawPath.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Terrain/P3 (16x16).png" type="Texture" id=10]
+[ext_resource path="res://OpenDoor.gd" type="Script" id=11]
+
+[sub_resource type="Curve2D" id=1]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, -881, -862, 0, 0, 0, 0, 1363, -862, 0, 0, 0, 0, -868, -862, 0, 0, 0, 0, 1353, -861 )
+}
+
+[sub_resource type="Curve2D" id=2]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 1363, -743, 0, 0, 0, 0, -933, -749, 0, 0, 0, 0, 1349, -745, 0, 0, 0, 0, -928, -749 )
+}
+
+[sub_resource type="Curve2D" id=3]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, -907, -634, 0, 0, 0, 0, 1385, -632, 0, 0, 0, 0, -898, -634, 0, 0, 0, 0, 1374, -633 )
+}
+
+[sub_resource type="Curve2D" id=4]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 1356, -502, 0, 0, 0, 0, -931, -530, 0, 0, 0, 0, 1347, -520, 0, 0, 0, 0, -923, -512 )
+}
+
+[sub_resource type="Curve2D" id=5]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, -904, -326, 0, 0, 0, 0, 1383, -358, 0, 0, 0, 0, -897, -343, 0, 0, 0, 0, 1370, -339 )
+}
+
+[sub_resource type="Curve2D" id=6]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 1355, -141, 0, 0, 0, 0, -932, -151, 0, 0, 0, 0, 1379, -144, 0, 0, 0, 0, -916, -147 )
+}
+
+[sub_resource type="Curve2D" id=7]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, -898, 18, 0, 0, 0, 0, 1373, 25, 0, 0, 0, 0, -885, 20, 0, 0, 0, 0, 1360, 22 )
+}
+
+[sub_resource type="Animation" id=8]
+resource_name = "OpenDoor"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("../OHolder/Obstical3:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 4.9 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( -1169, -489 ), Vector2( -1169, -1500 ) ]
+}
+
+[node name="Level" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource( 4 )]
+position = Vector2( 1381, 82 )
+
+[node name="TextureRect" parent="Player/CanvasLayer2" index="0"]
+texture = ExtResource( 10 )
+
+[node name="TextureRect5" parent="Player/CanvasLayer2/TextureRect/CanvasLayer" index="0"]
+self_modulate = Color( 0.803922, 0.929412, 0.635294, 1 )
+margin_left = 407.0
+margin_right = 429.0
+margin_bottom = 67.0
+
+[node name="TextureRect6" parent="Player/CanvasLayer2/TextureRect/CanvasLayer" index="1"]
+self_modulate = Color( 0.803922, 0.929412, 0.635294, 1 )
+margin_left = 384.0
+margin_right = 418.0
+
+[node name="TextureRect7" parent="Player/CanvasLayer2/TextureRect/CanvasLayer" index="2"]
+self_modulate = Color( 0.803922, 0.929412, 0.635294, 1 )
+margin_left = 502.0
+margin_right = 535.0
+margin_bottom = 49.0
+
+[node name="TextureRect8" parent="Player/CanvasLayer2/TextureRect/CanvasLayer" index="3"]
+self_modulate = Color( 0.803922, 0.929412, 0.635294, 1 )
+margin_left = 321.0
+margin_right = 354.0
+
+[node name="TextureRect9" parent="Player/CanvasLayer2/TextureRect/CanvasLayer" index="4"]
+visible = true
+self_modulate = Color( 0.803922, 0.929412, 0.635294, 1 )
+margin_left = 416.0
+margin_top = 143.0
+margin_right = 445.0
+margin_bottom = 177.0
+
+[node name="TextureRect10" parent="Player/CanvasLayer2/TextureRect/CanvasLayer" index="5"]
+visible = true
+self_modulate = Color( 0.803922, 0.929412, 0.635294, 1 )
+margin_left = 370.0
+margin_right = 394.0
+margin_bottom = 233.0
+
+[node name="TextureRect11" parent="Player/CanvasLayer2/TextureRect/CanvasLayer" index="6"]
+visible = true
+self_modulate = Color( 0.803922, 0.929412, 0.635294, 1 )
+margin_left = 595.0
+margin_right = 639.0
+
+[node name="TextureRect12" parent="Player/CanvasLayer2/TextureRect/CanvasLayer" index="7"]
+visible = true
+self_modulate = Color( 0.803922, 0.929412, 0.635294, 1 )
+margin_right = 369.0
+margin_bottom = 171.0
+
+[node name="TextureRect13" parent="Player/CanvasLayer2/TextureRect/CanvasLayer" index="8"]
+visible = true
+self_modulate = Color( 0.803922, 0.929412, 0.635294, 1 )
+margin_left = 447.0
+margin_right = 483.0
+margin_bottom = 121.0
+
+[node name="TextureRect14" parent="Player/CanvasLayer2/TextureRect/CanvasLayer" index="9"]
+visible = true
+self_modulate = Color( 0.803922, 0.929412, 0.635294, 1 )
+margin_left = 457.0
+margin_right = 502.0
+margin_bottom = 151.0
+
+[node name="TextureRect15" parent="Player/CanvasLayer2/TextureRect/CanvasLayer" index="10"]
+visible = true
+self_modulate = Color( 0.803922, 0.929412, 0.635294, 1 )
+margin_left = 573.0
+margin_right = 625.0
+margin_bottom = 98.0
+
+[node name="TextureRect16" parent="Player/CanvasLayer2/TextureRect/CanvasLayer" index="11"]
+visible = true
+self_modulate = Color( 0.803922, 0.929412, 0.635294, 1 )
+margin_left = 530.0
+margin_top = 93.0
+margin_right = 559.0
+margin_bottom = 123.0
+
+[node name="TextureRect17" parent="Player/CanvasLayer2/TextureRect/CanvasLayer" index="12"]
+visible = true
+self_modulate = Color( 0.803922, 0.929412, 0.635294, 1 )
+margin_left = 524.0
+margin_right = 553.0
+margin_bottom = 218.0
+
+[node name="TextureRect18" parent="Player/CanvasLayer2/TextureRect/CanvasLayer" index="13"]
+visible = true
+self_modulate = Color( 0.803922, 0.929412, 0.635294, 1 )
+margin_left = 534.0
+margin_right = 572.0
+margin_bottom = 254.0
+
+[node name="TextureRect19" parent="Player/CanvasLayer2/TextureRect/CanvasLayer" index="14"]
+visible = true
+self_modulate = Color( 0.803922, 0.929412, 0.635294, 1 )
+margin_left = 650.0
+margin_right = 696.0
+margin_bottom = 199.0
+
+[node name="TextureRect20" parent="Player/CanvasLayer2/TextureRect/CanvasLayer" index="15"]
+visible = true
+self_modulate = Color( 0.803922, 0.929412, 0.635294, 1 )
+margin_right = 528.0
+
+[node name="TextureRect2" parent="Player/CanvasLayer2" index="1"]
+texture = ExtResource( 10 )
+
+[node name="TextureRect3" parent="Player/CanvasLayer2" index="2"]
+texture = ExtResource( 10 )
+
+[node name="TextureRect4" parent="Player/CanvasLayer2" index="3"]
+self_modulate = Color( 0, 0, 0, 0.843137 )
+
+[node name="CHolder" type="Node" parent="." groups=["coin"]]
+script = ExtResource( 5 )
+
+[node name="Template" parent="CHolder" instance=ExtResource( 3 )]
+position = Vector2( -1600, 8820 )
+collision_layer = 2
+collision_mask = 2
+
+[node name="Collectable27" parent="CHolder" instance=ExtResource( 3 )]
+position = Vector2( 218, 311 )
+collision_layer = 2
+collision_mask = 2
+
+[node name="SawPaths" type="Node" parent="."]
+
+[node name="SawPath" parent="SawPaths" instance=ExtResource( 9 )]
+curve = SubResource( 1 )
+
+[node name="SawPath2" parent="SawPaths" instance=ExtResource( 9 )]
+curve = SubResource( 2 )
+
+[node name="SawPath3" parent="SawPaths" instance=ExtResource( 9 )]
+curve = SubResource( 3 )
+
+[node name="SawPath4" parent="SawPaths" instance=ExtResource( 9 )]
+curve = SubResource( 4 )
+
+[node name="SawPath5" parent="SawPaths" instance=ExtResource( 9 )]
+curve = SubResource( 5 )
+
+[node name="SawPath6" parent="SawPaths" instance=ExtResource( 9 )]
+curve = SubResource( 6 )
+
+[node name="SawPath7" parent="SawPaths" instance=ExtResource( 9 )]
+curve = SubResource( 7 )
+
+[node name="SHolder" type="Node" parent="."]
+script = ExtResource( 6 )
+
+[node name="Saw" parent="SHolder" instance=ExtResource( 7 )]
+position = Vector2( -893, -864 )
+scale = Vector2( 4, 4 )
+patrolPath = NodePath("../../SawPaths/SawPath")
+
+[node name="Saw2" parent="SHolder" instance=ExtResource( 7 )]
+position = Vector2( 1358, -748 )
+scale = Vector2( 4, 4 )
+patrolPath = NodePath("../../SawPaths/SawPath2")
+
+[node name="Saw3" parent="SHolder" instance=ExtResource( 7 )]
+position = Vector2( -906, -636 )
+scale = Vector2( 4, 4 )
+patrolPath = NodePath("../../SawPaths/SawPath3")
+
+[node name="Saw4" parent="SHolder" instance=ExtResource( 7 )]
+position = Vector2( 1361, -494 )
+scale = Vector2( 4, 4 )
+patrolPath = NodePath("../../SawPaths/SawPath4")
+
+[node name="Saw5" parent="SHolder" instance=ExtResource( 7 )]
+position = Vector2( -896, -323 )
+scale = Vector2( 4, 4 )
+patrolPath = NodePath("../../SawPaths/SawPath5")
+
+[node name="Saw6" parent="SHolder" instance=ExtResource( 7 )]
+position = Vector2( 1359, -138 )
+scale = Vector2( 4, 4 )
+patrolPath = NodePath("../../SawPaths/SawPath6")
+
+[node name="Saw7" parent="SHolder" instance=ExtResource( 7 )]
+position = Vector2( -898, 20 )
+scale = Vector2( 4, 4 )
+patrolPath = NodePath("../../SawPaths/SawPath7")
+
+[node name="OHolder" type="Node" parent="."]
+
+[node name="Obstical" parent="OHolder" instance=ExtResource( 1 )]
+position = Vector2( 890, 358 )
+scale = Vector2( 40.8044, 10.9375 )
+texture = ExtResource( 10 )
+
+[node name="Obstical7" parent="OHolder" instance=ExtResource( 1 )]
+position = Vector2( -704, -82 )
+texture = ExtResource( 10 )
+
+[node name="Obstical8" parent="OHolder" instance=ExtResource( 1 )]
+position = Vector2( -467, -162 )
+texture = ExtResource( 10 )
+
+[node name="Obstical9" parent="OHolder" instance=ExtResource( 1 )]
+position = Vector2( -288, -258 )
+texture = ExtResource( 10 )
+
+[node name="Obstical10" parent="OHolder" instance=ExtResource( 1 )]
+position = Vector2( -75, -390 )
+texture = ExtResource( 10 )
+
+[node name="Obstical11" parent="OHolder" instance=ExtResource( 1 )]
+position = Vector2( 86, -496 )
+texture = ExtResource( 10 )
+
+[node name="Obstical12" parent="OHolder" instance=ExtResource( 1 )]
+position = Vector2( 243, -634 )
+texture = ExtResource( 10 )
+
+[node name="Obstical13" parent="OHolder" instance=ExtResource( 1 )]
+position = Vector2( 602, -876 )
+texture = ExtResource( 10 )
+
+[node name="Obstical14" parent="OHolder" instance=ExtResource( 1 )]
+position = Vector2( 416, -747 )
+texture = ExtResource( 10 )
+
+[node name="Obstical15" parent="OHolder" instance=ExtResource( 1 )]
+position = Vector2( -75, 31 )
+texture = ExtResource( 10 )
+
+[node name="Obstical16" parent="OHolder" instance=ExtResource( 1 )]
+position = Vector2( 162, -49 )
+texture = ExtResource( 10 )
+
+[node name="Obstical17" parent="OHolder" instance=ExtResource( 1 )]
+position = Vector2( 341, -145 )
+texture = ExtResource( 10 )
+
+[node name="Obstical18" parent="OHolder" instance=ExtResource( 1 )]
+position = Vector2( 554, -277 )
+texture = ExtResource( 10 )
+
+[node name="Obstical19" parent="OHolder" instance=ExtResource( 1 )]
+position = Vector2( 715, -383 )
+texture = ExtResource( 10 )
+
+[node name="Obstical20" parent="OHolder" instance=ExtResource( 1 )]
+position = Vector2( 872, -521 )
+texture = ExtResource( 10 )
+
+[node name="Obstical21" parent="OHolder" instance=ExtResource( 1 )]
+position = Vector2( 1045, -634 )
+texture = ExtResource( 10 )
+
+[node name="Obstical22" parent="OHolder" instance=ExtResource( 1 )]
+position = Vector2( -467, 31 )
+texture = ExtResource( 10 )
+
+[node name="Obstical23" parent="OHolder" instance=ExtResource( 1 )]
+position = Vector2( -230, -49 )
+texture = ExtResource( 10 )
+
+[node name="Obstical24" parent="OHolder" instance=ExtResource( 1 )]
+position = Vector2( -51, -145 )
+texture = ExtResource( 10 )
+
+[node name="Obstical25" parent="OHolder" instance=ExtResource( 1 )]
+position = Vector2( 162, -277 )
+texture = ExtResource( 10 )
+
+[node name="Obstical26" parent="OHolder" instance=ExtResource( 1 )]
+position = Vector2( 323, -383 )
+texture = ExtResource( 10 )
+
+[node name="Obstical27" parent="OHolder" instance=ExtResource( 1 )]
+position = Vector2( 480, -521 )
+texture = ExtResource( 10 )
+
+[node name="Obstical28" parent="OHolder" instance=ExtResource( 1 )]
+position = Vector2( 653, -634 )
+texture = ExtResource( 10 )
+
+[node name="Obstical5" parent="OHolder" instance=ExtResource( 1 )]
+position = Vector2( -977, 363 )
+scale = Vector2( 40.8044, 10.9375 )
+texture = ExtResource( 10 )
+
+[node name="Obstical2" parent="OHolder" instance=ExtResource( 1 )]
+position = Vector2( -467, -1203 )
+scale = Vector2( 40.8044, 10.9375 )
+texture = ExtResource( 10 )
+
+[node name="Obstical6" parent="OHolder" instance=ExtResource( 1 )]
+position = Vector2( 961, -1205 )
+scale = Vector2( 40.8044, 10.9375 )
+texture = ExtResource( 10 )
+
+[node name="Obstical3" parent="OHolder" instance=ExtResource( 1 )]
+position = Vector2( -1169, -489 )
+rotation = 1.5708
+scale = Vector2( 40.8044, 10.9375 )
+texture = ExtResource( 10 )
+
+[node name="Obstical4" parent="OHolder" instance=ExtResource( 1 )]
+position = Vector2( 1616, -435 )
+rotation = 1.5708
+scale = Vector2( 40.8044, 10.9375 )
+texture = ExtResource( 10 )
+
+[node name="SpikeHolder" type="Node" parent="."]
+
+[node name="Enemy5" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 595, 102 )
+
+[node name="Enemy6" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 583, 102 )
+
+[node name="Enemy7" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 568, 102 )
+
+[node name="Enemy8" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 556, 102 )
+
+[node name="Enemy9" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 542, 102 )
+
+[node name="Enemy10" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 530, 102 )
+
+[node name="Enemy11" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 515, 102 )
+
+[node name="Enemy12" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 503, 102 )
+
+[node name="Enemy13" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 488, 102 )
+
+[node name="Enemy14" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 476, 102 )
+
+[node name="Enemy15" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 461, 102 )
+
+[node name="Enemy16" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 449, 102 )
+
+[node name="Enemy17" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 588, 102 )
+
+[node name="Enemy18" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 576, 102 )
+
+[node name="Enemy19" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 561, 102 )
+
+[node name="Enemy20" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 549, 102 )
+
+[node name="Enemy21" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 535, 102 )
+
+[node name="Enemy22" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 523, 102 )
+
+[node name="Enemy23" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 508, 102 )
+
+[node name="Enemy24" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 496, 102 )
+
+[node name="Enemy25" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 481, 102 )
+
+[node name="Enemy26" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 469, 102 )
+
+[node name="Enemy27" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 454, 102 )
+
+[node name="Enemy28" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 442, 102 )
+
+[node name="Enemy29" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 438, 101 )
+
+[node name="Enemy30" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 426, 101 )
+
+[node name="Enemy31" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 411, 101 )
+
+[node name="Enemy32" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 399, 101 )
+
+[node name="Enemy33" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 385, 101 )
+
+[node name="Enemy34" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 373, 101 )
+
+[node name="Enemy35" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 358, 101 )
+
+[node name="Enemy36" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 346, 101 )
+
+[node name="Enemy37" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 331, 101 )
+
+[node name="Enemy38" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 319, 101 )
+
+[node name="Enemy39" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 304, 101 )
+
+[node name="Enemy40" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 292, 101 )
+
+[node name="Enemy41" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 431, 101 )
+
+[node name="Enemy42" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 419, 101 )
+
+[node name="Enemy43" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 404, 101 )
+
+[node name="Enemy44" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 392, 101 )
+
+[node name="Enemy45" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 378, 101 )
+
+[node name="Enemy46" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 366, 101 )
+
+[node name="Enemy47" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 351, 101 )
+
+[node name="Enemy48" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 339, 101 )
+
+[node name="Enemy49" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 324, 101 )
+
+[node name="Enemy50" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 312, 101 )
+
+[node name="Enemy51" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 297, 101 )
+
+[node name="Enemy52" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 285, 101 )
+
+[node name="Enemy53" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( -8, 105 )
+
+[node name="Enemy54" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( -20, 105 )
+
+[node name="Enemy55" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( -35, 105 )
+
+[node name="Enemy56" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( -47, 105 )
+
+[node name="Enemy57" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( -61, 105 )
+
+[node name="Enemy58" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( -73, 105 )
+
+[node name="Enemy59" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( -88, 105 )
+
+[node name="Enemy60" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( -100, 105 )
+
+[node name="Enemy61" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( -115, 105 )
+
+[node name="Enemy62" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( -127, 105 )
+
+[node name="Enemy63" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( -142, 105 )
+
+[node name="Enemy64" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( -154, 105 )
+
+[node name="Enemy65" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( -15, 105 )
+
+[node name="Enemy66" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( -27, 105 )
+
+[node name="Enemy67" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( -42, 105 )
+
+[node name="Enemy68" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( -54, 105 )
+
+[node name="Enemy69" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( -68, 105 )
+
+[node name="Enemy70" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( -80, 105 )
+
+[node name="Enemy71" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( -95, 105 )
+
+[node name="Enemy72" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( -107, 105 )
+
+[node name="Enemy73" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( -122, 105 )
+
+[node name="Enemy74" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( -134, 105 )
+
+[node name="Enemy75" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( -149, 105 )
+
+[node name="Enemy76" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( -161, 105 )
+
+[node name="Enemy77" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( -165, 104 )
+
+[node name="Enemy78" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( -177, 104 )
+
+[node name="Enemy79" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( -192, 104 )
+
+[node name="Enemy80" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( -204, 104 )
+
+[node name="Enemy81" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( -218, 104 )
+
+[node name="Enemy82" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( -230, 104 )
+
+[node name="Enemy83" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( -245, 104 )
+
+[node name="Enemy84" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( -257, 104 )
+
+[node name="Enemy85" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( -272, 104 )
+
+[node name="Enemy86" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( -284, 104 )
+
+[node name="Enemy87" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( -299, 104 )
+
+[node name="Enemy88" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( -311, 104 )
+
+[node name="Enemy89" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( -172, 104 )
+
+[node name="Enemy90" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( -184, 104 )
+
+[node name="Enemy91" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( -199, 104 )
+
+[node name="Enemy92" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( -211, 104 )
+
+[node name="Enemy93" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( -225, 104 )
+
+[node name="Enemy94" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( -237, 104 )
+
+[node name="Enemy95" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( -252, 104 )
+
+[node name="Enemy96" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( -264, 104 )
+
+[node name="Enemy97" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( -279, 104 )
+
+[node name="Enemy98" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( -291, 104 )
+
+[node name="Enemy99" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( -306, 104 )
+
+[node name="Enemy100" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( -318, 104 )
+
+[node name="Enemy101" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 1159, 101 )
+
+[node name="Enemy102" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 1147, 101 )
+
+[node name="Enemy103" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 1132, 101 )
+
+[node name="Enemy104" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 1120, 101 )
+
+[node name="Enemy105" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 1106, 101 )
+
+[node name="Enemy106" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 1094, 101 )
+
+[node name="Enemy107" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 1079, 101 )
+
+[node name="Enemy108" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 1067, 101 )
+
+[node name="Enemy109" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 1052, 101 )
+
+[node name="Enemy110" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 1040, 101 )
+
+[node name="Enemy111" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 1025, 101 )
+
+[node name="Enemy112" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 1013, 101 )
+
+[node name="Enemy113" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 1152, 101 )
+
+[node name="Enemy114" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 1140, 101 )
+
+[node name="Enemy115" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 1125, 101 )
+
+[node name="Enemy116" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 1113, 101 )
+
+[node name="Enemy117" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 1099, 101 )
+
+[node name="Enemy118" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 1087, 101 )
+
+[node name="Enemy119" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 1072, 101 )
+
+[node name="Enemy120" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 1060, 101 )
+
+[node name="Enemy121" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 1045, 101 )
+
+[node name="Enemy122" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 1033, 101 )
+
+[node name="Enemy123" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 1018, 101 )
+
+[node name="Enemy124" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 1006, 101 )
+
+[node name="Enemy125" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 1002, 100 )
+
+[node name="Enemy126" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 990, 100 )
+
+[node name="Enemy127" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 975, 100 )
+
+[node name="Enemy128" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 963, 100 )
+
+[node name="Enemy129" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 949, 100 )
+
+[node name="Enemy130" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 937, 100 )
+
+[node name="Enemy131" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 922, 100 )
+
+[node name="Enemy132" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 910, 100 )
+
+[node name="Enemy133" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 895, 100 )
+
+[node name="Enemy134" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 883, 100 )
+
+[node name="Enemy135" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 868, 100 )
+
+[node name="Enemy136" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 856, 100 )
+
+[node name="Enemy137" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 995, 100 )
+
+[node name="Enemy138" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 983, 100 )
+
+[node name="Enemy139" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 968, 100 )
+
+[node name="Enemy140" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 956, 100 )
+
+[node name="Enemy141" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 942, 100 )
+
+[node name="Enemy142" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 930, 100 )
+
+[node name="Enemy143" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 915, 100 )
+
+[node name="Enemy144" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 903, 100 )
+
+[node name="Enemy145" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 888, 100 )
+
+[node name="Enemy146" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 876, 100 )
+
+[node name="Enemy147" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 861, 100 )
+
+[node name="Enemy148" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 849, 100 )
+
+[node name="Enemy149" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( -452, 108 )
+
+[node name="Enemy150" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( -464, 108 )
+
+[node name="Enemy151" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( -479, 108 )
+
+[node name="Enemy152" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( -491, 108 )
+
+[node name="Enemy153" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( -505, 108 )
+
+[node name="Enemy154" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( -517, 108 )
+
+[node name="Enemy155" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( -532, 108 )
+
+[node name="Enemy156" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( -544, 108 )
+
+[node name="Enemy157" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( -559, 108 )
+
+[node name="Enemy158" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( -571, 108 )
+
+[node name="Enemy159" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( -586, 108 )
+
+[node name="Enemy160" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( -598, 108 )
+
+[node name="Enemy161" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( -459, 108 )
+
+[node name="Enemy162" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( -471, 108 )
+
+[node name="Enemy163" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( -486, 108 )
+
+[node name="Enemy164" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( -498, 108 )
+
+[node name="Enemy165" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( -512, 108 )
+
+[node name="Enemy166" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( -524, 108 )
+
+[node name="Enemy167" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( -539, 108 )
+
+[node name="Enemy168" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( -551, 108 )
+
+[node name="Enemy169" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( -566, 108 )
+
+[node name="Enemy170" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( -578, 108 )
+
+[node name="Enemy171" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( -593, 108 )
+
+[node name="Enemy172" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( -605, 108 )
+
+[node name="Enemy173" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( -609, 107 )
+
+[node name="Enemy174" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( -621, 107 )
+
+[node name="Enemy175" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( -636, 107 )
+
+[node name="Enemy176" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( -648, 107 )
+
+[node name="Enemy177" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( -662, 107 )
+
+[node name="Enemy178" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( -674, 107 )
+
+[node name="Enemy179" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( -689, 107 )
+
+[node name="Enemy180" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( -701, 107 )
+
+[node name="Enemy181" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( -716, 107 )
+
+[node name="Enemy182" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( -728, 107 )
+
+[node name="Enemy183" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( -743, 107 )
+
+[node name="Enemy184" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( -755, 107 )
+
+[node name="Enemy185" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( -616, 107 )
+
+[node name="Enemy186" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( -628, 107 )
+
+[node name="Enemy187" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( -643, 107 )
+
+[node name="Enemy188" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( -655, 107 )
+
+[node name="Enemy189" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( -669, 107 )
+
+[node name="Enemy190" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( -681, 107 )
+
+[node name="Enemy191" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( -696, 107 )
+
+[node name="Enemy192" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( -708, 107 )
+
+[node name="Enemy193" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( -723, 107 )
+
+[node name="Enemy194" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( -735, 107 )
+
+[node name="Enemy195" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( -750, 107 )
+
+[node name="Enemy196" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( -762, 107 )
+
+[node name="Enemy197" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( -591, -946 )
+rotation = 3.14159
+
+[node name="Enemy198" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( -603, -946 )
+rotation = 3.14159
+
+[node name="Enemy199" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( -618, -946 )
+rotation = 3.14159
+
+[node name="Enemy200" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( -630, -946 )
+rotation = 3.14159
+
+[node name="Enemy201" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( -644, -946 )
+rotation = 3.14159
+
+[node name="Enemy202" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( -656, -946 )
+rotation = 3.14159
+
+[node name="Enemy203" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( -671, -946 )
+rotation = 3.14159
+
+[node name="Enemy204" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( -683, -946 )
+rotation = 3.14159
+
+[node name="Enemy205" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( -698, -946 )
+rotation = 3.14159
+
+[node name="Enemy206" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( -710, -946 )
+rotation = 3.14159
+
+[node name="Enemy207" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( -725, -946 )
+rotation = 3.14159
+
+[node name="Enemy208" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( -737, -946 )
+rotation = 3.14159
+
+[node name="Enemy209" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( -598, -946 )
+rotation = 3.14159
+
+[node name="Enemy210" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( -610, -946 )
+rotation = 3.14159
+
+[node name="Enemy211" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( -625, -946 )
+rotation = 3.14159
+
+[node name="Enemy212" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( -637, -946 )
+rotation = 3.14159
+
+[node name="Enemy213" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( -651, -946 )
+rotation = 3.14159
+
+[node name="Enemy214" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( -663, -946 )
+rotation = 3.14159
+
+[node name="Enemy215" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( -678, -946 )
+rotation = 3.14159
+
+[node name="Enemy216" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( -690, -946 )
+rotation = 3.14159
+
+[node name="Enemy217" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( -705, -946 )
+rotation = 3.14159
+
+[node name="Enemy218" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( -717, -946 )
+rotation = 3.14159
+
+[node name="Enemy219" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( -732, -946 )
+rotation = 3.14159
+
+[node name="Enemy220" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( -744, -946 )
+rotation = 3.14159
+
+[node name="Enemy221" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( -748, -947 )
+rotation = 3.14159
+
+[node name="Enemy222" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( -760, -947 )
+rotation = 3.14159
+
+[node name="Enemy223" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( -775, -947 )
+rotation = 3.14159
+
+[node name="Enemy224" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( -787, -947 )
+rotation = 3.14159
+
+[node name="Enemy225" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( -801, -947 )
+rotation = 3.14159
+
+[node name="Enemy226" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( -813, -947 )
+rotation = 3.14159
+
+[node name="Enemy227" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( -828, -947 )
+rotation = 3.14159
+
+[node name="Enemy228" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( -840, -947 )
+rotation = 3.14159
+
+[node name="Enemy229" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( -855, -947 )
+rotation = 3.14159
+
+[node name="Enemy230" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( -867, -947 )
+rotation = 3.14159
+
+[node name="Enemy231" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( -882, -947 )
+rotation = 3.14159
+
+[node name="Enemy232" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( -894, -947 )
+rotation = 3.14159
+
+[node name="Enemy233" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( -755, -947 )
+rotation = 3.14159
+
+[node name="Enemy234" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( -767, -947 )
+rotation = 3.14159
+
+[node name="Enemy235" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( -782, -947 )
+rotation = 3.14159
+
+[node name="Enemy236" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( -794, -947 )
+rotation = 3.14159
+
+[node name="Enemy237" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( -808, -947 )
+rotation = 3.14159
+
+[node name="Enemy238" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( -820, -947 )
+rotation = 3.14159
+
+[node name="Enemy239" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( -835, -947 )
+rotation = 3.14159
+
+[node name="Enemy240" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( -847, -947 )
+rotation = 3.14159
+
+[node name="Enemy241" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( -862, -947 )
+rotation = 3.14159
+
+[node name="Enemy242" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( -874, -947 )
+rotation = 3.14159
+
+[node name="Enemy243" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( -889, -947 )
+rotation = 3.14159
+
+[node name="Enemy244" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( -901, -947 )
+rotation = 3.14159
+
+[node name="Enemy245" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( -267, -951 )
+rotation = 3.14159
+
+[node name="Enemy246" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( -279, -951 )
+rotation = 3.14159
+
+[node name="Enemy247" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( -294, -951 )
+rotation = 3.14159
+
+[node name="Enemy248" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( -306, -951 )
+rotation = 3.14159
+
+[node name="Enemy249" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( -320, -951 )
+rotation = 3.14159
+
+[node name="Enemy250" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( -332, -951 )
+rotation = 3.14159
+
+[node name="Enemy251" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( -347, -951 )
+rotation = 3.14159
+
+[node name="Enemy252" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( -359, -951 )
+rotation = 3.14159
+
+[node name="Enemy253" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( -374, -951 )
+rotation = 3.14159
+
+[node name="Enemy254" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( -386, -951 )
+rotation = 3.14159
+
+[node name="Enemy255" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( -401, -951 )
+rotation = 3.14159
+
+[node name="Enemy256" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( -413, -951 )
+rotation = 3.14159
+
+[node name="Enemy257" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( -274, -951 )
+rotation = 3.14159
+
+[node name="Enemy258" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( -286, -951 )
+rotation = 3.14159
+
+[node name="Enemy259" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( -301, -951 )
+rotation = 3.14159
+
+[node name="Enemy260" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( -313, -951 )
+rotation = 3.14159
+
+[node name="Enemy261" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( -327, -951 )
+rotation = 3.14159
+
+[node name="Enemy262" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( -339, -951 )
+rotation = 3.14159
+
+[node name="Enemy263" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( -354, -951 )
+rotation = 3.14159
+
+[node name="Enemy264" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( -366, -951 )
+rotation = 3.14159
+
+[node name="Enemy265" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( -381, -951 )
+rotation = 3.14159
+
+[node name="Enemy266" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( -393, -951 )
+rotation = 3.14159
+
+[node name="Enemy267" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( -408, -951 )
+rotation = 3.14159
+
+[node name="Enemy268" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( -420, -945 )
+rotation = 3.14159
+
+[node name="Enemy269" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( -424, -946 )
+rotation = 3.14159
+
+[node name="Enemy270" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( -436, -946 )
+rotation = 3.14159
+
+[node name="Enemy271" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( -451, -946 )
+rotation = 3.14159
+
+[node name="Enemy272" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( -463, -946 )
+rotation = 3.14159
+
+[node name="Enemy273" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( -477, -946 )
+rotation = 3.14159
+
+[node name="Enemy274" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( -489, -946 )
+rotation = 3.14159
+
+[node name="Enemy275" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( -504, -946 )
+rotation = 3.14159
+
+[node name="Enemy276" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( -516, -946 )
+rotation = 3.14159
+
+[node name="Enemy277" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( -531, -946 )
+rotation = 3.14159
+
+[node name="Enemy278" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( -543, -946 )
+rotation = 3.14159
+
+[node name="Enemy279" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( -558, -946 )
+rotation = 3.14159
+
+[node name="Enemy280" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( -570, -946 )
+rotation = 3.14159
+
+[node name="Enemy281" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( -431, -946 )
+rotation = 3.14159
+
+[node name="Enemy282" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( -443, -946 )
+rotation = 3.14159
+
+[node name="Enemy283" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( -458, -946 )
+rotation = 3.14159
+
+[node name="Enemy284" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( -470, -946 )
+rotation = 3.14159
+
+[node name="Enemy285" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( -484, -946 )
+rotation = 3.14159
+
+[node name="Enemy286" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( -496, -946 )
+rotation = 3.14159
+
+[node name="Enemy287" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( -511, -946 )
+rotation = 3.14159
+
+[node name="Enemy288" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( -523, -946 )
+rotation = 3.14159
+
+[node name="Enemy289" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( -538, -946 )
+rotation = 3.14159
+
+[node name="Enemy290" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( -550, -946 )
+rotation = 3.14159
+
+[node name="Enemy291" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( -565, -946 )
+rotation = 3.14159
+
+[node name="Enemy292" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( -577, -946 )
+rotation = 3.14159
+
+[node name="Enemy293" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 58, -950 )
+rotation = 3.14159
+
+[node name="Enemy294" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 46, -950 )
+rotation = 3.14159
+
+[node name="Enemy295" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 31, -950 )
+rotation = 3.14159
+
+[node name="Enemy296" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 19, -950 )
+rotation = 3.14159
+
+[node name="Enemy297" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 5, -950 )
+rotation = 3.14159
+
+[node name="Enemy298" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( -7, -950 )
+rotation = 3.14159
+
+[node name="Enemy299" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( -22, -950 )
+rotation = 3.14159
+
+[node name="Enemy300" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( -34, -950 )
+rotation = 3.14159
+
+[node name="Enemy301" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( -49, -950 )
+rotation = 3.14159
+
+[node name="Enemy302" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( -61, -950 )
+rotation = 3.14159
+
+[node name="Enemy303" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( -76, -950 )
+rotation = 3.14159
+
+[node name="Enemy304" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( -88, -950 )
+rotation = 3.14159
+
+[node name="Enemy305" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 51, -950 )
+rotation = 3.14159
+
+[node name="Enemy306" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 39, -950 )
+rotation = 3.14159
+
+[node name="Enemy307" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 24, -950 )
+rotation = 3.14159
+
+[node name="Enemy308" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 12, -950 )
+rotation = 3.14159
+
+[node name="Enemy309" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( -2, -950 )
+rotation = 3.14159
+
+[node name="Enemy310" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( -14, -950 )
+rotation = 3.14159
+
+[node name="Enemy311" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( -29, -950 )
+rotation = 3.14159
+
+[node name="Enemy312" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( -41, -950 )
+rotation = 3.14159
+
+[node name="Enemy313" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( -56, -950 )
+rotation = 3.14159
+
+[node name="Enemy314" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( -68, -950 )
+rotation = 3.14159
+
+[node name="Enemy315" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( -83, -950 )
+rotation = 3.14159
+
+[node name="Enemy316" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( -95, -950 )
+rotation = 3.14159
+
+[node name="Enemy317" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( -99, -951 )
+rotation = 3.14159
+
+[node name="Enemy318" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( -111, -951 )
+rotation = 3.14159
+
+[node name="Enemy319" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( -126, -951 )
+rotation = 3.14159
+
+[node name="Enemy320" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( -138, -951 )
+rotation = 3.14159
+
+[node name="Enemy321" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( -152, -951 )
+rotation = 3.14159
+
+[node name="Enemy322" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( -164, -951 )
+rotation = 3.14159
+
+[node name="Enemy323" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( -179, -951 )
+rotation = 3.14159
+
+[node name="Enemy324" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( -191, -951 )
+rotation = 3.14159
+
+[node name="Enemy325" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( -206, -951 )
+rotation = 3.14159
+
+[node name="Enemy326" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( -218, -951 )
+rotation = 3.14159
+
+[node name="Enemy327" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( -233, -951 )
+rotation = 3.14159
+
+[node name="Enemy328" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( -245, -951 )
+rotation = 3.14159
+
+[node name="Enemy329" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( -106, -951 )
+rotation = 3.14159
+
+[node name="Enemy330" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( -118, -951 )
+rotation = 3.14159
+
+[node name="Enemy331" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( -133, -951 )
+rotation = 3.14159
+
+[node name="Enemy332" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( -145, -951 )
+rotation = 3.14159
+
+[node name="Enemy333" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( -159, -951 )
+rotation = 3.14159
+
+[node name="Enemy334" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( -171, -951 )
+rotation = 3.14159
+
+[node name="Enemy335" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( -186, -951 )
+rotation = 3.14159
+
+[node name="Enemy336" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( -198, -951 )
+rotation = 3.14159
+
+[node name="Enemy337" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( -213, -951 )
+rotation = 3.14159
+
+[node name="Enemy338" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( -225, -951 )
+rotation = 3.14159
+
+[node name="Enemy339" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( -240, -951 )
+rotation = 3.14159
+
+[node name="Enemy340" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( -252, -951 )
+rotation = 3.14159
+
+[node name="Enemy341" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 382, -949 )
+rotation = 3.14159
+
+[node name="Enemy342" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 370, -949 )
+rotation = 3.14159
+
+[node name="Enemy343" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 355, -949 )
+rotation = 3.14159
+
+[node name="Enemy344" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 343, -949 )
+rotation = 3.14159
+
+[node name="Enemy345" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 329, -949 )
+rotation = 3.14159
+
+[node name="Enemy346" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 317, -949 )
+rotation = 3.14159
+
+[node name="Enemy347" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 302, -949 )
+rotation = 3.14159
+
+[node name="Enemy348" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 290, -949 )
+rotation = 3.14159
+
+[node name="Enemy349" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 275, -949 )
+rotation = 3.14159
+
+[node name="Enemy350" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 263, -949 )
+rotation = 3.14159
+
+[node name="Enemy351" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 248, -949 )
+rotation = 3.14159
+
+[node name="Enemy352" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 236, -949 )
+rotation = 3.14159
+
+[node name="Enemy353" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 375, -949 )
+rotation = 3.14159
+
+[node name="Enemy354" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 363, -949 )
+rotation = 3.14159
+
+[node name="Enemy355" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 348, -949 )
+rotation = 3.14159
+
+[node name="Enemy356" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 336, -949 )
+rotation = 3.14159
+
+[node name="Enemy357" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 322, -949 )
+rotation = 3.14159
+
+[node name="Enemy358" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 310, -949 )
+rotation = 3.14159
+
+[node name="Enemy359" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 295, -949 )
+rotation = 3.14159
+
+[node name="Enemy360" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 283, -949 )
+rotation = 3.14159
+
+[node name="Enemy361" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 268, -949 )
+rotation = 3.14159
+
+[node name="Enemy362" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 256, -949 )
+rotation = 3.14159
+
+[node name="Enemy363" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 241, -949 )
+rotation = 3.14159
+
+[node name="Enemy364" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 229, -949 )
+rotation = 3.14159
+
+[node name="Enemy365" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 225, -950 )
+rotation = 3.14159
+
+[node name="Enemy366" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 213, -950 )
+rotation = 3.14159
+
+[node name="Enemy367" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 198, -950 )
+rotation = 3.14159
+
+[node name="Enemy368" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 186, -950 )
+rotation = 3.14159
+
+[node name="Enemy369" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 172, -950 )
+rotation = 3.14159
+
+[node name="Enemy370" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 160, -950 )
+rotation = 3.14159
+
+[node name="Enemy371" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 145, -950 )
+rotation = 3.14159
+
+[node name="Enemy372" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 133, -950 )
+rotation = 3.14159
+
+[node name="Enemy373" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 118, -950 )
+rotation = 3.14159
+
+[node name="Enemy374" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 106, -950 )
+rotation = 3.14159
+
+[node name="Enemy375" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 91, -950 )
+rotation = 3.14159
+
+[node name="Enemy376" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 79, -950 )
+rotation = 3.14159
+
+[node name="Enemy377" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 218, -950 )
+rotation = 3.14159
+
+[node name="Enemy378" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 206, -950 )
+rotation = 3.14159
+
+[node name="Enemy379" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 191, -950 )
+rotation = 3.14159
+
+[node name="Enemy380" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 179, -950 )
+rotation = 3.14159
+
+[node name="Enemy381" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 165, -950 )
+rotation = 3.14159
+
+[node name="Enemy382" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 153, -950 )
+rotation = 3.14159
+
+[node name="Enemy383" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 138, -950 )
+rotation = 3.14159
+
+[node name="Enemy384" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 126, -950 )
+rotation = 3.14159
+
+[node name="Enemy385" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 111, -950 )
+rotation = 3.14159
+
+[node name="Enemy386" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 99, -950 )
+rotation = 3.14159
+
+[node name="Enemy387" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 84, -950 )
+rotation = 3.14159
+
+[node name="Enemy388" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 72, -950 )
+rotation = 3.14159
+
+[node name="Enemy389" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 706, -947 )
+rotation = 3.14159
+
+[node name="Enemy390" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 694, -947 )
+rotation = 3.14159
+
+[node name="Enemy391" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 679, -947 )
+rotation = 3.14159
+
+[node name="Enemy392" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 667, -947 )
+rotation = 3.14159
+
+[node name="Enemy393" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 653, -947 )
+rotation = 3.14159
+
+[node name="Enemy394" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 641, -947 )
+rotation = 3.14159
+
+[node name="Enemy395" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 626, -947 )
+rotation = 3.14159
+
+[node name="Enemy396" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 614, -947 )
+rotation = 3.14159
+
+[node name="Enemy397" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 599, -947 )
+rotation = 3.14159
+
+[node name="Enemy398" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 587, -947 )
+rotation = 3.14159
+
+[node name="Enemy399" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 572, -947 )
+rotation = 3.14159
+
+[node name="Enemy400" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 560, -947 )
+rotation = 3.14159
+
+[node name="Enemy401" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 699, -947 )
+rotation = 3.14159
+
+[node name="Enemy402" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 687, -947 )
+rotation = 3.14159
+
+[node name="Enemy403" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 672, -947 )
+rotation = 3.14159
+
+[node name="Enemy404" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 660, -947 )
+rotation = 3.14159
+
+[node name="Enemy405" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 646, -947 )
+rotation = 3.14159
+
+[node name="Enemy406" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 634, -947 )
+rotation = 3.14159
+
+[node name="Enemy407" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 619, -947 )
+rotation = 3.14159
+
+[node name="Enemy408" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 607, -947 )
+rotation = 3.14159
+
+[node name="Enemy409" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 592, -947 )
+rotation = 3.14159
+
+[node name="Enemy410" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 580, -947 )
+rotation = 3.14159
+
+[node name="Enemy411" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 565, -947 )
+rotation = 3.14159
+
+[node name="Enemy412" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 553, -947 )
+rotation = 3.14159
+
+[node name="Enemy413" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 549, -948 )
+rotation = 3.14159
+
+[node name="Enemy414" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 537, -948 )
+rotation = 3.14159
+
+[node name="Enemy415" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 522, -948 )
+rotation = 3.14159
+
+[node name="Enemy416" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 510, -948 )
+rotation = 3.14159
+
+[node name="Enemy417" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 496, -948 )
+rotation = 3.14159
+
+[node name="Enemy418" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 484, -948 )
+rotation = 3.14159
+
+[node name="Enemy419" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 469, -948 )
+rotation = 3.14159
+
+[node name="Enemy420" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 457, -948 )
+rotation = 3.14159
+
+[node name="Enemy421" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 442, -948 )
+rotation = 3.14159
+
+[node name="Enemy422" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 430, -948 )
+rotation = 3.14159
+
+[node name="Enemy423" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 415, -948 )
+rotation = 3.14159
+
+[node name="Enemy424" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 403, -948 )
+rotation = 3.14159
+
+[node name="Enemy425" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 542, -948 )
+rotation = 3.14159
+
+[node name="Enemy426" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 530, -948 )
+rotation = 3.14159
+
+[node name="Enemy427" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 515, -948 )
+rotation = 3.14159
+
+[node name="Enemy428" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 503, -948 )
+rotation = 3.14159
+
+[node name="Enemy429" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 489, -948 )
+rotation = 3.14159
+
+[node name="Enemy430" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 477, -948 )
+rotation = 3.14159
+
+[node name="Enemy431" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 462, -948 )
+rotation = 3.14159
+
+[node name="Enemy432" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 450, -948 )
+rotation = 3.14159
+
+[node name="Enemy433" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 435, -948 )
+rotation = 3.14159
+
+[node name="Enemy434" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 423, -948 )
+rotation = 3.14159
+
+[node name="Enemy435" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 408, -948 )
+rotation = 3.14159
+
+[node name="Enemy436" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 396, -948 )
+rotation = 3.14159
+
+[node name="Enemy437" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 1040, -947 )
+rotation = 3.14159
+
+[node name="Enemy438" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 1018, -947 )
+rotation = 3.14159
+
+[node name="Enemy439" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 1003, -947 )
+rotation = 3.14159
+
+[node name="Enemy440" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 991, -947 )
+rotation = 3.14159
+
+[node name="Enemy441" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 977, -947 )
+rotation = 3.14159
+
+[node name="Enemy442" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 965, -947 )
+rotation = 3.14159
+
+[node name="Enemy443" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 950, -947 )
+rotation = 3.14159
+
+[node name="Enemy444" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 938, -947 )
+rotation = 3.14159
+
+[node name="Enemy445" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 923, -947 )
+rotation = 3.14159
+
+[node name="Enemy446" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 911, -947 )
+rotation = 3.14159
+
+[node name="Enemy447" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 896, -947 )
+rotation = 3.14159
+
+[node name="Enemy448" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 884, -947 )
+rotation = 3.14159
+
+[node name="Enemy449" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 1033, -947 )
+rotation = 3.14159
+
+[node name="Enemy450" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 1011, -947 )
+rotation = 3.14159
+
+[node name="Enemy451" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 996, -947 )
+rotation = 3.14159
+
+[node name="Enemy452" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 984, -947 )
+rotation = 3.14159
+
+[node name="Enemy453" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 970, -947 )
+rotation = 3.14159
+
+[node name="Enemy454" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 958, -947 )
+rotation = 3.14159
+
+[node name="Enemy455" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 943, -947 )
+rotation = 3.14159
+
+[node name="Enemy456" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 931, -947 )
+rotation = 3.14159
+
+[node name="Enemy457" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 916, -947 )
+rotation = 3.14159
+
+[node name="Enemy458" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 904, -947 )
+rotation = 3.14159
+
+[node name="Enemy459" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 889, -947 )
+rotation = 3.14159
+
+[node name="Enemy460" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 877, -946 )
+rotation = 3.14159
+
+[node name="Enemy461" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 873, -947 )
+rotation = 3.14159
+
+[node name="Enemy462" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 861, -947 )
+rotation = 3.14159
+
+[node name="Enemy463" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 846, -947 )
+rotation = 3.14159
+
+[node name="Enemy464" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 834, -947 )
+rotation = 3.14159
+
+[node name="Enemy465" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 820, -947 )
+rotation = 3.14159
+
+[node name="Enemy466" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 808, -947 )
+rotation = 3.14159
+
+[node name="Enemy467" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 793, -947 )
+rotation = 3.14159
+
+[node name="Enemy468" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 781, -947 )
+rotation = 3.14159
+
+[node name="Enemy469" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 766, -947 )
+rotation = 3.14159
+
+[node name="Enemy470" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 754, -947 )
+rotation = 3.14159
+
+[node name="Enemy471" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 739, -947 )
+rotation = 3.14159
+
+[node name="Enemy472" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 727, -947 )
+rotation = 3.14159
+
+[node name="Enemy473" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 866, -947 )
+rotation = 3.14159
+
+[node name="Enemy474" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 854, -947 )
+rotation = 3.14159
+
+[node name="Enemy475" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 839, -947 )
+rotation = 3.14159
+
+[node name="Enemy476" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 827, -947 )
+rotation = 3.14159
+
+[node name="Enemy477" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 813, -947 )
+rotation = 3.14159
+
+[node name="Enemy478" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 801, -947 )
+rotation = 3.14159
+
+[node name="Enemy479" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 786, -947 )
+rotation = 3.14159
+
+[node name="Enemy480" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 774, -947 )
+rotation = 3.14159
+
+[node name="Enemy481" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 759, -947 )
+rotation = 3.14159
+
+[node name="Enemy482" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 747, -947 )
+rotation = 3.14159
+
+[node name="Enemy483" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 732, -947 )
+rotation = 3.14159
+
+[node name="Enemy484" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 720, -947 )
+rotation = 3.14159
+
+[node name="Enemy485" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 706, -947 )
+rotation = 3.14159
+
+[node name="Enemy486" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 694, -947 )
+rotation = 3.14159
+
+[node name="Enemy487" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 679, -947 )
+rotation = 3.14159
+
+[node name="Enemy488" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 667, -947 )
+rotation = 3.14159
+
+[node name="Enemy489" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 653, -947 )
+rotation = 3.14159
+
+[node name="Enemy490" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 641, -947 )
+rotation = 3.14159
+
+[node name="Enemy491" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 626, -947 )
+rotation = 3.14159
+
+[node name="Enemy492" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 614, -947 )
+rotation = 3.14159
+
+[node name="Enemy493" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 599, -947 )
+rotation = 3.14159
+
+[node name="Enemy494" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 587, -947 )
+rotation = 3.14159
+
+[node name="Enemy495" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 572, -947 )
+rotation = 3.14159
+
+[node name="Enemy496" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 560, -947 )
+rotation = 3.14159
+
+[node name="Enemy497" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 699, -947 )
+rotation = 3.14159
+
+[node name="Enemy498" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 687, -947 )
+rotation = 3.14159
+
+[node name="Enemy499" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 672, -947 )
+rotation = 3.14159
+
+[node name="Enemy500" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 660, -947 )
+rotation = 3.14159
+
+[node name="Enemy501" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 646, -947 )
+rotation = 3.14159
+
+[node name="Enemy502" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 634, -947 )
+rotation = 3.14159
+
+[node name="Enemy503" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 619, -947 )
+rotation = 3.14159
+
+[node name="Enemy504" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 607, -947 )
+rotation = 3.14159
+
+[node name="Enemy505" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 592, -947 )
+rotation = 3.14159
+
+[node name="Enemy506" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 580, -947 )
+rotation = 3.14159
+
+[node name="Enemy507" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 565, -947 )
+rotation = 3.14159
+
+[node name="Enemy508" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 553, -947 )
+rotation = 3.14159
+
+[node name="Enemy509" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 549, -948 )
+rotation = 3.14159
+
+[node name="Enemy510" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 537, -948 )
+rotation = 3.14159
+
+[node name="Enemy511" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 522, -948 )
+rotation = 3.14159
+
+[node name="Enemy512" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 510, -948 )
+rotation = 3.14159
+
+[node name="Enemy513" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 496, -948 )
+rotation = 3.14159
+
+[node name="Enemy514" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 484, -948 )
+rotation = 3.14159
+
+[node name="Enemy515" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 469, -948 )
+rotation = 3.14159
+
+[node name="Enemy516" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 457, -948 )
+rotation = 3.14159
+
+[node name="Enemy517" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 442, -948 )
+rotation = 3.14159
+
+[node name="Enemy518" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 430, -948 )
+rotation = 3.14159
+
+[node name="Enemy519" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 415, -948 )
+rotation = 3.14159
+
+[node name="Enemy520" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 403, -948 )
+rotation = 3.14159
+
+[node name="Enemy521" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 542, -948 )
+rotation = 3.14159
+
+[node name="Enemy522" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 530, -948 )
+rotation = 3.14159
+
+[node name="Enemy523" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 515, -948 )
+rotation = 3.14159
+
+[node name="Enemy524" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 503, -948 )
+rotation = 3.14159
+
+[node name="Enemy525" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 489, -948 )
+rotation = 3.14159
+
+[node name="Enemy526" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 477, -948 )
+rotation = 3.14159
+
+[node name="Enemy527" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 462, -948 )
+rotation = 3.14159
+
+[node name="Enemy528" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 450, -948 )
+rotation = 3.14159
+
+[node name="Enemy529" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 435, -948 )
+rotation = 3.14159
+
+[node name="Enemy530" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 423, -948 )
+rotation = 3.14159
+
+[node name="Enemy531" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 408, -948 )
+rotation = 3.14159
+
+[node name="Enemy532" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 396, -948 )
+rotation = 3.14159
+
+[node name="Enemy533" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 1040, -947 )
+rotation = 3.14159
+
+[node name="Enemy534" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 1018, -947 )
+rotation = 3.14159
+
+[node name="Enemy535" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 1003, -947 )
+rotation = 3.14159
+
+[node name="Enemy536" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 991, -947 )
+rotation = 3.14159
+
+[node name="Enemy537" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 977, -947 )
+rotation = 3.14159
+
+[node name="Enemy538" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 965, -947 )
+rotation = 3.14159
+
+[node name="Enemy539" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 950, -947 )
+rotation = 3.14159
+
+[node name="Enemy540" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 938, -947 )
+rotation = 3.14159
+
+[node name="Enemy541" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 923, -947 )
+rotation = 3.14159
+
+[node name="Enemy542" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 911, -947 )
+rotation = 3.14159
+
+[node name="Enemy543" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 896, -947 )
+rotation = 3.14159
+
+[node name="Enemy544" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 884, -947 )
+rotation = 3.14159
+
+[node name="Enemy545" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 1033, -947 )
+rotation = 3.14159
+
+[node name="Enemy546" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 1011, -947 )
+rotation = 3.14159
+
+[node name="Enemy547" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 996, -947 )
+rotation = 3.14159
+
+[node name="Enemy548" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 984, -947 )
+rotation = 3.14159
+
+[node name="Enemy549" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 970, -947 )
+rotation = 3.14159
+
+[node name="Enemy550" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 958, -947 )
+rotation = 3.14159
+
+[node name="Enemy551" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 943, -947 )
+rotation = 3.14159
+
+[node name="Enemy552" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 931, -947 )
+rotation = 3.14159
+
+[node name="Enemy553" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 916, -947 )
+rotation = 3.14159
+
+[node name="Enemy554" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 904, -947 )
+rotation = 3.14159
+
+[node name="Enemy555" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 889, -947 )
+rotation = 3.14159
+
+[node name="Enemy556" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 877, -946 )
+rotation = 3.14159
+
+[node name="Enemy581" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 1219, -948 )
+rotation = 3.14159
+
+[node name="Enemy582" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 1197, -948 )
+rotation = 3.14159
+
+[node name="Enemy583" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 1182, -948 )
+rotation = 3.14159
+
+[node name="Enemy584" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 1170, -948 )
+rotation = 3.14159
+
+[node name="Enemy585" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 1156, -948 )
+rotation = 3.14159
+
+[node name="Enemy586" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 1144, -948 )
+rotation = 3.14159
+
+[node name="Enemy587" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 1129, -948 )
+rotation = 3.14159
+
+[node name="Enemy588" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 1117, -948 )
+rotation = 3.14159
+
+[node name="Enemy589" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 1102, -948 )
+rotation = 3.14159
+
+[node name="Enemy590" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 1090, -948 )
+rotation = 3.14159
+
+[node name="Enemy591" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 1075, -948 )
+rotation = 3.14159
+
+[node name="Enemy592" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 1063, -948 )
+rotation = 3.14159
+
+[node name="Enemy593" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 1212, -948 )
+rotation = 3.14159
+
+[node name="Enemy594" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 1190, -948 )
+rotation = 3.14159
+
+[node name="Enemy595" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 1175, -948 )
+rotation = 3.14159
+
+[node name="Enemy596" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 1163, -948 )
+rotation = 3.14159
+
+[node name="Enemy597" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 1149, -948 )
+rotation = 3.14159
+
+[node name="Enemy598" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 1137, -948 )
+rotation = 3.14159
+
+[node name="Enemy599" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 1122, -948 )
+rotation = 3.14159
+
+[node name="Enemy600" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 1110, -948 )
+rotation = 3.14159
+
+[node name="Enemy601" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 1095, -948 )
+rotation = 3.14159
+
+[node name="Enemy602" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 1083, -948 )
+rotation = 3.14159
+
+[node name="Enemy603" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 1068, -948 )
+rotation = 3.14159
+
+[node name="Enemy604" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 1056, -947 )
+rotation = 3.14159
+
+[node name="Enemy605" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 1219, -948 )
+rotation = 3.14159
+
+[node name="Enemy606" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 1197, -948 )
+rotation = 3.14159
+
+[node name="Enemy607" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 1182, -948 )
+rotation = 3.14159
+
+[node name="Enemy608" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 1170, -948 )
+rotation = 3.14159
+
+[node name="Enemy609" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 1156, -948 )
+rotation = 3.14159
+
+[node name="Enemy610" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 1144, -948 )
+rotation = 3.14159
+
+[node name="Enemy611" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 1129, -948 )
+rotation = 3.14159
+
+[node name="Enemy612" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 1117, -948 )
+rotation = 3.14159
+
+[node name="Enemy613" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 1102, -948 )
+rotation = 3.14159
+
+[node name="Enemy614" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 1090, -948 )
+rotation = 3.14159
+
+[node name="Enemy615" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 1075, -948 )
+rotation = 3.14159
+
+[node name="Enemy616" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 1063, -948 )
+rotation = 3.14159
+
+[node name="Enemy617" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 1212, -948 )
+rotation = 3.14159
+
+[node name="Enemy618" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 1190, -948 )
+rotation = 3.14159
+
+[node name="Enemy619" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 1175, -948 )
+rotation = 3.14159
+
+[node name="Enemy620" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 1163, -948 )
+rotation = 3.14159
+
+[node name="Enemy621" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 1149, -948 )
+rotation = 3.14159
+
+[node name="Enemy622" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 1137, -948 )
+rotation = 3.14159
+
+[node name="Enemy623" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 1122, -948 )
+rotation = 3.14159
+
+[node name="Enemy624" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 1110, -948 )
+rotation = 3.14159
+
+[node name="Enemy625" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 1095, -948 )
+rotation = 3.14159
+
+[node name="Enemy626" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 1083, -948 )
+rotation = 3.14159
+
+[node name="Enemy627" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 1068, -948 )
+rotation = 3.14159
+
+[node name="Enemy628" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 1056, -947 )
+rotation = 3.14159
+
+[node name="Enemy629" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 1356, -948 )
+rotation = 3.14159
+
+[node name="Enemy630" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 1334, -948 )
+rotation = 3.14159
+
+[node name="Enemy631" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 1319, -948 )
+rotation = 3.14159
+
+[node name="Enemy632" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 1307, -948 )
+rotation = 3.14159
+
+[node name="Enemy633" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 1293, -948 )
+rotation = 3.14159
+
+[node name="Enemy634" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 1281, -948 )
+rotation = 3.14159
+
+[node name="Enemy635" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 1266, -948 )
+rotation = 3.14159
+
+[node name="Enemy636" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 1254, -948 )
+rotation = 3.14159
+
+[node name="Enemy637" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 1239, -948 )
+rotation = 3.14159
+
+[node name="Enemy638" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 1227, -948 )
+rotation = 3.14159
+
+[node name="Enemy639" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 1212, -948 )
+rotation = 3.14159
+
+[node name="Enemy640" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 1200, -948 )
+rotation = 3.14159
+
+[node name="Enemy641" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 1349, -948 )
+rotation = 3.14159
+
+[node name="Enemy642" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 1327, -948 )
+rotation = 3.14159
+
+[node name="Enemy643" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 1312, -948 )
+rotation = 3.14159
+
+[node name="Enemy644" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 1300, -948 )
+rotation = 3.14159
+
+[node name="Enemy645" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 1286, -948 )
+rotation = 3.14159
+
+[node name="Enemy646" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 1274, -948 )
+rotation = 3.14159
+
+[node name="Enemy647" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 1259, -948 )
+rotation = 3.14159
+
+[node name="Enemy648" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 1247, -948 )
+rotation = 3.14159
+
+[node name="Enemy649" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 1232, -948 )
+rotation = 3.14159
+
+[node name="Enemy650" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 1220, -948 )
+rotation = 3.14159
+
+[node name="Enemy651" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 1205, -948 )
+rotation = 3.14159
+
+[node name="Enemy652" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 1193, -947 )
+rotation = 3.14159
+
+[node name="Enemy653" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 1356, -948 )
+rotation = 3.14159
+
+[node name="Enemy654" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 1334, -948 )
+rotation = 3.14159
+
+[node name="Enemy655" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 1319, -948 )
+rotation = 3.14159
+
+[node name="Enemy656" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 1307, -948 )
+rotation = 3.14159
+
+[node name="Enemy657" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 1293, -948 )
+rotation = 3.14159
+
+[node name="Enemy658" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 1281, -948 )
+rotation = 3.14159
+
+[node name="Enemy659" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 1266, -948 )
+rotation = 3.14159
+
+[node name="Enemy660" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 1254, -948 )
+rotation = 3.14159
+
+[node name="Enemy661" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 1239, -948 )
+rotation = 3.14159
+
+[node name="Enemy662" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 1227, -948 )
+rotation = 3.14159
+
+[node name="Enemy663" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 1212, -948 )
+rotation = 3.14159
+
+[node name="Enemy664" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 1200, -948 )
+rotation = 3.14159
+
+[node name="Enemy665" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 1349, -948 )
+rotation = 3.14159
+
+[node name="Enemy666" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 1327, -948 )
+rotation = 3.14159
+
+[node name="Enemy667" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 1312, -948 )
+rotation = 3.14159
+
+[node name="Enemy668" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 1300, -948 )
+rotation = 3.14159
+
+[node name="Enemy669" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 1286, -948 )
+rotation = 3.14159
+
+[node name="Enemy670" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 1274, -948 )
+rotation = 3.14159
+
+[node name="Enemy671" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 1259, -948 )
+rotation = 3.14159
+
+[node name="Enemy672" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 1247, -948 )
+rotation = 3.14159
+
+[node name="Enemy673" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 1232, -948 )
+rotation = 3.14159
+
+[node name="Enemy674" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 1220, -948 )
+rotation = 3.14159
+
+[node name="Enemy675" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 1205, -948 )
+rotation = 3.14159
+
+[node name="Enemy676" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 1193, -947 )
+rotation = 3.14159
+
+[node name="Enemy557" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 873, -947 )
+rotation = 3.14159
+
+[node name="Enemy558" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 861, -947 )
+rotation = 3.14159
+
+[node name="Enemy559" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 846, -947 )
+rotation = 3.14159
+
+[node name="Enemy560" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 834, -947 )
+rotation = 3.14159
+
+[node name="Enemy561" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 820, -947 )
+rotation = 3.14159
+
+[node name="Enemy562" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 808, -947 )
+rotation = 3.14159
+
+[node name="Enemy563" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 793, -947 )
+rotation = 3.14159
+
+[node name="Enemy564" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 781, -947 )
+rotation = 3.14159
+
+[node name="Enemy565" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 766, -947 )
+rotation = 3.14159
+
+[node name="Enemy566" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 754, -947 )
+rotation = 3.14159
+
+[node name="Enemy567" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 739, -947 )
+rotation = 3.14159
+
+[node name="Enemy568" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 727, -947 )
+rotation = 3.14159
+
+[node name="Enemy569" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 866, -947 )
+rotation = 3.14159
+
+[node name="Enemy570" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 854, -947 )
+rotation = 3.14159
+
+[node name="Enemy571" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 839, -947 )
+rotation = 3.14159
+
+[node name="Enemy572" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 827, -947 )
+rotation = 3.14159
+
+[node name="Enemy573" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 813, -947 )
+rotation = 3.14159
+
+[node name="Enemy574" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 801, -947 )
+rotation = 3.14159
+
+[node name="Enemy575" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 786, -947 )
+rotation = 3.14159
+
+[node name="Enemy576" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 774, -947 )
+rotation = 3.14159
+
+[node name="Enemy577" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 759, -947 )
+rotation = 3.14159
+
+[node name="Enemy578" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 747, -947 )
+rotation = 3.14159
+
+[node name="Enemy579" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 732, -947 )
+rotation = 3.14159
+
+[node name="Enemy580" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 720, -947 )
+rotation = 3.14159
+
+[node name="END3" parent="." instance=ExtResource( 8 )]
+position = Vector2( -1634, 80 )
+
+[node name="Node" type="Node" parent="."]
+script = ExtResource( 11 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Node"]
+anims/OpenDoor = SubResource( 8 )
+
+[connection signal="Display" from="Player" to="Player/CanvasLayer/Panel/Coin" method="_on_Player_Display"]
+[connection signal="Open" from="Player" to="Node" method="_on_Player_Open"]
+[connection signal="Reset" from="Player" to="CHolder" method="_on_Player_Reset"]
+[connection signal="takeDamage" from="Player" to="Player" method="_on_Player_takeDamage"]
+[connection signal="timeout" from="Player/Label2/Timer" to="Node" method="_on_Timer_timeout"]
+[connection signal="Amount" from="CHolder" to="Player" method="_on_CHolder_Amount"]
+[connection signal="Amount" from="CHolder" to="CHolder/Collectable27" method="_on_CHolder_Amount"]
+[connection signal="Hit" from="SHolder/Saw" to="Player" method="_on_Saw_Hit"]
+[connection signal="Hit" from="SHolder/Saw2" to="Player" method="_on_Saw_Hit"]
+[connection signal="Hit" from="SHolder/Saw3" to="Player" method="_on_Saw_Hit"]
+[connection signal="Hit" from="SHolder/Saw4" to="Player" method="_on_Saw_Hit"]
+[connection signal="Hit" from="SHolder/Saw5" to="Player" method="_on_Saw_Hit"]
+[connection signal="Hit" from="SHolder/Saw6" to="Player" method="_on_Saw_Hit"]
+[connection signal="Hit" from="SHolder/Saw7" to="Player" method="_on_Saw_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy5" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy6" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy7" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy8" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy9" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy10" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy11" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy12" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy13" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy14" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy15" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy16" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy17" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy18" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy19" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy20" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy21" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy22" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy23" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy24" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy25" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy26" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy27" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy28" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy29" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy30" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy31" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy32" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy33" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy34" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy35" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy36" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy37" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy38" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy39" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy40" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy41" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy42" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy43" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy44" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy45" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy46" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy47" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy48" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy49" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy50" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy51" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy52" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy53" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy54" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy55" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy56" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy57" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy58" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy59" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy60" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy61" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy62" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy63" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy64" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy65" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy66" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy67" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy68" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy69" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy70" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy71" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy72" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy73" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy74" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy75" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy76" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy77" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy78" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy79" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy80" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy81" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy82" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy83" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy84" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy85" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy86" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy87" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy88" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy89" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy90" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy91" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy92" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy93" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy94" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy95" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy96" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy97" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy98" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy99" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy100" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy101" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy102" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy103" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy104" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy105" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy106" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy107" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy108" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy109" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy110" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy111" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy112" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy113" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy114" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy115" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy116" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy117" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy118" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy119" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy120" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy121" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy122" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy123" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy124" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy125" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy126" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy127" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy128" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy129" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy130" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy131" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy132" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy133" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy134" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy135" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy136" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy137" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy138" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy139" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy140" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy141" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy142" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy143" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy144" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy145" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy146" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy147" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy148" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy149" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy150" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy151" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy152" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy153" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy154" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy155" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy156" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy157" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy158" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy159" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy160" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy161" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy162" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy163" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy164" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy165" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy166" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy167" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy168" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy169" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy170" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy171" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy172" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy173" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy174" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy175" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy176" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy177" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy178" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy179" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy180" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy181" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy182" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy183" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy184" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy185" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy186" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy187" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy188" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy189" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy190" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy191" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy192" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy193" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy194" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy195" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy196" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy197" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy198" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy199" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy200" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy201" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy202" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy203" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy204" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy205" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy206" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy207" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy208" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy209" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy210" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy211" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy212" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy213" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy214" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy215" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy216" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy217" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy218" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy219" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy220" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy221" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy222" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy223" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy224" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy225" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy226" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy227" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy228" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy229" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy230" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy231" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy232" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy233" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy234" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy235" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy236" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy237" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy238" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy239" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy240" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy241" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy242" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy243" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy244" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy245" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy246" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy247" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy248" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy249" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy250" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy251" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy252" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy253" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy254" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy255" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy256" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy257" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy258" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy259" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy260" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy261" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy262" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy263" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy264" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy265" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy266" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy267" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy268" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy269" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy270" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy271" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy272" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy273" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy274" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy275" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy276" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy277" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy278" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy279" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy280" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy281" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy282" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy283" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy284" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy285" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy286" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy287" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy288" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy289" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy290" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy291" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy292" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy293" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy294" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy295" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy296" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy297" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy298" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy299" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy300" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy301" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy302" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy303" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy304" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy305" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy306" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy307" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy308" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy309" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy310" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy311" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy312" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy313" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy314" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy315" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy316" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy317" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy318" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy319" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy320" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy321" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy322" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy323" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy324" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy325" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy326" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy327" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy328" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy329" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy330" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy331" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy332" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy333" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy334" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy335" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy336" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy337" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy338" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy339" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy340" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy341" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy342" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy343" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy344" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy345" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy346" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy347" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy348" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy349" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy350" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy351" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy352" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy353" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy354" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy355" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy356" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy357" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy358" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy359" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy360" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy361" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy362" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy363" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy364" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy365" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy366" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy367" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy368" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy369" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy370" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy371" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy372" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy373" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy374" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy375" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy376" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy377" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy378" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy379" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy380" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy381" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy382" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy383" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy384" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy385" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy386" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy387" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy388" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy389" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy390" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy391" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy392" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy393" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy394" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy395" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy396" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy397" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy398" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy399" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy400" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy401" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy402" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy403" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy404" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy405" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy406" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy407" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy408" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy409" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy410" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy411" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy412" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy413" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy414" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy415" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy416" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy417" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy418" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy419" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy420" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy421" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy422" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy423" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy424" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy425" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy426" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy427" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy428" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy429" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy430" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy431" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy432" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy433" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy434" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy435" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy436" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy437" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy438" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy439" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy440" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy441" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy442" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy443" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy444" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy445" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy446" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy447" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy448" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy449" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy450" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy451" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy452" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy453" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy454" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy455" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy456" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy457" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy458" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy459" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy460" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy461" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy462" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy463" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy464" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy465" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy466" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy467" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy468" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy469" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy470" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy471" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy472" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy473" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy474" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy475" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy476" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy477" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy478" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy479" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy480" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy481" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy482" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy483" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy484" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy485" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy486" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy487" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy488" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy489" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy490" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy491" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy492" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy493" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy494" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy495" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy496" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy497" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy498" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy499" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy500" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy501" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy502" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy503" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy504" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy505" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy506" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy507" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy508" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy509" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy510" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy511" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy512" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy513" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy514" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy515" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy516" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy517" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy518" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy519" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy520" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy521" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy522" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy523" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy524" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy525" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy526" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy527" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy528" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy529" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy530" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy531" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy532" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy533" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy534" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy535" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy536" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy537" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy538" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy539" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy540" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy541" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy542" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy543" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy544" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy545" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy546" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy547" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy548" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy549" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy550" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy551" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy552" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy553" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy554" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy555" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy556" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy581" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy582" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy583" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy584" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy585" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy586" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy587" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy588" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy589" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy590" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy591" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy592" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy593" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy594" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy595" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy596" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy597" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy598" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy599" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy600" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy601" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy602" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy603" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy604" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy605" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy606" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy607" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy608" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy609" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy610" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy611" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy612" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy613" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy614" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy615" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy616" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy617" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy618" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy619" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy620" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy621" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy622" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy623" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy624" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy625" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy626" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy627" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy628" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy629" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy630" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy631" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy632" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy633" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy634" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy635" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy636" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy637" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy638" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy639" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy640" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy641" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy642" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy643" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy644" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy645" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy646" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy647" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy648" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy649" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy650" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy651" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy652" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy653" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy654" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy655" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy656" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy657" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy658" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy659" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy660" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy661" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy662" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy663" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy664" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy665" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy666" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy667" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy668" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy669" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy670" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy671" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy672" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy673" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy674" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy675" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy676" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy557" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy558" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy559" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy560" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy561" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy562" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy563" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy564" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy565" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy566" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy567" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy568" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy569" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy570" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy571" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy572" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy573" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy574" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy575" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy576" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy577" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy578" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy579" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy580" to="Player" method="_on_Enemy_Hit"]
+[connection signal="win" from="END3" to="Player" method="_on_END3_win"]
+
+[editable path="Player"]
+[editable path="Player/CanvasLayer/PopupPanel"]
+[editable path="Player/CanvasLayer/pause"]

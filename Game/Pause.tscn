@@ -1,0 +1,91 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://ButtonTheme.tres" type="Theme" id=1]
+[ext_resource path="res://Pause.gd" type="Script" id=2]
+[ext_resource path="res://click.wav" type="AudioStream" id=3]
+[ext_resource path="res://blipSelect.wav" type="AudioStream" id=4]
+[ext_resource path="res://Main.wav" type="AudioStream" id=5]
+
+[node name="Popup" type="Popup"]
+pause_mode = 2
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = 4.0
+popup_exclusive = true
+script = ExtResource( 2 )
+
+[node name="Panel" type="Panel" parent="."]
+margin_top = 1.0
+margin_right = 1024.0
+margin_bottom = 607.0
+
+[node name="Button" type="Button" parent="Panel"]
+margin_left = 328.0
+margin_top = 121.0
+margin_right = 621.0
+margin_bottom = 202.0
+focus_neighbour_top = NodePath("../Button3")
+focus_neighbour_bottom = NodePath("../Button2")
+focus_next = NodePath("../Button2")
+focus_previous = NodePath("../Button3")
+theme = ExtResource( 1 )
+text = "Resume"
+
+[node name="Button2" type="Button" parent="Panel"]
+margin_left = 338.0
+margin_top = 246.0
+margin_right = 631.0
+margin_bottom = 327.0
+focus_neighbour_top = NodePath("../Button")
+focus_neighbour_bottom = NodePath("../CheckBox")
+focus_next = NodePath("../CheckBox")
+focus_previous = NodePath("../Button")
+theme = ExtResource( 1 )
+text = "Change Size"
+
+[node name="Label" type="Label" parent="Panel/Button2"]
+margin_left = 51.0
+margin_top = 65.0
+margin_right = 247.0
+margin_bottom = 103.0
+text = "Size:"
+
+[node name="CheckBox" type="CheckButton" parent="Panel"]
+margin_left = 359.0
+margin_top = 393.0
+margin_right = 624.0
+margin_bottom = 433.0
+theme = ExtResource( 1 )
+text = "Full Screen"
+icon_align = 2
+
+[node name="Button3" type="Button" parent="Panel"]
+margin_left = 339.0
+margin_top = 474.0
+margin_right = 632.0
+margin_bottom = 555.0
+focus_neighbour_top = NodePath("../CheckBox")
+focus_neighbour_bottom = NodePath("../Button")
+focus_next = NodePath("../Button")
+focus_previous = NodePath("../CheckBox")
+theme = ExtResource( 1 )
+text = "Exit to Menu"
+
+[node name="Click" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )
+
+[node name="Select" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+
+[connection signal="popup_hide" from="." to="." method="_on_Popup_popup_hide"]
+[connection signal="focus_entered" from="Panel/Button" to="." method="_on_Button_focus_entered"]
+[connection signal="pressed" from="Panel/Button" to="." method="_on_Button_pressed"]
+[connection signal="focus_entered" from="Panel/Button2" to="." method="_on_Button2_focus_entered"]
+[connection signal="pressed" from="Panel/Button2" to="." method="_on_Button2_pressed"]
+[connection signal="focus_entered" from="Panel/CheckBox" to="." method="_on_CheckBox_focus_entered"]
+[connection signal="pressed" from="Panel/CheckBox" to="." method="_on_CheckBox_pressed"]
+[connection signal="focus_entered" from="Panel/Button3" to="." method="_on_Button3_focus_entered"]
+[connection signal="pressed" from="Panel/Button3" to="." method="_on_Button3_pressed"]
