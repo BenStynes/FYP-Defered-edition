@@ -59,6 +59,7 @@ onready var fall_gravity : float = (-2.0 * JumpHeight) / (FallTime * FallTime) *
 onready var wall_gravity : float = (-2.0 * JumpHeight) / (3 * 3) * -1.0
 
 func _ready():
+	
 	LevelNotif.visible = false
 	position = StartPosition
 	totalCoins = get_parent().get_child(1).get_child_count() -1
@@ -102,6 +103,8 @@ func _ready():
 	sound.volume_db = PlayerInformation.soundVol
 	if startTimer == true:
 		timer.start(45)
+
+	
 func _physics_process(delta):
 	
 	axisX = Input.get_action_strength("right") - Input.get_action_strength("left")
@@ -110,11 +113,10 @@ func _physics_process(delta):
 		
 	if Input.is_action_pressed("left"):
 		velocity.x = lerp(velocity.x,-moveSpeed,0.5)
-		
-	time.text = "Time left for door " + str(timer.time_left)
+	if timer.time_left >= 0:
+		time.text = "Time left for door " + str(timer.time_left)
 	
-	if timer.get_time_left() <= 0:
-		emit_signal("Open")
+	
 	
 	velocity.y +=  get_gravity() * delta
 	if Input.is_action_just_pressed("ui_cancel"):
@@ -362,5 +364,6 @@ func _on_AnimationPlayer3_animation_finished(anim_name):
 
 
 func _on_Timer_timeout():
+	
+	time.text = "The Door is Open go left" # Replace with function body.
 	timer.stop()
-	time.text = "The Door is Open" # Replace with function body.

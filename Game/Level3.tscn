@@ -44,7 +44,7 @@ _data = {
 
 [sub_resource type="Curve2D" id=7]
 _data = {
-"points": PoolVector2Array( 0, 0, 0, 0, -898, 18, 0, 0, 0, 0, 1373, 25, 0, 0, 0, 0, -885, 20, 0, 0, 0, 0, 1360, 22 )
+"points": PoolVector2Array( 0, 0, 0, 0, -898, 18, 0, 0, 0, 0, 1373, 25, 0, 0, 0, 0, -885, 20, 0, 0, 0, 0, 1360, 22, 0, 0, 0, 0, -889, 30 )
 }
 
 [sub_resource type="Animation" id=8]
@@ -67,6 +67,9 @@ tracks/0/keys = {
 
 [node name="Player" parent="." instance=ExtResource( 4 )]
 position = Vector2( 1381, 82 )
+
+[node name="ssSprite" parent="Player" index="0"]
+frame = 6
 
 [node name="TextureRect" parent="Player/CanvasLayer2" index="0"]
 texture = ExtResource( 10 )
@@ -258,6 +261,41 @@ position = Vector2( -898, 20 )
 scale = Vector2( 4, 4 )
 patrolPath = NodePath("../../SawPaths/SawPath7")
 
+[node name="Saw8" parent="SHolder" instance=ExtResource( 7 )]
+position = Vector2( -893, -864 )
+scale = Vector2( 4, 4 )
+patrolPath = NodePath("../../SawPaths/SawPath7")
+
+[node name="Saw9" parent="SHolder" instance=ExtResource( 7 )]
+position = Vector2( 1358, -748 )
+scale = Vector2( 4, 4 )
+patrolPath = NodePath("../../SawPaths/SawPath6")
+
+[node name="Saw10" parent="SHolder" instance=ExtResource( 7 )]
+position = Vector2( -906, -636 )
+scale = Vector2( 4, 4 )
+patrolPath = NodePath("../../SawPaths/SawPath5")
+
+[node name="Saw11" parent="SHolder" instance=ExtResource( 7 )]
+position = Vector2( 1361, -494 )
+scale = Vector2( 4, 4 )
+patrolPath = NodePath("../../SawPaths/SawPath4")
+
+[node name="Saw12" parent="SHolder" instance=ExtResource( 7 )]
+position = Vector2( -896, -323 )
+scale = Vector2( 4, 4 )
+patrolPath = NodePath("../../SawPaths/SawPath3")
+
+[node name="Saw13" parent="SHolder" instance=ExtResource( 7 )]
+position = Vector2( 1359, -138 )
+scale = Vector2( 4, 4 )
+patrolPath = NodePath("../../SawPaths/SawPath2")
+
+[node name="Saw14" parent="SHolder" instance=ExtResource( 7 )]
+position = Vector2( -898, 20 )
+scale = Vector2( 4, 4 )
+patrolPath = NodePath("../../SawPaths/SawPath")
+
 [node name="OHolder" type="Node" parent="."]
 
 [node name="Obstical" parent="OHolder" instance=ExtResource( 1 )]
@@ -363,12 +401,18 @@ position = Vector2( -467, -1203 )
 scale = Vector2( 40.8044, 10.9375 )
 texture = ExtResource( 10 )
 
+[node name="Obstical30" parent="OHolder" instance=ExtResource( 1 )]
+position = Vector2( -1497, -1236 )
+scale = Vector2( 40.8044, 10.9375 )
+texture = ExtResource( 10 )
+
 [node name="Obstical6" parent="OHolder" instance=ExtResource( 1 )]
 position = Vector2( 961, -1205 )
 scale = Vector2( 40.8044, 10.9375 )
 texture = ExtResource( 10 )
 
 [node name="Obstical3" parent="OHolder" instance=ExtResource( 1 )]
+self_modulate = Color( 0.909804, 1, 0, 1 )
 position = Vector2( -1169, -489 )
 rotation = 1.5708
 scale = Vector2( 40.8044, 10.9375 )
@@ -376,6 +420,12 @@ texture = ExtResource( 10 )
 
 [node name="Obstical4" parent="OHolder" instance=ExtResource( 1 )]
 position = Vector2( 1616, -435 )
+rotation = 1.5708
+scale = Vector2( 40.8044, 10.9375 )
+texture = ExtResource( 10 )
+
+[node name="Obstical29" parent="OHolder" instance=ExtResource( 1 )]
+position = Vector2( -2173, -321 )
 rotation = 1.5708
 scale = Vector2( 40.8044, 10.9375 )
 texture = ExtResource( 10 )
@@ -2901,6 +2951,13 @@ anims/OpenDoor = SubResource( 8 )
 [connection signal="Hit" from="SHolder/Saw5" to="Player" method="_on_Saw_Hit"]
 [connection signal="Hit" from="SHolder/Saw6" to="Player" method="_on_Saw_Hit"]
 [connection signal="Hit" from="SHolder/Saw7" to="Player" method="_on_Saw_Hit"]
+[connection signal="Hit" from="SHolder/Saw8" to="Player" method="_on_Saw_Hit"]
+[connection signal="Hit" from="SHolder/Saw9" to="Player" method="_on_Saw_Hit"]
+[connection signal="Hit" from="SHolder/Saw10" to="Player" method="_on_Saw_Hit"]
+[connection signal="Hit" from="SHolder/Saw11" to="Player" method="_on_Saw_Hit"]
+[connection signal="Hit" from="SHolder/Saw12" to="Player" method="_on_Saw_Hit"]
+[connection signal="Hit" from="SHolder/Saw13" to="Player" method="_on_Saw_Hit"]
+[connection signal="Hit" from="SHolder/Saw14" to="Player" method="_on_Saw_Hit"]
 [connection signal="Hit" from="SpikeHolder/Enemy5" to="Player" method="_on_Enemy_Hit"]
 [connection signal="Hit" from="SpikeHolder/Enemy6" to="Player" method="_on_Enemy_Hit"]
 [connection signal="Hit" from="SpikeHolder/Enemy7" to="Player" method="_on_Enemy_Hit"]

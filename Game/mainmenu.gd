@@ -47,18 +47,7 @@ func _process(delta):
 		Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
 	else:
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
-	match volumeS:
-		0: soundsl.text = "100"
-		-15: soundsl.text = "75"
-		-30: soundsl.text = "50"
-		-45: soundsl.text = "25"
-		-80: soundsl.text = "0"
-	match volumeM:
-		0: musicsl.text = "100"
-		-15: musicsl.text = "75"
-		-30: musicsl.text = "50"
-		-45: musicsl.text = "25"
-		-80: musicsl.text = "0"
+
 
 func _on_Button_focus_entered():
 		get_viewport().warp_mouse(button.rect_global_position + offset) # Replace with function body.
@@ -147,23 +136,9 @@ func _on_Done_pressed():
 func _on_Bsfx_pressed():
 	click.play()
 	
-	volumeS = volumeS + increase
-	if(volumeS <-80):
-		volumeS = 0
-	
-	if volumeS == -60:
-		volumeS =-80
-	PlayerInformation.soundVol = volumeS
-
 func _on_BMusic_pressed():
 	click.play()
-	
-	volumeM = volumeM + increase
-	if(volumeM <-80):
-		volumeM = 0
 
-	if volumeM == -60:
-		volumeM =-80
 	PlayerInformation.musicVol = volumeM
 
 
@@ -171,3 +146,14 @@ func _on_Button5_focus_entered():
 		get_viewport().warp_mouse(button4.rect_global_position) # Replace with function body.
 		select.play()
 		
+
+
+func _on_BMusic_value_changed(value):
+	volumeM = value # Replace with function body.
+	PlayerInformation.musicVol = volumeM
+
+
+func _on_Bsfx_value_changed(value):
+	volumeS = value
+	PlayerInformation.soundVol = volumeS
+	

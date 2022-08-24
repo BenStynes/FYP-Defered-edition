@@ -13,23 +13,26 @@
 
 [sub_resource type="Curve2D" id=1]
 _data = {
-"points": PoolVector2Array( 0, 0, 0, 0, 1772, -500, 0, 0, 0, 0, -537, -500, 0, 0, 0, 0, 580, -705, 0, 0, 0, 0, 1746, -540, 0, 0, 0, 0, 568, -536, 0, 0, 0, 0, -529, -517 )
+"points": PoolVector2Array( 0, 0, 0, 0, 1396, 743, 0, 0, 0, 0, -676, 773 )
 }
 
 [sub_resource type="Curve2D" id=2]
 _data = {
-"points": PoolVector2Array( 0, 0, 0, 0, 1772, 112, 0, 0, 0, 0, -534, 44, 0, 0, 0, 0, 395, -133, 0, 0, 0, 0, 1760, 104, 0, 0, 0, 0, 371, 158, 0, 0, 0, 0, -541, 42 )
+"points": PoolVector2Array( 0, 0, 0, 0, 1664, 121, 0, 0, 0, 0, -744, 127 )
 }
 
 [sub_resource type="Curve2D" id=3]
 _data = {
-"points": PoolVector2Array( 0, 0, 0, 0, 1755, 701, 0, 0, 0, 0, -522, 661, 0, 0, 0, 0, 480, 458, 0, 0, 0, 0, 1695, 674, 0, 0, 0, 0, 537, 854, 0, 0, 0, 0, -527, 662 )
+"points": PoolVector2Array( 0, 0, 0, 0, 1469, -508, 0, 0, 0, 0, -740, -526 )
 }
 
 [node name="Level" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource( 4 )]
 position = Vector2( 651, 234 )
+
+[node name="ssSprite" parent="Player" index="0"]
+frame = 1
 
 [node name="TextureRect" parent="Player/CanvasLayer2" index="0"]
 texture = ExtResource( 10 )
@@ -262,17 +265,17 @@ curve = SubResource( 3 )
 script = ExtResource( 6 )
 
 [node name="Saw" parent="SHolder" instance=ExtResource( 7 )]
-position = Vector2( 1785, 721 )
+position = Vector2( 1621, 762 )
 scale = Vector2( 16, 16 )
 patrolPath = NodePath("../../SawPaths/SawPath")
 
 [node name="Saw2" parent="SHolder" instance=ExtResource( 7 )]
-position = Vector2( 1787, 111 )
+position = Vector2( 1886, 140 )
 scale = Vector2( 16, 16 )
 patrolPath = NodePath("../../SawPaths/SawPath2")
 
 [node name="Saw3" parent="SHolder" instance=ExtResource( 7 )]
-position = Vector2( 1787, -500 )
+position = Vector2( 1681, -542 )
 scale = Vector2( 16, 16 )
 patrolPath = NodePath("../../SawPaths/SawPath3")
 
@@ -292,8 +295,28 @@ position = Vector2( 2976, 278 )
 scale = Vector2( 50, 50 )
 texture = ExtResource( 10 )
 
+[node name="Obstical45" parent="OHolder" instance=ExtResource( 1 )]
+position = Vector2( 2976, -2027 )
+scale = Vector2( 50, 50 )
+texture = ExtResource( 10 )
+
+[node name="Obstical47" parent="OHolder" instance=ExtResource( 1 )]
+position = Vector2( 2101, -1969 )
+scale = Vector2( 50, 50 )
+texture = ExtResource( 10 )
+
+[node name="Obstical46" parent="OHolder" instance=ExtResource( 1 )]
+position = Vector2( 290, -1978 )
+scale = Vector2( 50, 50 )
+texture = ExtResource( 10 )
+
 [node name="Obstical11" parent="OHolder" instance=ExtResource( 1 )]
 position = Vector2( -1995, 273 )
+scale = Vector2( 50, 50 )
+texture = ExtResource( 10 )
+
+[node name="Obstical44" parent="OHolder" instance=ExtResource( 1 )]
+position = Vector2( -1995, -2010 )
 scale = Vector2( 50, 50 )
 texture = ExtResource( 10 )
 
@@ -647,6 +670,246 @@ scale = Vector2( 4, 1 )
 position = Vector2( 1415, 1148 )
 scale = Vector2( 4, 1 )
 
+[node name="Enemy53" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 22, -822 )
+rotation = 3.14159
+scale = Vector2( 4, 1 )
+
+[node name="Enemy54" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( -30, -822 )
+rotation = 3.14159
+scale = Vector2( 4, 1 )
+
+[node name="Enemy55" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( -89, -822 )
+rotation = 3.14159
+scale = Vector2( 4, 1 )
+
+[node name="Enemy56" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( -141, -822 )
+rotation = 3.14159
+scale = Vector2( 4, 1 )
+
+[node name="Enemy57" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( -202, -822 )
+rotation = 3.14159
+scale = Vector2( 4, 1 )
+
+[node name="Enemy58" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( -254, -822 )
+rotation = 3.14159
+scale = Vector2( 4, 1 )
+
+[node name="Enemy59" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( -314, -822 )
+rotation = 3.14159
+scale = Vector2( 4, 1 )
+
+[node name="Enemy60" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( -366, -822 )
+rotation = 3.14159
+scale = Vector2( 4, 1 )
+
+[node name="Enemy61" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( -423, -822 )
+rotation = 3.14159
+scale = Vector2( 4, 1 )
+
+[node name="Enemy62" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( -475, -822 )
+rotation = 3.14159
+scale = Vector2( 4, 1 )
+
+[node name="Enemy63" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( -534, -822 )
+rotation = 3.14159
+scale = Vector2( 4, 1 )
+
+[node name="Enemy64" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( -586, -822 )
+rotation = 3.14159
+scale = Vector2( 4, 1 )
+
+[node name="Enemy65" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( -647, -822 )
+rotation = 3.14159
+scale = Vector2( 4, 1 )
+
+[node name="Enemy66" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( -699, -822 )
+rotation = 3.14159
+scale = Vector2( 4, 1 )
+
+[node name="Enemy67" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( -759, -822 )
+rotation = 3.14159
+scale = Vector2( 4, 1 )
+
+[node name="Enemy68" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( -811, -822 )
+rotation = 3.14159
+scale = Vector2( 4, 1 )
+
+[node name="Enemy69" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 466, -822 )
+rotation = 3.14159
+scale = Vector2( 4, 1 )
+
+[node name="Enemy70" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 414, -822 )
+rotation = 3.14159
+scale = Vector2( 4, 1 )
+
+[node name="Enemy71" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 355, -822 )
+rotation = 3.14159
+scale = Vector2( 4, 1 )
+
+[node name="Enemy72" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 303, -822 )
+rotation = 3.14159
+scale = Vector2( 4, 1 )
+
+[node name="Enemy73" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 242, -822 )
+rotation = 3.14159
+scale = Vector2( 4, 1 )
+
+[node name="Enemy74" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 190, -822 )
+rotation = 3.14159
+scale = Vector2( 4, 1 )
+
+[node name="Enemy75" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 130, -822 )
+rotation = 3.14159
+scale = Vector2( 4, 1 )
+
+[node name="Enemy76" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 78, -822 )
+rotation = 3.14159
+scale = Vector2( 4, 1 )
+
+[node name="Enemy77" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 912, -822 )
+rotation = 3.14159
+scale = Vector2( 4, 1 )
+
+[node name="Enemy78" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 860, -822 )
+rotation = 3.14159
+scale = Vector2( 4, 1 )
+
+[node name="Enemy79" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 801, -822 )
+rotation = 3.14159
+scale = Vector2( 4, 1 )
+
+[node name="Enemy80" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 749, -822 )
+rotation = 3.14159
+scale = Vector2( 4, 1 )
+
+[node name="Enemy81" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 688, -822 )
+rotation = 3.14159
+scale = Vector2( 4, 1 )
+
+[node name="Enemy82" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 636, -822 )
+rotation = 3.14159
+scale = Vector2( 4, 1 )
+
+[node name="Enemy83" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 576, -822 )
+rotation = 3.14159
+scale = Vector2( 4, 1 )
+
+[node name="Enemy84" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 524, -822 )
+rotation = 3.14159
+scale = Vector2( 4, 1 )
+
+[node name="Enemy85" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 1358, -822 )
+rotation = 3.14159
+scale = Vector2( 4, 1 )
+
+[node name="Enemy86" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 1306, -822 )
+rotation = 3.14159
+scale = Vector2( 4, 1 )
+
+[node name="Enemy87" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 1247, -822 )
+rotation = 3.14159
+scale = Vector2( 4, 1 )
+
+[node name="Enemy88" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 1195, -822 )
+rotation = 3.14159
+scale = Vector2( 4, 1 )
+
+[node name="Enemy89" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 1134, -822 )
+rotation = 3.14159
+scale = Vector2( 4, 1 )
+
+[node name="Enemy90" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 1082, -822 )
+rotation = 3.14159
+scale = Vector2( 4, 1 )
+
+[node name="Enemy91" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 1022, -822 )
+rotation = 3.14159
+scale = Vector2( 4, 1 )
+
+[node name="Enemy92" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 970, -822 )
+rotation = 3.14159
+scale = Vector2( 4, 1 )
+
+[node name="Enemy93" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 1804, -822 )
+rotation = 3.14159
+scale = Vector2( 4, 1 )
+
+[node name="Enemy94" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 1752, -822 )
+rotation = 3.14159
+scale = Vector2( 4, 1 )
+
+[node name="Enemy95" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 1693, -822 )
+rotation = 3.14159
+scale = Vector2( 4, 1 )
+
+[node name="Enemy96" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 1641, -822 )
+rotation = 3.14159
+scale = Vector2( 4, 1 )
+
+[node name="Enemy97" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 1580, -822 )
+rotation = 3.14159
+scale = Vector2( 4, 1 )
+
+[node name="Enemy98" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 1528, -822 )
+rotation = 3.14159
+scale = Vector2( 4, 1 )
+
+[node name="Enemy99" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 1468, -822 )
+rotation = 3.14159
+scale = Vector2( 4, 1 )
+
+[node name="Enemy100" parent="SpikeHolder" instance=ExtResource( 2 )]
+position = Vector2( 1416, -822 )
+rotation = 3.14159
+scale = Vector2( 4, 1 )
+
 [node name="END2" parent="." instance=ExtResource( 8 )]
 position = Vector2( -708, -573 )
 
@@ -706,6 +969,54 @@ position = Vector2( -708, -573 )
 [connection signal="Hit" from="SpikeHolder/Enemy50" to="Player" method="_on_Enemy_Hit"]
 [connection signal="Hit" from="SpikeHolder/Enemy51" to="Player" method="_on_Enemy_Hit"]
 [connection signal="Hit" from="SpikeHolder/Enemy52" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy53" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy54" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy55" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy56" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy57" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy58" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy59" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy60" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy61" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy62" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy63" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy64" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy65" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy66" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy67" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy68" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy69" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy70" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy71" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy72" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy73" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy74" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy75" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy76" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy77" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy78" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy79" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy80" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy81" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy82" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy83" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy84" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy85" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy86" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy87" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy88" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy89" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy90" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy91" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy92" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy93" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy94" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy95" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy96" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy97" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy98" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy99" to="Player" method="_on_Enemy_Hit"]
+[connection signal="Hit" from="SpikeHolder/Enemy100" to="Player" method="_on_Enemy_Hit"]
 [connection signal="win" from="END2" to="Player" method="_on_END2_win"]
 
 [editable path="Player"]

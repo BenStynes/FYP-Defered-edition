@@ -45,10 +45,10 @@ animations = [ {
 } ]
 
 [sub_resource type="CircleShape2D" id=11]
-radius = 19.0
+radius = 20.0
 
 [sub_resource type="CircleShape2D" id=12]
-radius = 19.0
+radius = 20.0
 
 [node name="Saw" type="KinematicBody2D" groups=["Enemy"]]
 collision_layer = 2
@@ -57,11 +57,13 @@ script = ExtResource( 2 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="." groups=["Enemy"]]
 frames = SubResource( 9 )
-frame = 5
+frame = 3
 speed_scale = 1.5
 playing = true
 
 [node name="Hitbox" type="Area2D" parent="." groups=["Enemy"]]
+collision_layer = 2
+collision_mask = 2
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Hitbox" groups=["Enemy"]]
 shape = SubResource( 11 )
@@ -71,6 +73,7 @@ shape = SubResource( 12 )
 
 [node name="SawSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 3 )
+max_distance = 200.0
 
 [connection signal="area_entered" from="Hitbox" to="." method="_on_Hitbox_area_entered"]
 [connection signal="body_entered" from="Hitbox" to="." method="_on_Hitbox_body_entered"]

@@ -31,6 +31,9 @@ _data = {
 [node name="Player" parent="." instance=ExtResource( 4 )]
 position = Vector2( 1448, 111 )
 
+[node name="ssSprite" parent="Player" index="0"]
+frame = 0
+
 [node name="TextureRect4" parent="Player/CanvasLayer2" index="3"]
 self_modulate = Color( 0.47451, 0.423529, 0.87451, 0.54902 )
 
@@ -466,7 +469,11 @@ position = Vector2( -5099, 176 )
 scale = Vector2( 4.14584, 2.6875 )
 
 [node name="Obstical11" parent="OHolder" instance=ExtResource( 1 )]
-position = Vector2( 2982.5, -2092.5 )
+position = Vector2( 3005, -1075 )
+scale = Vector2( 63.2292, 113.729 )
+
+[node name="Obstical87" parent="OHolder" instance=ExtResource( 1 )]
+position = Vector2( -6700, -1623 )
 scale = Vector2( 63.2292, 113.729 )
 
 [node name="Obstical12" parent="OHolder" instance=ExtResource( 1 )]
@@ -613,6 +620,10 @@ scale = Vector2( 4.22917, 1.8125 )
 
 [node name="Obstical" parent="OHolder" instance=ExtResource( 1 )]
 position = Vector2( 13, 613.031 )
+scale = Vector2( 400, 10.8709 )
+
+[node name="Obstical88" parent="OHolder" instance=ExtResource( 1 )]
+position = Vector2( -215, -3473 )
 scale = Vector2( 400, 10.8709 )
 
 [node name="SpikeHolder" type="Node" parent="."]
@@ -1211,7 +1222,7 @@ position = Vector2( -1687, 357 )
 position = Vector2( -1673, 357 )
 
 [node name="END" parent="." instance=ExtResource( 8 )]
-position = Vector2( -4130, -13 )
+position = Vector2( -4170, -16 )
 
 [connection signal="Display" from="Player" to="Player/CanvasLayer/Panel/Coin" method="_on_Player_Display"]
 [connection signal="Reset" from="Player" to="CHolder" method="_on_Player_Reset"]

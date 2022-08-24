@@ -13,7 +13,7 @@ signal Hit()
 onready var jump_velocity : float = (2.0* JumpHeight) / PeakTime * -1.0
 onready var jump_gravity : float = (-2.0 * JumpHeight) / (PeakTime * PeakTime) *  -1.0
 onready var fall_gravity : float = (-2.0 * JumpHeight) / (FallTime * FallTime) * -1.0
-var moveSpeed = 100
+var moveSpeed = 200
 export (NodePath) var patrolPath
 onready var path = get_node(patrolPath)
 var patrolPoints 
@@ -22,7 +22,6 @@ var velocity = position
 var doOnce = false
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	
 	sawsound.volume_db = PlayerInformation.soundVol
 	if patrolPath: 
 		patrolPoints = path.curve.get_baked_points()
@@ -39,11 +38,11 @@ func _physics_process(delta):
 	
 	
 	
-	if position.distance_to(target) <1:
+	if position.distance_to(target) <2:
 		patrolIndex = wrapi(patrolIndex + 1,0,patrolPoints.size())
 		target = patrolPoints[patrolIndex]
 	velocity = (target - position).normalized() * moveSpeed 
-	velocity.y += fall_gravity * delta
+	
 	
 	velocity = move_and_slide(velocity)
 	

@@ -179,42 +179,44 @@ margin_top = -14.32
 margin_right = -7.52399
 margin_bottom = 0.599976
 
-[node name="BMusic" type="Button" parent="Button3/Popup"]
-margin_left = 718.0
-margin_top = 382.707
-margin_right = 917.0
-margin_bottom = 422.707
+[node name="BMusic" type="HSlider" parent="Button3/Popup"]
+margin_left = 683.0
+margin_top = 383.0
+margin_right = 909.0
+margin_bottom = 423.0
 focus_neighbour_top = NodePath("../Done")
 focus_neighbour_bottom = NodePath("../Bsfx")
-text = "music"
+min_value = -80.0
+max_value = 24.0
 
 [node name="Label" type="Label" parent="Button3/Popup/BMusic"]
-margin_left = 171.0
-margin_top = 8.0
-margin_right = 211.0
-margin_bottom = 33.0
-text = "50"
+margin_left = 75.0
+margin_top = -26.0
+margin_right = 115.0
+margin_bottom = -1.0
+text = "Music"
 
-[node name="Bsfx" type="Button" parent="Button3/Popup"]
-margin_left = 701.0
-margin_top = 465.707
-margin_right = 931.0
-margin_bottom = 505.707
+[node name="Bsfx" type="HSlider" parent="Button3/Popup"]
+margin_left = 680.0
+margin_top = 464.707
+margin_right = 910.0
+margin_bottom = 504.707
 focus_neighbour_top = NodePath("../BMusic")
 focus_neighbour_bottom = NodePath("../Done")
-text = "Effects"
+min_value = -80.0
+max_value = 24.0
 
 [node name="Label2" type="Label" parent="Button3/Popup/Bsfx"]
-margin_left = 199.0
-margin_top = 6.7074
-margin_right = 239.0
-margin_bottom = 31.7074
-text = "50"
+margin_left = 82.0
+margin_top = -35.0
+margin_right = 122.0
+margin_bottom = -10.0
+text = "Sound"
 
 [node name="Done" type="Button" parent="Button3/Popup"]
-margin_left = 704.0
+margin_left = 624.0
 margin_top = 546.707
-margin_right = 934.0
+margin_right = 854.0
 margin_bottom = 586.707
 focus_neighbour_top = NodePath("../Bsfx")
 focus_neighbour_bottom = NodePath("../BMusic")
@@ -380,9 +382,9 @@ stream = ExtResource( 10 )
 [connection signal="focus_entered" from="Button3" to="." method="_on_Button3_focus_entered"]
 [connection signal="pressed" from="Button3" to="." method="_on_Button3_pressed"]
 [connection signal="focus_entered" from="Button3/Popup/BMusic" to="." method="_on_BMusic_focus_entered"]
-[connection signal="pressed" from="Button3/Popup/BMusic" to="." method="_on_BMusic_pressed"]
+[connection signal="value_changed" from="Button3/Popup/BMusic" to="." method="_on_BMusic_value_changed"]
 [connection signal="focus_entered" from="Button3/Popup/Bsfx" to="." method="_on_Bsfx_focus_entered"]
-[connection signal="pressed" from="Button3/Popup/Bsfx" to="." method="_on_Bsfx_pressed"]
+[connection signal="value_changed" from="Button3/Popup/Bsfx" to="." method="_on_Bsfx_value_changed"]
 [connection signal="focus_entered" from="Button3/Popup/Done" to="." method="_on_Done_focus_entered"]
 [connection signal="pressed" from="Button3/Popup/Done" to="." method="_on_Done_pressed"]
 [connection signal="focus_entered" from="Button5" to="." method="_on_Button5_focus_entered"]
