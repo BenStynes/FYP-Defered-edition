@@ -32,7 +32,7 @@ _data = {
 position = Vector2( 651, 234 )
 
 [node name="ssSprite" parent="Player" index="0"]
-frame = 1
+frame = 6
 
 [node name="TextureRect" parent="Player/CanvasLayer2" index="0"]
 texture = ExtResource( 10 )
@@ -72,183 +72,268 @@ collision_mask = 2
 
 [node name="Collectable27" parent="CHolder" instance=ExtResource( 3 )]
 position = Vector2( 400, 239 )
-collision_layer = 2
-collision_mask = 2
+collision_layer = 32768
+collision_mask = 32768
 
 [node name="Collectable28" parent="CHolder" instance=ExtResource( 3 )]
 position = Vector2( 246, 116 )
-collision_layer = 2
-collision_mask = 2
+collision_layer = 32768
+collision_mask = 32768
 
 [node name="Collectable29" parent="CHolder" instance=ExtResource( 3 )]
 position = Vector2( 493, -110 )
-collision_layer = 2
-collision_mask = 2
+collision_layer = 32768
+collision_mask = 32768
 
 [node name="Collectable30" parent="CHolder" instance=ExtResource( 3 )]
 position = Vector2( 516, -261 )
-collision_layer = 2
-collision_mask = 2
+collision_layer = 32768
+collision_mask = 32768
 
 [node name="Collectable31" parent="CHolder" instance=ExtResource( 3 )]
 position = Vector2( 81, -288 )
-collision_layer = 2
-collision_mask = 2
+collision_layer = 32768
+collision_mask = 32768
 
 [node name="Collectable32" parent="CHolder" instance=ExtResource( 3 )]
 position = Vector2( -349, -339 )
-collision_layer = 2
-collision_mask = 2
+collision_layer = 32768
+collision_mask = 32768
 
 [node name="Collectable33" parent="CHolder" instance=ExtResource( 3 )]
 position = Vector2( -578, -322 )
-collision_layer = 2
-collision_mask = 2
+collision_layer = 32768
+collision_mask = 32768
 
 [node name="Collectable34" parent="CHolder" instance=ExtResource( 3 )]
 position = Vector2( 907, -277 )
-collision_layer = 2
-collision_mask = 2
+collision_layer = 32768
+collision_mask = 32768
 
 [node name="Collectable35" parent="CHolder" instance=ExtResource( 3 )]
 position = Vector2( 988, -164 )
-collision_layer = 2
-collision_mask = 2
+collision_layer = 32768
+collision_mask = 32768
 
 [node name="Collectable36" parent="CHolder" instance=ExtResource( 3 )]
 position = Vector2( 1305, -233 )
-collision_layer = 2
-collision_mask = 2
+collision_layer = 32768
+collision_mask = 32768
 
 [node name="Collectable37" parent="CHolder" instance=ExtResource( 3 )]
 position = Vector2( 1153, 216 )
-collision_layer = 2
-collision_mask = 2
+collision_layer = 32768
+collision_mask = 32768
 
 [node name="Collectable38" parent="CHolder" instance=ExtResource( 3 )]
 position = Vector2( 1434, 116 )
-collision_layer = 2
-collision_mask = 2
+collision_layer = 32768
+collision_mask = 32768
 
 [node name="Collectable39" parent="CHolder" instance=ExtResource( 3 )]
 position = Vector2( 1229, 880 )
-collision_layer = 2
-collision_mask = 2
+collision_layer = 32768
+collision_mask = 32768
 
 [node name="Collectable40" parent="CHolder" instance=ExtResource( 3 )]
 position = Vector2( 984, 1040 )
-collision_layer = 2
-collision_mask = 2
+collision_layer = 32768
+collision_mask = 32768
 
 [node name="Collectable41" parent="CHolder" instance=ExtResource( 3 )]
 position = Vector2( 853, 772 )
-collision_layer = 2
-collision_mask = 2
+collision_layer = 32768
+collision_mask = 32768
 
 [node name="Collectable42" parent="CHolder" instance=ExtResource( 3 )]
 position = Vector2( 845, 576 )
-collision_layer = 2
-collision_mask = 2
+collision_layer = 32768
+collision_mask = 32768
 
 [node name="Collectable43" parent="CHolder" instance=ExtResource( 3 )]
 position = Vector2( 617, 625 )
-collision_layer = 2
-collision_mask = 2
+collision_layer = 32768
+collision_mask = 32768
 
 [node name="Collectable44" parent="CHolder" instance=ExtResource( 3 )]
 position = Vector2( 670, 469 )
-collision_layer = 2
-collision_mask = 2
+collision_layer = 32768
+collision_mask = 32768
 
 [node name="Collectable45" parent="CHolder" instance=ExtResource( 3 )]
 position = Vector2( 497, 402 )
-collision_layer = 2
-collision_mask = 2
+collision_layer = 32768
+collision_mask = 32768
 
 [node name="Collectable46" parent="CHolder" instance=ExtResource( 3 )]
 position = Vector2( 409, 598 )
-collision_layer = 2
-collision_mask = 2
+collision_layer = 32768
+collision_mask = 32768
 
 [node name="Collectable47" parent="CHolder" instance=ExtResource( 3 )]
 position = Vector2( 404, 765 )
-collision_layer = 2
-collision_mask = 2
+collision_layer = 32768
+collision_mask = 32768
 
 [node name="Collectable48" parent="CHolder" instance=ExtResource( 3 )]
 position = Vector2( 527, 1032 )
-collision_layer = 2
-collision_mask = 2
+collision_layer = 32768
+collision_mask = 32768
 
 [node name="Collectable49" parent="CHolder" instance=ExtResource( 3 )]
 position = Vector2( 211, 1015 )
-collision_layer = 2
-collision_mask = 2
+collision_layer = 32768
+collision_mask = 32768
 
 [node name="Collectable50" parent="CHolder" instance=ExtResource( 3 )]
 position = Vector2( 46, 790 )
-collision_layer = 2
-collision_mask = 2
+collision_layer = 32768
+collision_mask = 32768
 
 [node name="Collectable51" parent="CHolder" instance=ExtResource( 3 )]
 position = Vector2( 23, 633 )
-collision_layer = 2
-collision_mask = 2
+collision_layer = 32768
+collision_mask = 32768
 
 [node name="Collectable52" parent="CHolder" instance=ExtResource( 3 )]
 position = Vector2( -288, 739 )
-collision_layer = 2
-collision_mask = 2
+collision_layer = 32768
+collision_mask = 32768
 
 [node name="Collectable53" parent="CHolder" instance=ExtResource( 3 )]
 position = Vector2( -212, 1010 )
-collision_layer = 2
-collision_mask = 2
+collision_layer = 32768
+collision_mask = 32768
 
 [node name="Collectable54" parent="CHolder" instance=ExtResource( 3 )]
 position = Vector2( -459, 924 )
-collision_layer = 2
-collision_mask = 2
+collision_layer = 32768
+collision_mask = 32768
 
 [node name="Collectable55" parent="CHolder" instance=ExtResource( 3 )]
 position = Vector2( -660, 778 )
-collision_layer = 2
-collision_mask = 2
+collision_layer = 32768
+collision_mask = 32768
 
 [node name="Collectable56" parent="CHolder" instance=ExtResource( 3 )]
 position = Vector2( -628, 455 )
-collision_layer = 2
-collision_mask = 2
+collision_layer = 32768
+collision_mask = 32768
 
 [node name="Collectable57" parent="CHolder" instance=ExtResource( 3 )]
 position = Vector2( -464, 255 )
-collision_layer = 2
-collision_mask = 2
+collision_layer = 32768
+collision_mask = 32768
 
 [node name="Collectable58" parent="CHolder" instance=ExtResource( 3 )]
 position = Vector2( -264, 231 )
-collision_layer = 2
-collision_mask = 2
+collision_layer = 32768
+collision_mask = 32768
 
 [node name="Collectable59" parent="CHolder" instance=ExtResource( 3 )]
 position = Vector2( -766, 211 )
-collision_layer = 2
-collision_mask = 2
+collision_layer = 32768
+collision_mask = 32768
 
 [node name="Collectable60" parent="CHolder" instance=ExtResource( 3 )]
 position = Vector2( -776, -30 )
-collision_layer = 2
-collision_mask = 2
+collision_layer = 32768
+collision_mask = 32768
 
 [node name="Collectable61" parent="CHolder" instance=ExtResource( 3 )]
 position = Vector2( -815, 482 )
-collision_layer = 2
-collision_mask = 2
+collision_layer = 32768
+collision_mask = 32768
 
 [node name="Collectable62" parent="CHolder" instance=ExtResource( 3 )]
 position = Vector2( -817, -375 )
-collision_layer = 2
-collision_mask = 2
+collision_layer = 32768
+collision_mask = 32768
+
+[node name="Collectable63" parent="CHolder" instance=ExtResource( 3 )]
+position = Vector2( -60, 1011 )
+collision_layer = 32768
+collision_mask = 32768
+
+[node name="Collectable64" parent="CHolder" instance=ExtResource( 3 )]
+position = Vector2( -140, 817 )
+collision_layer = 32768
+collision_mask = 32768
+
+[node name="Collectable65" parent="CHolder" instance=ExtResource( 3 )]
+position = Vector2( 215, 838 )
+collision_layer = 32768
+collision_mask = 32768
+
+[node name="Collectable66" parent="CHolder" instance=ExtResource( 3 )]
+position = Vector2( 202, 641 )
+collision_layer = 32768
+collision_mask = 32768
+
+[node name="Collectable67" parent="CHolder" instance=ExtResource( 3 )]
+position = Vector2( -464, 602 )
+collision_layer = 32768
+collision_mask = 32768
+
+[node name="Collectable68" parent="CHolder" instance=ExtResource( 3 )]
+position = Vector2( 117, 22 )
+collision_layer = 32768
+collision_mask = 32768
+
+[node name="Collectable69" parent="CHolder" instance=ExtResource( 3 )]
+position = Vector2( -1, -54 )
+collision_layer = 32768
+collision_mask = 32768
+
+[node name="Collectable70" parent="CHolder" instance=ExtResource( 3 )]
+position = Vector2( -151, -96 )
+collision_layer = 32768
+collision_mask = 32768
+
+[node name="Collectable71" parent="CHolder" instance=ExtResource( 3 )]
+position = Vector2( -151, -96 )
+collision_layer = 32768
+collision_mask = 32768
+
+[node name="Collectable72" parent="CHolder" instance=ExtResource( 3 )]
+position = Vector2( -271, -165 )
+collision_layer = 32768
+collision_mask = 32768
+
+[node name="Collectable73" parent="CHolder" instance=ExtResource( 3 )]
+position = Vector2( -271, -165 )
+collision_layer = 32768
+collision_mask = 32768
+
+[node name="Collectable74" parent="CHolder" instance=ExtResource( 3 )]
+position = Vector2( -443, -242 )
+collision_layer = 32768
+collision_mask = 32768
+
+[node name="Collectable75" parent="CHolder" instance=ExtResource( 3 )]
+position = Vector2( -443, -242 )
+collision_layer = 32768
+collision_mask = 32768
+
+[node name="Collectable76" parent="CHolder" instance=ExtResource( 3 )]
+position = Vector2( -64, -232 )
+collision_layer = 32768
+collision_mask = 32768
+
+[node name="Collectable77" parent="CHolder" instance=ExtResource( 3 )]
+position = Vector2( -64, -232 )
+collision_layer = 32768
+collision_mask = 32768
+
+[node name="Collectable78" parent="CHolder" instance=ExtResource( 3 )]
+position = Vector2( 271, -196 )
+collision_layer = 32768
+collision_mask = 32768
+
+[node name="Collectable79" parent="CHolder" instance=ExtResource( 3 )]
+position = Vector2( 271, -196 )
+collision_layer = 32768
+collision_mask = 32768
 
 [node name="SawPaths" type="Node" parent="."]
 
@@ -333,7 +418,39 @@ position = Vector2( 648, 276 )
 texture = ExtResource( 10 )
 
 [node name="Obstical5" parent="OHolder" instance=ExtResource( 1 )]
-position = Vector2( 401, 278 )
+position = Vector2( 404, 279 )
+texture = ExtResource( 10 )
+
+[node name="Obstical65" parent="OHolder" instance=ExtResource( 1 )]
+position = Vector2( 222, 278 )
+texture = ExtResource( 10 )
+
+[node name="Obstical66" parent="OHolder" instance=ExtResource( 1 )]
+position = Vector2( 532, 273 )
+texture = ExtResource( 10 )
+
+[node name="Obstical67" parent="OHolder" instance=ExtResource( 1 )]
+position = Vector2( -645, -380 )
+texture = ExtResource( 10 )
+
+[node name="Obstical68" parent="OHolder" instance=ExtResource( 1 )]
+position = Vector2( -758, -442 )
+texture = ExtResource( 10 )
+
+[node name="Obstical69" parent="OHolder" instance=ExtResource( 1 )]
+position = Vector2( -545, -448 )
+texture = ExtResource( 10 )
+
+[node name="Obstical70" parent="OHolder" instance=ExtResource( 1 )]
+position = Vector2( -546, -449 )
+texture = ExtResource( 10 )
+
+[node name="Obstical71" parent="OHolder" instance=ExtResource( 1 )]
+position = Vector2( -777, 1050 )
+texture = ExtResource( 10 )
+
+[node name="Obstical72" parent="OHolder" instance=ExtResource( 1 )]
+position = Vector2( -591, 1061 )
 texture = ExtResource( 10 )
 
 [node name="Obstical6" parent="OHolder" instance=ExtResource( 1 )]
@@ -474,6 +591,74 @@ texture = ExtResource( 10 )
 
 [node name="Obstical43" parent="OHolder" instance=ExtResource( 1 )]
 position = Vector2( -819, -325 )
+texture = ExtResource( 10 )
+
+[node name="Obstical48" parent="OHolder" instance=ExtResource( 1 )]
+position = Vector2( -58, 1069 )
+texture = ExtResource( 10 )
+
+[node name="Obstical49" parent="OHolder" instance=ExtResource( 1 )]
+position = Vector2( -138, 875 )
+texture = ExtResource( 10 )
+
+[node name="Obstical50" parent="OHolder" instance=ExtResource( 1 )]
+position = Vector2( 217, 896 )
+texture = ExtResource( 10 )
+
+[node name="Obstical51" parent="OHolder" instance=ExtResource( 1 )]
+position = Vector2( 204, 699 )
+texture = ExtResource( 10 )
+
+[node name="Obstical52" parent="OHolder" instance=ExtResource( 1 )]
+position = Vector2( -462, 660 )
+texture = ExtResource( 10 )
+
+[node name="Obstical53" parent="OHolder" instance=ExtResource( 1 )]
+position = Vector2( 119, 80 )
+texture = ExtResource( 10 )
+
+[node name="Obstical54" parent="OHolder" instance=ExtResource( 1 )]
+position = Vector2( 1, 4 )
+texture = ExtResource( 10 )
+
+[node name="Obstical55" parent="OHolder" instance=ExtResource( 1 )]
+position = Vector2( -149, -38 )
+texture = ExtResource( 10 )
+
+[node name="Obstical56" parent="OHolder" instance=ExtResource( 1 )]
+position = Vector2( -149, -38 )
+texture = ExtResource( 10 )
+
+[node name="Obstical57" parent="OHolder" instance=ExtResource( 1 )]
+position = Vector2( -269, -107 )
+texture = ExtResource( 10 )
+
+[node name="Obstical58" parent="OHolder" instance=ExtResource( 1 )]
+position = Vector2( -269, -107 )
+texture = ExtResource( 10 )
+
+[node name="Obstical59" parent="OHolder" instance=ExtResource( 1 )]
+position = Vector2( -441, -184 )
+texture = ExtResource( 10 )
+
+[node name="Obstical60" parent="OHolder" instance=ExtResource( 1 )]
+position = Vector2( -441, -184 )
+texture = ExtResource( 10 )
+
+[node name="Obstical61" parent="OHolder" instance=ExtResource( 1 )]
+position = Vector2( -62, -174 )
+texture = ExtResource( 10 )
+
+[node name="Obstical62" parent="OHolder" instance=ExtResource( 1 )]
+position = Vector2( -62, -174 )
+texture = ExtResource( 10 )
+
+[node name="Obstical63" parent="OHolder" instance=ExtResource( 1 )]
+position = Vector2( 273, -138 )
+texture = ExtResource( 10 )
+
+[node name="Obstical64" parent="OHolder" instance=ExtResource( 1 )]
+position = Vector2( 273, -138 )
 texture = ExtResource( 10 )
 
 [node name="SpikeHolder" type="Node" parent="."]

@@ -57,7 +57,7 @@ script = ExtResource( 2 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="." groups=["Enemy"]]
 frames = SubResource( 9 )
-frame = 3
+frame = 6
 speed_scale = 1.5
 playing = true
 
@@ -70,6 +70,7 @@ shape = SubResource( 11 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["Enemy"]]
 shape = SubResource( 12 )
+disabled = true
 
 [node name="SawSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 3 )

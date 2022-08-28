@@ -69,7 +69,7 @@ tracks/0/keys = {
 position = Vector2( 1381, 82 )
 
 [node name="ssSprite" parent="Player" index="0"]
-frame = 6
+frame = 5
 
 [node name="TextureRect" parent="Player/CanvasLayer2" index="0"]
 texture = ExtResource( 10 )
@@ -223,6 +223,8 @@ curve = SubResource( 6 )
 [node name="SawPath7" parent="SawPaths" instance=ExtResource( 9 )]
 curve = SubResource( 7 )
 
+[node name="SawPath8" parent="SawPaths" instance=ExtResource( 9 )]
+
 [node name="SHolder" type="Node" parent="."]
 script = ExtResource( 6 )
 
@@ -230,6 +232,31 @@ script = ExtResource( 6 )
 position = Vector2( -893, -864 )
 scale = Vector2( 4, 4 )
 patrolPath = NodePath("../../SawPaths/SawPath")
+
+[node name="Saw15" parent="SHolder" instance=ExtResource( 7 )]
+position = Vector2( -609, -877 )
+scale = Vector2( 4, 4 )
+patrolPath = NodePath("../../SawPaths/SawPath8")
+
+[node name="Saw16" parent="SHolder" instance=ExtResource( 7 )]
+position = Vector2( -330, 51 )
+scale = Vector2( 4, 4 )
+patrolPath = NodePath("../../SawPaths/SawPath8")
+
+[node name="Saw17" parent="SHolder" instance=ExtResource( 7 )]
+position = Vector2( 125, -875 )
+scale = Vector2( 4, 4 )
+patrolPath = NodePath("../../SawPaths/SawPath8")
+
+[node name="Saw18" parent="SHolder" instance=ExtResource( 7 )]
+position = Vector2( 534, 59 )
+scale = Vector2( 4, 4 )
+patrolPath = NodePath("../../SawPaths/SawPath8")
+
+[node name="Saw19" parent="SHolder" instance=ExtResource( 7 )]
+position = Vector2( 926, -894 )
+scale = Vector2( 4, 4 )
+patrolPath = NodePath("../../SawPaths/SawPath8")
 
 [node name="Saw2" parent="SHolder" instance=ExtResource( 7 )]
 position = Vector2( 1358, -748 )
@@ -2945,6 +2972,11 @@ anims/OpenDoor = SubResource( 8 )
 [connection signal="Amount" from="CHolder" to="Player" method="_on_CHolder_Amount"]
 [connection signal="Amount" from="CHolder" to="CHolder/Collectable27" method="_on_CHolder_Amount"]
 [connection signal="Hit" from="SHolder/Saw" to="Player" method="_on_Saw_Hit"]
+[connection signal="Hit" from="SHolder/Saw15" to="Player" method="_on_Saw_Hit"]
+[connection signal="Hit" from="SHolder/Saw16" to="Player" method="_on_Saw_Hit"]
+[connection signal="Hit" from="SHolder/Saw17" to="Player" method="_on_Saw_Hit"]
+[connection signal="Hit" from="SHolder/Saw18" to="Player" method="_on_Saw_Hit"]
+[connection signal="Hit" from="SHolder/Saw19" to="Player" method="_on_Saw_Hit"]
 [connection signal="Hit" from="SHolder/Saw2" to="Player" method="_on_Saw_Hit"]
 [connection signal="Hit" from="SHolder/Saw3" to="Player" method="_on_Saw_Hit"]
 [connection signal="Hit" from="SHolder/Saw4" to="Player" method="_on_Saw_Hit"]

@@ -22,10 +22,10 @@
 [ext_resource path="res://UP.tres" type="Animation" id=20]
 
 [sub_resource type="RectangleShape2D" id=33]
-extents = Vector2( 10.5, 14 )
+extents = Vector2( 10.5, 13.5 )
 
 [sub_resource type="RectangleShape2D" id=34]
-extents = Vector2( 10.5, 14 )
+extents = Vector2( 10.5, 13.5 )
 
 [sub_resource type="Animation" id=30]
 resource_name = "Damage"
@@ -39,7 +39,7 @@ tracks/0/enabled = true
 tracks/0/keys = {
 "times": PoolRealArray( 0, 0.5, 1, 1.5, 2, 2.5, 3 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
-"update": 1,
+"update": 0,
 "values": [ true, false, true, false, true, false, true ]
 }
 
@@ -52,9 +52,9 @@ outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 10 )
 
 [node name="Player" type="KinematicBody2D" groups=["Player"]]
-position = Vector2( -11, -22 )
-collision_layer = 16595
-collision_mask = 16593
+position = Vector2( -4, -19 )
+collision_layer = 49235
+collision_mask = 49235
 script = ExtResource( 5 )
 __meta__ = {
 "_edit_group_": true
@@ -63,19 +63,19 @@ __meta__ = {
 [node name="ssSprite" type="AnimatedSprite" parent="." groups=["Player"]]
 frames = ExtResource( 1 )
 animation = "Idle"
-frame = 2
+frame = 4
 playing = true
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="." groups=["Player"]]
-position = Vector2( 0.5, 2 )
+position = Vector2( 0.5, 2.5 )
 shape = SubResource( 33 )
 
 [node name="Collect" type="Area2D" parent="." groups=["Player"]]
-collision_layer = 16467
-collision_mask = 16467
+collision_layer = 49235
+collision_mask = 49235
 
 [node name="Hitbox" type="CollisionShape2D" parent="Collect" groups=["Player"]]
-position = Vector2( 0.5, 2 )
+position = Vector2( 0.5, 2.5 )
 shape = SubResource( 34 )
 
 [node name="CanvasLayer2" type="ParallaxBackground" parent="."]
@@ -268,10 +268,7 @@ stretch_mode = 1
 current = true
 limit_smoothed = true
 smoothing_enabled = true
-drag_margin_left = 0.06
-drag_margin_top = 0.09
-drag_margin_right = 0.03
-drag_margin_bottom = 0.07
+smoothing_speed = 7.0
 editor_draw_drag_margin = true
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="Camera2D"]
@@ -362,10 +359,10 @@ theme = ExtResource( 19 )
 text = "Level Up"
 
 [node name="Label2" type="Label" parent="."]
-margin_left = -139.0
-margin_top = -232.0
-margin_right = 166.0
-margin_bottom = -207.0
+margin_left = -147.0
+margin_top = -119.0
+margin_right = 158.0
+margin_bottom = -94.0
 theme = ExtResource( 19 )
 text = "TIMe Till door unlocks "
 

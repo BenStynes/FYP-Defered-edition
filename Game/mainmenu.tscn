@@ -88,23 +88,25 @@ anims/text = SubResource( 2 )
 
 [node name="Label" type="Label" parent="."]
 self_modulate = Color( 0.373856, 0.273203, 0.691503, 1 )
-margin_left = -45.0
-margin_top = 13.2926
-margin_right = 980.0
-margin_bottom = 603.293
+margin_left = -36.0
+margin_top = -5.0
+margin_right = 989.0
+margin_bottom = 585.0
 custom_fonts/font = ExtResource( 1 )
-text = "lEVEL JUMP"
+text = "lEVEL JUMP a leveling
+based platformer"
 align = 1
 uppercase = true
 
 [node name="Label2" type="Label" parent="."]
 self_modulate = Color( 0.942577, 0.980112, 0.659384, 1 )
-margin_left = -45.0
-margin_top = 21.2926
-margin_right = 979.995
-margin_bottom = 611.293
+margin_left = -36.0
+margin_top = 3.0
+margin_right = 988.995
+margin_bottom = 593.0
 custom_fonts/font = ExtResource( 1 )
-text = "lEVEL JUMP"
+text = "lEVEL JUMP a leveling
+based platformer"
 align = 1
 uppercase = true
 
@@ -238,9 +240,11 @@ layer = -2
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
 self_modulate = Color( 1, 1, 1, 0.713726 )
-margin_top = -27.7074
-margin_right = 1027.0
-margin_bottom = 179.293
+margin_left = -460.0
+margin_top = -43.0
+margin_right = 567.0
+margin_bottom = 164.0
+rect_scale = Vector2( 1.76, 1 )
 texture = ExtResource( 4 )
 expand = true
 

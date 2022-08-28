@@ -35,7 +35,7 @@ var onWall = false
 var axisX
 var experience = 0
 var XPLimiit = 1
-var moveSpeed = 125 * Speed
+var moveSpeed = 150 * max(Speed,1)
 var jumpCount = Dexterity
 var lock = false
 var totalCoins 
@@ -46,9 +46,9 @@ signal Display(level)
 signal Display2(coin)
 var startTimer = false
 var musicpos 
-var JumpHeight : float = 100 + Strength * 20
-var PeakTime: float = 0.5
-var FallTime: float = 0.4
+var JumpHeight : float = 120 + Strength * 30
+var PeakTime: float = 0.7
+var FallTime: float = 0.5
 var health  = 3 
 var damage = 0
 var pitchy = 1
@@ -65,7 +65,7 @@ func _ready():
 	totalCoins = get_parent().get_child(1).get_child_count() -1
 	level = PlayerInformation.level		
 	Strength = PlayerInformation.Strength
-	JumpHeight = 100 + Strength * 20
+	JumpHeight = 120 + Strength * 30
 	Body = PlayerInformation.Body
 	Speed = PlayerInformation.Speed
 	Dexterity = PlayerInformation.Dexterity
@@ -83,7 +83,7 @@ func _ready():
 	jump_velocity = (2.0* JumpHeight) / PeakTime * -1.0
 	jump_gravity = (-2.0 * JumpHeight) / (PeakTime * PeakTime) *  -1.0
 	fall_gravity =   (-2.0 * JumpHeight) / (FallTime * FallTime) * -1.0
-	moveSpeed = 125 * Speed
+	moveSpeed = 150 * max(Speed,1)
 	jumpCount =  Dexterity/2
 	pitchy = PlayerInformation.pitch
 	animation.self_modulate = PlayerInformation.color
@@ -101,6 +101,7 @@ func _ready():
 	else:
 		anime2.stop()
 	sound.volume_db = PlayerInformation.soundVol
+	
 	if startTimer == true:
 		timer.start(45)
 
@@ -114,7 +115,7 @@ func _physics_process(delta):
 	if Input.is_action_pressed("left"):
 		velocity.x = lerp(velocity.x,-moveSpeed,0.5)
 	if timer.time_left >= 0:
-		time.text = "Time left for door " + str(timer.time_left)
+		time.text = "Time left until door Opens " + str(timer.time_left)
 	
 	
 	
@@ -183,10 +184,10 @@ func levelUp(var x):
 	match x:
 		1:
 			 Strength += 1
-			 JumpHeight = 100 + Strength * 20
+			 JumpHeight = 120 + Strength * 30
 		2:
 			 Speed += 1
-			 moveSpeed = 125 * Speed
+			 moveSpeed = 150 * max(Speed,1)
 			
 			
 		3:
@@ -217,7 +218,7 @@ func levelUp(var x):
 func get_gravity():
 	
 	
-	if velocity.y < 0.0 or not is_on_wall():
+	if velocity.y < 0.0:
 		falling = false
 		return jump_gravity 
 	else:

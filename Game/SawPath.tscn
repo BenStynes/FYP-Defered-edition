@@ -5,10 +5,12 @@
 
 [sub_resource type="Curve2D" id=1]
 _data = {
-"points": PoolVector2Array(  )
+"points": PoolVector2Array( 0, 0, 0, 0, -693.168, -998.088, 0, 0, 0, 0, -609.457, 42.5415, 0, 0, 0, 0, -203.152, -994.816, 0, 0, 0, 0, -670.709, -986.09, 0, 0, 0, 0, -228.674, 1.09081, 0, 0, 0, 0, -603.332, 19.6345 )
 }
 
 [node name="SawPath" type="Path2D"]
+position = Vector2( 66, 27 )
+scale = Vector2( 0.979561, 0.916752 )
 curve = SubResource( 1 )
 script = ExtResource( 1 )
 

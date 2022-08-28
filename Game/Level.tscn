@@ -32,7 +32,7 @@ _data = {
 position = Vector2( 1448, 111 )
 
 [node name="ssSprite" parent="Player" index="0"]
-frame = 10
+frame = 8
 
 [node name="TextureRect4" parent="Player/CanvasLayer2" index="3"]
 self_modulate = Color( 0.47451, 0.423529, 0.87451, 0.54902 )
@@ -47,224 +47,224 @@ collision_mask = 2
 
 [node name="Collectable27" parent="CHolder" instance=ExtResource( 3 )]
 position = Vector2( 116, -150 )
-collision_layer = 2
-collision_mask = 2
+collision_layer = 32768
+collision_mask = 32768
 
 [node name="Collectable4" parent="CHolder" instance=ExtResource( 3 )]
 position = Vector2( 104, 80 )
 scale = Vector2( 0.257609, 1 )
-collision_layer = 2
-collision_mask = 2
+collision_layer = 32768
+collision_mask = 32768
 
 [node name="Collectable13" parent="CHolder" instance=ExtResource( 3 )]
 position = Vector2( -1148, -126 )
 scale = Vector2( 0.257609, 1 )
-collision_layer = 2
-collision_mask = 2
+collision_layer = 32768
+collision_mask = 32768
 
 [node name="Collectable5" parent="CHolder" instance=ExtResource( 3 )]
 position = Vector2( 391, 138 )
 scale = Vector2( 0.257609, 1 )
-collision_layer = 2
-collision_mask = 2
+collision_layer = 32768
+collision_mask = 32768
 
 [node name="Collectable14" parent="CHolder" instance=ExtResource( 3 )]
 position = Vector2( 363, -48 )
 scale = Vector2( 0.257609, 1 )
-collision_layer = 2
-collision_mask = 2
+collision_layer = 32768
+collision_mask = 32768
 
 [node name="Collectable6" parent="CHolder" instance=ExtResource( 3 )]
 position = Vector2( 345, -223 )
 scale = Vector2( 0.257609, 1 )
-collision_layer = 2
-collision_mask = 2
+collision_layer = 32768
+collision_mask = 32768
 
 [node name="Collectable7" parent="CHolder" instance=ExtResource( 3 )]
 position = Vector2( 362, 321 )
 scale = Vector2( 0.257609, 1 )
-collision_layer = 2
-collision_mask = 2
+collision_layer = 32768
+collision_mask = 32768
 
 [node name="Collectable9" parent="CHolder" instance=ExtResource( 3 )]
 position = Vector2( 1186, 282 )
 scale = Vector2( 0.257609, 1 )
-collision_layer = 2
-collision_mask = 2
+collision_layer = 32768
+collision_mask = 32768
 
 [node name="Collectable10" parent="CHolder" instance=ExtResource( 3 )]
 position = Vector2( -2658, 319 )
 scale = Vector2( 0.257609, 1 )
-collision_layer = 2
-collision_mask = 2
+collision_layer = 32768
+collision_mask = 32768
 
 [node name="Collectable28" parent="CHolder" instance=ExtResource( 3 )]
 position = Vector2( -3023, 316 )
 scale = Vector2( 0.257609, 1 )
-collision_layer = 2
-collision_mask = 2
+collision_layer = 32768
+collision_mask = 32768
 
 [node name="Collectable29" parent="CHolder" instance=ExtResource( 3 )]
 position = Vector2( -3322, 324 )
 scale = Vector2( 0.257609, 1 )
-collision_layer = 2
-collision_mask = 2
+collision_layer = 32768
+collision_mask = 32768
 
 [node name="Collectable30" parent="CHolder" instance=ExtResource( 3 )]
 position = Vector2( -3593, 327 )
 scale = Vector2( 0.257609, 1 )
-collision_layer = 2
-collision_mask = 2
+collision_layer = 32768
+collision_mask = 32768
 
 [node name="Collectable31" parent="CHolder" instance=ExtResource( 3 )]
 position = Vector2( -3914, 315 )
 scale = Vector2( 0.257609, 1 )
-collision_layer = 2
-collision_mask = 2
+collision_layer = 32768
+collision_mask = 32768
 
 [node name="Collectable32" parent="CHolder" instance=ExtResource( 3 )]
 position = Vector2( -3999, -3 )
 scale = Vector2( 0.257609, 1 )
-collision_layer = 2
-collision_mask = 2
+collision_layer = 32768
+collision_mask = 32768
 
 [node name="Collectable33" parent="CHolder" instance=ExtResource( 3 )]
 position = Vector2( -4508, 257 )
 scale = Vector2( 0.257609, 1 )
-collision_layer = 2
-collision_mask = 2
+collision_layer = 32768
+collision_mask = 32768
 
 [node name="Collectable36" parent="CHolder" instance=ExtResource( 3 )]
 position = Vector2( -4883, 190 )
 scale = Vector2( 0.257609, 1 )
-collision_layer = 2
-collision_mask = 2
+collision_layer = 32768
+collision_mask = 32768
 
 [node name="Collectable37" parent="CHolder" instance=ExtResource( 3 )]
 position = Vector2( -5104, 64 )
 scale = Vector2( 0.257609, 1 )
-collision_layer = 2
-collision_mask = 2
+collision_layer = 32768
+collision_mask = 32768
 
 [node name="Collectable38" parent="CHolder" instance=ExtResource( 3 )]
 position = Vector2( -4865, -132 )
 scale = Vector2( 0.257609, 1 )
-collision_layer = 2
-collision_mask = 2
+collision_layer = 32768
+collision_mask = 32768
 
 [node name="Collectable39" parent="CHolder" instance=ExtResource( 3 )]
 position = Vector2( -4589, -131 )
 scale = Vector2( 0.257609, 1 )
-collision_layer = 2
-collision_mask = 2
+collision_layer = 32768
+collision_mask = 32768
 
 [node name="Collectable34" parent="CHolder" instance=ExtResource( 3 )]
 position = Vector2( -4571, 285 )
 scale = Vector2( 0.257609, 1 )
-collision_layer = 2
-collision_mask = 2
+collision_layer = 32768
+collision_mask = 32768
 
 [node name="Collectable35" parent="CHolder" instance=ExtResource( 3 )]
 position = Vector2( -2321, 267 )
 scale = Vector2( 0.257609, 1 )
-collision_layer = 2
-collision_mask = 2
+collision_layer = 32768
+collision_mask = 32768
 
 [node name="Collectable12" parent="CHolder" instance=ExtResource( 3 )]
 position = Vector2( 964, 172 )
 scale = Vector2( 0.257609, 1 )
-collision_layer = 2
-collision_mask = 2
+collision_layer = 32768
+collision_mask = 32768
 
 [node name="Collectable15" parent="CHolder" instance=ExtResource( 3 )]
 position = Vector2( -1177, -1092 )
 scale = Vector2( 0.257609, 1 )
-collision_layer = 2
-collision_mask = 2
+collision_layer = 32768
+collision_mask = 32768
 
 [node name="Collectable16" parent="CHolder" instance=ExtResource( 3 )]
 position = Vector2( -1219, -625 )
 scale = Vector2( 0.257609, 1 )
-collision_layer = 2
-collision_mask = 2
+collision_layer = 32768
+collision_mask = 32768
 
 [node name="Collectable18" parent="CHolder" instance=ExtResource( 3 )]
 position = Vector2( -954, -29 )
 scale = Vector2( 0.257609, 1 )
-collision_layer = 2
-collision_mask = 2
+collision_layer = 32768
+collision_mask = 32768
 
 [node name="Collectable19" parent="CHolder" instance=ExtResource( 3 )]
 position = Vector2( -956, -1062 )
 scale = Vector2( 0.257609, 1 )
-collision_layer = 2
-collision_mask = 2
+collision_layer = 32768
+collision_mask = 32768
 
 [node name="Collectable20" parent="CHolder" instance=ExtResource( 3 )]
 position = Vector2( -939, -1279 )
 scale = Vector2( 0.257609, 1 )
-collision_layer = 2
-collision_mask = 2
+collision_layer = 32768
+collision_mask = 32768
 
 [node name="Collectable21" parent="CHolder" instance=ExtResource( 3 )]
 position = Vector2( -990, -504 )
 scale = Vector2( 0.257609, 1 )
-collision_layer = 2
-collision_mask = 2
+collision_layer = 32768
+collision_mask = 32768
 
 [node name="Collectable22" parent="CHolder" instance=ExtResource( 3 )]
 position = Vector2( -956, -283 )
 scale = Vector2( 0.257609, 1 )
-collision_layer = 2
-collision_mask = 2
+collision_layer = 32768
+collision_mask = 32768
 
 [node name="Collectable23" parent="CHolder" instance=ExtResource( 3 )]
 position = Vector2( -2012, 168 )
 scale = Vector2( 0.257609, 1 )
-collision_layer = 2
-collision_mask = 2
+collision_layer = 32768
+collision_mask = 32768
 
 [node name="Collectable40" parent="CHolder" instance=ExtResource( 3 )]
 position = Vector2( -2012, 210 )
 scale = Vector2( 0.257609, 1 )
-collision_layer = 2
-collision_mask = 2
+collision_layer = 32768
+collision_mask = 32768
 
 [node name="Collectable41" parent="CHolder" instance=ExtResource( 3 )]
 position = Vector2( -2012, 265 )
 scale = Vector2( 0.257609, 1 )
-collision_layer = 2
-collision_mask = 2
+collision_layer = 32768
+collision_mask = 32768
 
 [node name="Collectable42" parent="CHolder" instance=ExtResource( 3 )]
 position = Vector2( -2012, 323 )
 scale = Vector2( 0.257609, 1 )
-collision_layer = 2
-collision_mask = 2
+collision_layer = 32768
+collision_mask = 32768
 
 [node name="Collectable43" parent="CHolder" instance=ExtResource( 3 )]
 position = Vector2( -2012, 357 )
 scale = Vector2( 0.257609, 1 )
-collision_layer = 2
-collision_mask = 2
+collision_layer = 32768
+collision_mask = 32768
 
 [node name="Collectable24" parent="CHolder" instance=ExtResource( 3 )]
 position = Vector2( -870, -1546 )
 scale = Vector2( 0.257609, 1 )
-collision_layer = 2
-collision_mask = 2
+collision_layer = 32768
+collision_mask = 32768
 
 [node name="Collectable25" parent="CHolder" instance=ExtResource( 3 )]
 position = Vector2( -874, -1784 )
 scale = Vector2( 0.257609, 1 )
-collision_layer = 2
-collision_mask = 2
+collision_layer = 32768
+collision_mask = 32768
 
 [node name="Collectable26" parent="CHolder" instance=ExtResource( 3 )]
 position = Vector2( -961, -1945 )
 scale = Vector2( 0.257609, 1 )
-collision_layer = 2
-collision_mask = 2
+collision_layer = 32768
+collision_mask = 32768
 
 [node name="SawPaths" type="Node" parent="."]
 
@@ -381,9 +381,6 @@ position = Vector2( -1965, 165 )
 [node name="Obstical51" parent="OHolder" instance=ExtResource( 1 )]
 position = Vector2( -1863, 168 )
 
-[node name="Obstical52" parent="OHolder" instance=ExtResource( 1 )]
-position = Vector2( -1608, 355 )
-
 [node name="Obstical53" parent="OHolder" instance=ExtResource( 1 )]
 position = Vector2( -2321, 312 )
 
@@ -437,12 +434,12 @@ position = Vector2( -2096, 138 )
 scale = Vector2( 0.604167, 1 )
 
 [node name="Obstical58" parent="OHolder" instance=ExtResource( 1 )]
-position = Vector2( -2665, 89.5 )
-scale = Vector2( 10.625, 2.6875 )
+position = Vector2( -2651.5, 89.5 )
+scale = Vector2( 12.2826, 2.6875 )
 
 [node name="Obstical59" parent="OHolder" instance=ExtResource( 1 )]
-position = Vector2( -3160, 91 )
-scale = Vector2( 10.625, 2.6875 )
+position = Vector2( -3180.31, 91 )
+scale = Vector2( 11.5082, 2.6875 )
 
 [node name="Obstical60" parent="OHolder" instance=ExtResource( 1 )]
 position = Vector2( -3659, 89 )
@@ -477,10 +474,11 @@ position = Vector2( -6700, -1623 )
 scale = Vector2( 63.2292, 113.729 )
 
 [node name="Obstical12" parent="OHolder" instance=ExtResource( 1 )]
-position = Vector2( -1453, 155 )
+position = Vector2( -1433, 147 )
 
 [node name="Obstical15" parent="OHolder" instance=ExtResource( 1 )]
-position = Vector2( -1646, 319 )
+position = Vector2( -1685, 331.5 )
+scale = Vector2( 1, 1.58696 )
 
 [node name="Obstical16" parent="OHolder" instance=ExtResource( 1 )]
 position = Vector2( -1739, 223 )
@@ -490,9 +488,6 @@ position = Vector2( -1550, 212 )
 
 [node name="Obstical18" parent="OHolder" instance=ExtResource( 1 )]
 position = Vector2( -1337, 33 )
-
-[node name="Obstical19" parent="OHolder" instance=ExtResource( 1 )]
-position = Vector2( -1521, 108 )
 
 [node name="Obstical20" parent="OHolder" instance=ExtResource( 1 )]
 position = Vector2( -1263, -91 )
@@ -1171,9 +1166,6 @@ position = Vector2( -1727, 357 )
 [node name="Enemy27" parent="SpikeHolder" instance=ExtResource( 2 )]
 position = Vector2( -1714, 357 )
 
-[node name="Enemy28" parent="SpikeHolder" instance=ExtResource( 2 )]
-position = Vector2( -1701, 357 )
-
 [node name="Enemy31" parent="SpikeHolder" instance=ExtResource( 2 )]
 position = Vector2( -1724, 194 )
 
@@ -1204,7 +1196,7 @@ position = Vector2( 858, 264 )
 rotation = -1.56393
 
 [node name="Enemy35" parent="SpikeHolder" instance=ExtResource( 2 )]
-position = Vector2( -1654, 290 )
+position = Vector2( -1697, 290 )
 
 [node name="Enemy36" parent="SpikeHolder" instance=ExtResource( 2 )]
 position = Vector2( -1636, -87 )
@@ -1214,12 +1206,6 @@ position = Vector2( -1620, -87 )
 
 [node name="Enemy38" parent="SpikeHolder" instance=ExtResource( 2 )]
 position = Vector2( -1604, -87 )
-
-[node name="Enemy29" parent="SpikeHolder" instance=ExtResource( 2 )]
-position = Vector2( -1687, 357 )
-
-[node name="Enemy30" parent="SpikeHolder" instance=ExtResource( 2 )]
-position = Vector2( -1673, 357 )
 
 [node name="END" parent="." instance=ExtResource( 8 )]
 position = Vector2( -4170, -16 )
@@ -1413,7 +1399,6 @@ position = Vector2( -4170, -16 )
 [connection signal="Hit" from="SpikeHolder/Enemy25" to="Player" method="_on_Enemy_Hit"]
 [connection signal="Hit" from="SpikeHolder/Enemy26" to="Player" method="_on_Enemy_Hit"]
 [connection signal="Hit" from="SpikeHolder/Enemy27" to="Player" method="_on_Enemy_Hit"]
-[connection signal="Hit" from="SpikeHolder/Enemy28" to="Player" method="_on_Enemy_Hit"]
 [connection signal="Hit" from="SpikeHolder/Enemy31" to="Player" method="_on_Enemy_Hit"]
 [connection signal="Hit" from="SpikeHolder/Enemy32" to="Player" method="_on_Enemy_Hit"]
 [connection signal="Hit" from="SpikeHolder/Enemy33" to="Player" method="_on_Enemy_Hit"]
@@ -1426,8 +1411,6 @@ position = Vector2( -4170, -16 )
 [connection signal="Hit" from="SpikeHolder/Enemy36" to="Player" method="_on_Enemy_Hit"]
 [connection signal="Hit" from="SpikeHolder/Enemy37" to="Player" method="_on_Enemy_Hit"]
 [connection signal="Hit" from="SpikeHolder/Enemy38" to="Player" method="_on_Enemy_Hit"]
-[connection signal="Hit" from="SpikeHolder/Enemy29" to="Player" method="_on_Enemy_Hit"]
-[connection signal="Hit" from="SpikeHolder/Enemy30" to="Player" method="_on_Enemy_Hit"]
 [connection signal="win" from="END" to="Player" method="_on_END_win"]
 
 [editable path="Player"]
@@ -1522,5 +1505,3 @@ position = Vector2( -4170, -16 )
 [editable path="SpikeHolder/Enemy21"]
 [editable path="SpikeHolder/Enemy22"]
 [editable path="SpikeHolder/Enemy23"]
-[editable path="SpikeHolder/Enemy29"]
-[editable path="SpikeHolder/Enemy30"]
